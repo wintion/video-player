@@ -1381,17 +1381,17 @@
       </dict>
     </dict>
 	</array>
-	<key>com.colliderli.iina.build.branch</key>
+	<key>com.wintion.rawya.build.branch</key>
 	<string>IINA_BUILD_BRANCH</string>
-	<key>com.colliderli.iina.build.commit</key>
+	<key>com.wintion.rawya.build.commit</key>
 	<string>IINA_BUILD_COMMIT</string>
-	<key>com.colliderli.iina.build.configuration</key>
+	<key>com.wintion.rawya.build.configuration</key>
 	<string>$(CONFIGURATION)</string>
-	<key>com.colliderli.iina.build.date</key>
+	<key>com.wintion.rawya.build.date</key>
 	<string>IINA_BUILD_DATE</string>
-	<key>com.colliderli.iina.build.sdk</key>
+	<key>com.wintion.rawya.build.sdk</key>
 	<string>$(SDK_VERSION)</string>
-	<key>com.colliderli.iina.build.xcode</key>
+	<key>com.wintion.rawya.build.xcode</key>
 	<string>$(XCODE_VERSION_ACTUAL)</string>
 </dict>
 </plist>
