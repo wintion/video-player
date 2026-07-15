@@ -62,7 +62,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   lazy var fontPicker: FontPickerWindowController = FontPickerWindowController()
   lazy var inspector: InspectorWindowController = InspectorWindowController()
   lazy var historyWindow: HistoryWindowController = HistoryWindowController()
-  lazy var guideWindow: GuideWindowController = GuideWindowController()
   lazy var logWindow: LogWindowController = LogWindowController()
 
   lazy var vfWindow: FilterWindowController = {
@@ -248,11 +247,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
     // Check for legacy pref entries and migrate them to their modern equivalents
     LegacyMigration.shared.migrateLegacyPreferences()
-
-    // guide window
-    if FirstRunManager.isFirstRun(for: .init("firstLaunchAfter\(version)")) {
-      guideWindow.show(pages: [.highlights])
-    }
 
     // Hide Window > "Enter Full Screen" menu item, because this is already present in the Video menu
     UserDefaults.standard.set(false, forKey: "NSFullScreenMenuItemEverywhere")
@@ -991,10 +985,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @IBAction func showLogWindow(_ sender: AnyObject) {
     logWindow.showWindow(self)
-  }
-
-  @IBAction func showHighlights(_ sender: AnyObject) {
-    guideWindow.show(pages: [.highlights])
   }
 
   @IBAction func helpAction(_ sender: AnyObject) {

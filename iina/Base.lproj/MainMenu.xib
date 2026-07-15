@@ -674,13 +674,6 @@ CA
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="ZO8-wH-FBe"/>
-                            <menuItem title="Release Highlights" id="kOx-hc-aQG">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="showHighlights:" target="Voe-Tx-rLC" id="VXT-LI-ofl"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="Cxg-P0-6hm"/>
                             <menuItem title="GitHub" id="A9w-iE-gVg">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
