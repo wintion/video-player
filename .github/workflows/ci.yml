@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-      branches: [develop]
+      branches: [main]
   pull_request:
-      branches: [develop]
+      branches: [main]
 
 jobs:
   build:
@@ -23,15 +23,15 @@ jobs:
           DOWNLOAD_LIBS_ARGS: ${{ github.event_name == 'pull_request' && '--skip-plugins' || '' }}
 
       - name: Build
-        run: xcodebuild -project iina.xcodeproj ONLY_ACTIVE_ARCH=NO -scheme iina -configuration Nightly ${{ matrix.deployment_target }}
+        run: xcodebuild -project iina.xcodeproj ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO -scheme iina -configuration Release -derivedDataPath "$RUNNER_TEMP/rawya-derived" ${{ matrix.deployment_target }}
         env:
           DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer
 
       - name: Archive
-        run: tar cvJf ~/iina.tar.xz -C /Users/runner/Library/Developer/Xcode/DerivedData/iina-csbkugdtxazzqogjnydbothqrvib/Build/Products/Nightly IINA.app 
+        run: tar cvJf "$RUNNER_TEMP/rawya.tar.xz" -C "$RUNNER_TEMP/rawya-derived/Build/Products/Release" Rawya.app
 
       - name: Save artifacts
         uses: actions/upload-artifact@v6
         with:
-          name: IINA
-          path: ~/iina.tar.xz
+          name: Rawya
+          path: ${{ runner.temp }}/rawya.tar.xz
