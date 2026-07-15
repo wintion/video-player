@@ -90,6 +90,15 @@ struct InfoDictionary {
 
   var copyright: String { dictionary["NSHumanReadableCopyright"] as! String }
 
+  var localizedBrandSubtitle: String? {
+    let subtitle = NSLocalizedString("brand.localized_name",
+                                     tableName: nil,
+                                     bundle: .main,
+                                     value: "",
+                                     comment: "Localized secondary brand name")
+    return subtitle.isEmpty ? nil : subtitle
+  }
+
   let dictionary = Bundle.main.infoDictionary!
 
   /// A Boolean value that indicates whether this executable was an optimized (not debug) build.

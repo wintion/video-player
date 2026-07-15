@@ -368,8 +368,15 @@ extension PrefKeyBindingViewController: NSTableViewDelegate, NSTableViewDataSour
 
   func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
     let name = cachedConfigNames[row]
+    let displayName = name == KC.rawyaDefaultConfigName
+      ? NSLocalizedString("preference.keybindings.rawya_default",
+                          tableName: nil,
+                          bundle: .main,
+                          value: KC.rawyaDefaultConfigName,
+                          comment: "Rawya default key binding configuration")
+      : name
     return [
-      "name": name,
+      "name": displayName,
       "isHidden": !isDefaultConfig(name)
     ] as [String: Any]
   }

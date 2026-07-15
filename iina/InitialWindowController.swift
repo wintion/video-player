@@ -60,6 +60,7 @@ class InitialWindowController: NSWindowController {
 
   @IBOutlet weak var recentFilesTableView: NSTableView!
   @IBOutlet weak var appIcon: NSImageView!
+  @IBOutlet weak var appNameLabel: NSTextField!
   @IBOutlet weak var versionLabel: NSTextField!
   @IBOutlet weak var visualEffectView: NSVisualEffectView!
   @IBOutlet weak var leftOverlayView: NSView!
@@ -144,6 +145,8 @@ class InitialWindowController: NSWindowController {
       betaIndicatorView.isHidden = false
     }
 
+    addLocalizedBrandSubtitle(infoDict.localizedBrandSubtitle)
+
     loadLastPlaybackInfo()
 
     recentFilesTableView.delegate = self
@@ -160,6 +163,33 @@ class InitialWindowController: NSWindowController {
       UserDefaults.standard.addObserver(self, forKeyPath: key.rawValue, options: .new, context: nil)
     }
     reloadData()
+  }
+
+  private func addLocalizedBrandSubtitle(_ subtitle: String?) {
+    guard let subtitle,
+          let container = appNameLabel.superview,
+          versionLabel.superview === container,
+          let versionTopConstraint = container.constraints.first(where: {
+            $0.firstItem === versionLabel &&
+              $0.secondItem === appNameLabel &&
+              $0.firstAttribute == .top &&
+              $0.secondAttribute == .bottom
+          }) else { return }
+
+    versionTopConstraint.isActive = false
+
+    let subtitleLabel = NSTextField(labelWithString: subtitle)
+    subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+    subtitleLabel.alignment = .center
+    subtitleLabel.font = NSFont.systemFont(ofSize: 12, weight: .medium)
+    subtitleLabel.textColor = .secondaryLabelColor
+    container.addSubview(subtitleLabel)
+
+    NSLayoutConstraint.activate([
+      subtitleLabel.topAnchor.constraint(equalTo: appNameLabel.bottomAnchor, constant: 1),
+      subtitleLabel.centerXAnchor.constraint(equalTo: appNameLabel.centerXAnchor),
+      versionLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 2),
+    ])
   }
 
   private func setMaterial(_ theme: Preference.Theme?) {

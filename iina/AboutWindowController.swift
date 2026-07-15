@@ -64,6 +64,7 @@ class AboutWindowController: NSWindowController {
 
     let (version, build) = InfoDictionary.shared.version
     versionLabel.stringValue = "\(version) Build \(build)"
+    addLocalizedBrandSubtitle(InfoDictionary.shared.localizedBrandSubtitle)
 
     mpvVersionLabel.stringValue = MPVOptionDefaults.shared.mpvVersion
     ffmpegVersionLabel.stringValue = "FFmpeg \(String(cString: av_version_info()))"
@@ -123,6 +124,33 @@ class AboutWindowController: NSWindowController {
     contributorsFooterView.maskImage = image
 
     contributorsCollectionView.enclosingScrollView?.contentInsets.bottom = contributorsFooterView.frame.height * loc[colors.firstIndex(of: 0)! - 1]
+  }
+
+  private func addLocalizedBrandSubtitle(_ subtitle: String?) {
+    guard let subtitle,
+          let container = iinaLabel.superview,
+          versionLabel.superview === container,
+          let versionTopConstraint = container.constraints.first(where: {
+            $0.firstItem === versionLabel &&
+              $0.secondItem === iinaLabel &&
+              $0.firstAttribute == .top &&
+              $0.secondAttribute == .bottom
+          }) else { return }
+
+    versionTopConstraint.isActive = false
+
+    let subtitleLabel = NSTextField(labelWithString: subtitle)
+    subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+    subtitleLabel.alignment = .center
+    subtitleLabel.font = NSFont.systemFont(ofSize: 13, weight: .medium)
+    subtitleLabel.textColor = .secondaryLabelColor
+    container.addSubview(subtitleLabel)
+
+    NSLayoutConstraint.activate([
+      subtitleLabel.topAnchor.constraint(equalTo: iinaLabel.bottomAnchor, constant: 1),
+      subtitleLabel.centerXAnchor.constraint(equalTo: iinaLabel.centerXAnchor),
+      versionLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 4),
+    ])
   }
 
   @objc func openCommitLink() {

@@ -16,6 +16,7 @@
 "general.username" = "Username";
 "general.password" = "Password";
 "general.na" = "N/A";
+"brand.localized_name" = "";
 
 "input.value_is_empty" = "Value cannot be empty.";
 "input.already_exists" = "Value already exists.";
@@ -151,6 +152,7 @@
 "preference.network" = "Network";
 "preference.control" = "Control";
 "preference.keybindings" = "Key Bindings";
+"preference.keybindings.rawya_default" = "Rawya Default";
 "preference.advanced" = "Advanced";
 "preference.plugins" = "Plugins";
 "preference.utilities" = "Utilities";

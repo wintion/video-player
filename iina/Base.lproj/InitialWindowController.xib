@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="InitialWindowController" customModule="IINA" customModuleProvider="target">
             <connections>
                 <outlet property="appIcon" destination="nrn-G9-P2A" id="2hO-5g-HzS"/>
+                <outlet property="appNameLabel" destination="8hV-gP-tZA" id="raw-ya-name"/>
                 <outlet property="betaIndicatorView" destination="7SF-fn-3LF" id="uST-Lq-V3d"/>
                 <outlet property="betaTextField" destination="aUL-kg-QKC" id="7wg-qM-67K"/>
                 <outlet property="lastFileContainerView" destination="XbN-3R-9zz" id="lHL-TU-uYf"/>
