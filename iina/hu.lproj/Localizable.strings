@@ -27,8 +27,8 @@
 
 // Initial Window
 "initial.announcement" = "Ön Az Rawya %@ verzióját használja";
-"initial.beta.desc" = "Amennyiben végleges verzióra váltana, szüntesse meg a kijelölést a \"béta frissítések\" opciónál a Beállítások > Általános almenüben, és telepítsen stabil verziót a <a href=\"https://iina.io\">hivatalos weboldalunkról</a>.";
-"initial.nightly.desc" = "A Nightly verzió nem ajánlott mindennapi használatra. Jelenleg a nightly verzió nem támogatja az automatikus frissítést.. Töltsd le a friss verziót a <a href=\"https://nightly.iina.io\">nightly oldalunkról</a>.";
+"initial.beta.desc" = "Amennyiben végleges verzióra váltana, szüntesse meg a kijelölést a \"béta frissítések\" opciónál a Beállítások > Általános almenüben, és telepítsen stabil verziót a <a href=\"https://rawya.ai\">hivatalos weboldalunkról</a>.";
+"initial.nightly.desc" = "A Nightly verzió nem ajánlott mindennapi használatra. Jelenleg a nightly verzió nem támogatja az automatikus frissítést.. Töltsd le a friss verziót a <a href=\"https://rawya.ai\">nightly oldalunkról</a>.";
 "initial.debug.desc" = "A hibakeresési verzió általában nincs teljesítményre optimalizálva, ezért nem ajánlott napi használatra. A hibakeresési verziók nem támogatják az automatikus frissítést.";
 "initial.bug_report" = "Jelentés a <a href=\"https://github.com/iina/iina/issues\">GitHub-bugok</a> felületen.";
 

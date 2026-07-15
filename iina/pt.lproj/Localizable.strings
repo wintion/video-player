@@ -27,8 +27,8 @@
 
 // Initial Window
 "initial.announcement" = "Está a usar a versão %@ do Rawya";
-"initial.beta.desc" = "Para reverter para uma versão anterior desmarque \"Receber Atualizações beta\" a partir de Definições... > Geral, e instale a versão pretendida através do nosso <a href=\"https://iina.io\">site oficial</a>.";
-"initial.nightly.desc" = "Não é recomendado que use Nightly no dia a dia. As versões Nightly não suportam atualizações automáticas. Descarregue novas versões manualmente do nosso <a href=\"https://nightly.iina.io\">website nightly</a>.";
+"initial.beta.desc" = "Para reverter para uma versão anterior desmarque \"Receber Atualizações beta\" a partir de Definições... > Geral, e instale a versão pretendida através do nosso <a href=\"https://rawya.ai\">site oficial</a>.";
+"initial.nightly.desc" = "Não é recomendado que use Nightly no dia a dia. As versões Nightly não suportam atualizações automáticas. Descarregue novas versões manualmente do nosso <a href=\"https://rawya.ai\">website nightly</a>.";
 "initial.debug.desc" = "Compilações para depuração não estão otimizadas para velocidade, por isso não é recomendado que a use no dia a dia. Compilações para depuração não suportam atualizações automáticas.";
 "initial.bug_report" = "Reporte através <a href=\"https://github.com/iina/iina/issues\">GitHub Issues</a>.";
 

@@ -27,8 +27,8 @@
 
 // Initial Window
 "initial.announcement" = "Rawyaバージョン %@ を使用しています";
-"initial.beta.desc" = "リリースバージョンにロールバックする場合は、設定 > 一般 の \"ベータアップデートを受信\" のチェックを外し、<a href=\"https://iina.io\">公式Webサイト</a> から安定版リリースをインストールしてください。";
-"initial.nightly.desc" = "Nightlyを常用することは推奨されません。Nightlyビルドは、現在自動アップデートに対応していません。新しいビルドは<a href=\"https://nightly.iina.io\">Nightly Webサイト</a>から手動でダウンロードしてください。";
+"initial.beta.desc" = "リリースバージョンにロールバックする場合は、設定 > 一般 の \"ベータアップデートを受信\" のチェックを外し、<a href=\"https://rawya.ai\">公式Webサイト</a> から安定版リリースをインストールしてください。";
+"initial.nightly.desc" = "Nightlyを常用することは推奨されません。Nightlyビルドは、現在自動アップデートに対応していません。新しいビルドは<a href=\"https://rawya.ai\">Nightly Webサイト</a>から手動でダウンロードしてください。";
 "initial.debug.desc" = "デバッグビルドは通常パフォーマンスが最適化されていないので、常用することは推奨されません。デバッグビルドは自動アップデートに対応していません。";
 "initial.bug_report" = "<a href=\"https://github.com/iina/iina/issues\">GitHub issues</a> で報告してください。";
 

@@ -27,8 +27,8 @@
 
 // Initial Window
 "initial.announcement" = "U gebruikt een %@ versie van Rawya";
-"initial.beta.desc" = "Als u wilt teruggaan naar een stabiele versie, vink \"beta updates ontvangen\" uit via Instellingen > Algemeen, en installeer een stabiele release van onze <a href=\"https://iina.io\">officiële website</a>.";
-"initial.nightly.desc" = "Nightly wordt niet aanbevolen voor dagelijks gebruik. Momenteel ondersteunen nightly builds geen automatische updates. Download handmatig nieuwere builds van onze <a href=\"https://nightly.iina.io\">nightly website</a>.";
+"initial.beta.desc" = "Als u wilt teruggaan naar een stabiele versie, vink \"beta updates ontvangen\" uit via Instellingen > Algemeen, en installeer een stabiele release van onze <a href=\"https://rawya.ai\">officiële website</a>.";
+"initial.nightly.desc" = "Nightly wordt niet aanbevolen voor dagelijks gebruik. Momenteel ondersteunen nightly builds geen automatische updates. Download handmatig nieuwere builds van onze <a href=\"https://rawya.ai\">nightly website</a>.";
 "initial.debug.desc" = "Debug builds zijn meestal niet geoptimaliseerd voor prestaties, dus deze zijn niet aangeraden voor dagelijks gebruik. Debug builds ondersteunen geen automatische updates.";
 "initial.bug_report" = "Rapporteer via <a href=\"https://github.com/iina/iina/issues\">GitHub issues</a>.";
 
