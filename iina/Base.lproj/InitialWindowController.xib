@@ -58,7 +58,7 @@
                                             <constraint firstAttribute="height" constant="128" id="Wn7-bK-7pD"/>
                                             <constraint firstAttribute="width" constant="128" id="ZWC-9S-k88"/>
                                         </constraints>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="QyS-ah-TEY"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="rawya_mark" id="QyS-ah-TEY"/>
                                     </imageView>
                                     <customView identifier="openFile" translatesAutoresizingMaskIntoConstraints="NO" id="ZGi-N7-Zv2" customClass="InitialWindowViewActionButton" customModule="IINA" customModuleProvider="target">
                                         <rect key="frame" x="204" y="339" width="392" height="28"/>
@@ -411,6 +411,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="AppIcon" width="512" height="512"/>
+        <image name="rawya_mark" width="512" height="512"/>
     </resources>
 </document>
