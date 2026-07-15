@@ -85,8 +85,8 @@
 /* Class = "NSTextFieldCell"; title = "Advanced"; ObjectID = "X7X-18-FJg"; */
 "X7X-18-FJg.title" = "Avansat";
 
-/* Class = "NSMenuItem"; title = "Detect intelligently by IINA"; ObjectID = "XiL-eE-jah"; */
-"XiL-eE-jah.title" = "Detectate inteligent de IINA";
+/* Class = "NSMenuItem"; title = "Detect intelligently by Rawya"; ObjectID = "XiL-eE-jah"; */
+"XiL-eE-jah.title" = "Detectate inteligent de Rawya";
 
 /* Class = "NSTextFieldCell"; title = "Default encoding:"; ObjectID = "Y75-4k-2Du"; */
 "Y75-4k-2Du.title" = "Codare implicită:";
@@ -154,8 +154,8 @@
 /* Class = "NSTextFieldCell"; title = "Color:"; ObjectID = "vDc-dw-liI"; */
 "vDc-dw-liI.title" = "Culoare:";
 
-/* Class = "NSTextFieldCell"; title = "If enabled, IINA will automatically search online subtitles only for videos without loaded subtitles and longer than 20 mintues."; ObjectID = "vYb-qH-XkH"; */
-"vYb-qH-XkH.title" = "Odată activat, IINA va căuta în mod automat subtitrări online doar pentru video-uri fără subtitrări și mai lungi de 20 de minute.";
+/* Class = "NSTextFieldCell"; title = "If enabled, Rawya will automatically search online subtitles only for videos without loaded subtitles and longer than 20 mintues."; ObjectID = "vYb-qH-XkH"; */
+"vYb-qH-XkH.title" = "Odată activat, Rawya va căuta în mod automat subtitrări online doar pentru video-uri fără subtitrări și mai lungi de 20 de minute.";
 
 /* Class = "NSTextFieldCell"; title = "Y:"; ObjectID = "xGf-fF-4Hx"; */
 "xGf-fF-4Hx.title" = "Y:";

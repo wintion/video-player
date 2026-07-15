@@ -51,6 +51,8 @@
 "iina.fit-to-screen" = "Fit to Screen";
 "iina.toggle-flip" = "Toggle flip";
 "iina.toggle-mirror" = "Toggle mirror";
+"iina.rotate-video-clockwise" = "Rotate video clockwise 90°";
+"iina.rotate-video-counterclockwise" = "Rotate video counterclockwise 90°";
 "iina.save-playlist" = "Save current playlist";
 "iina.show-current-file-in-finder" = "Show current file in Finder";
 "iina.delete-current-file" = "Delete current file";

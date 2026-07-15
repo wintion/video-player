@@ -26,7 +26,7 @@
 "guide.faq" = "Často kladené otázky";
 
 // Initial Window
-"initial.announcement" = "Používate %@ beta verziu aplikácie IINA";
+"initial.announcement" = "Používate %@ beta verziu aplikácie Rawya";
 "initial.beta.desc" = "Odškrtnite \"Sťahovať beta aktualizácie\" v Nastavenia - Všeobecné a nainštalujte stabilnú verziu z našej <a href=\"https://iina.io\">oficiálnej stránky</a>.";
 "initial.nightly.desc" = "
 Nočné zostavy sa neodporúčajú používať ako denný ovládač. V súčasnosti nočné zostavy nepodporujú automatickú aktualizáciu. Nové zostavy si prosím stiahnite ručne z našej <a href=\"https://nightly.iina.io\">stránky s nočnými zostavami</a>.";
@@ -294,8 +294,8 @@ Nočné zostavy sa neodporúčajú používať ako denný ovládač. V súčasno
 "alert.sub.cannot_login" = "Nedá sa prihlásiť. Skontrolujte používateľské meno, heslo a stav siete. \n\n%@";
 "alert.sub.save_downloaded.title" = "Uložiť stiahnuté titulky";
 
-"alert.set_default.title" = "Nastaviť IINA ako predvolenú aplikáciu";
-"alert.set_default.message" = "IINA bude nastavená ako predvolená aplikácia pre všetky typy súborov, ktoré podporuje.";
+"alert.set_default.title" = "Nastaviť Rawya ako predvolenú aplikáciu";
+"alert.set_default.message" = "Rawya bude nastavená ako predvolená aplikácia pre všetky typy súborov, ktoré podporuje.";
 "alert.set_default.success" = "Dokončené s %d úspechom a %d chybami.";
 
 "alert.add_watch.title" = "Pridať položku pozerať";
@@ -463,6 +463,6 @@ Nočné zostavy sa neodporúčajú používať ako denný ovládač. V súčasno
 "plugin.install_error.file_not_found" = "Súbor balíčka sa nedá nájsť.";
 "plugin.install_error.cannot_download" = "Sťahovanie plug-inu zlyhalo.\n\nVýstup:%@\n";
 "plugin.install_error.cannot_unpackage" = "Rozbaľovanie plug-inu zlyhalo.\n\nVýstup:%@\n";
-"plugin.install_error.cannot_load" = "IINA nemôže načítať tento plugin. Môže byť v chybnom formáte.";
+"plugin.install_error.cannot_load" = "Rawya nemôže načítať tento plugin. Môže byť v chybnom formáte.";
 "plugin.check_for_updates" = "Skontrolovať aktualizácie";
 "plugin.updating" = "Sťahovanie aktualizácie…";

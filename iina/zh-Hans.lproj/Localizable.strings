@@ -26,7 +26,7 @@
 "guide.faq" = "常见问题";
 
 // Initial Window
-"initial.announcement" = "您正在使用 IINA 的 %@ 版本";
+"initial.announcement" = "您正在使用 Rawya 的 %@ 版本";
 "initial.beta.desc" = "如果你想回滚到发布版本，请从“设置” > “通用” 中取消勾选 “接收测试版本（Beta）更新”，并从我们的<a href=\"https://iina.io\">官方网站</a>安装一个稳定版本。";
 "initial.nightly.desc" = "我们不建议将 Nightly 作为日常使用的版本。目前 Nightly 不支持自动更新。请从我们的<a href=\"https://nightly.iina.io\"> Nightly 网站</a>手动下载更新的版本。";
 "initial.debug.desc" = "调试版本（Debug）通常没有对性能进行优化，所以不建议日常用。调试版本（Debug）不支持自动更新。";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "添加新滤镜";
 "alert.add_filter.message" = "请输入符合 mpv 的 vf 或 af 格式的滤镜字符串。";
 
-"alert.keybinding_config.error" = "无法读取快捷键配置文件“%@”！已回退至 IINA 默认的键位设置。请检查你的快捷键配置。";
+"alert.keybinding_config.error" = "无法读取快捷键配置文件“%@”！已回退至 Rawya 默认的键位设置。请检查你的快捷键配置。";
 
 "alert.extra_option.cannot_read" = "无法读取用户定义的 mpv 额外选项。";
 "alert.extra_option.empty" = "键或值不能为空！";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "无法登录。请检查您的用户名、密码及网络状态。\n\n%@";
 "alert.sub.save_downloaded.title" = "保存已下载字幕";
 
-"alert.set_default.title" = "正在将 IINA 设为默认程序";
-"alert.set_default.message" = "IINA 将作为默认程序打开所有支持文件类型。";
+"alert.set_default.title" = "正在将 Rawya 设为默认程序";
+"alert.set_default.message" = "Rawya 将作为默认程序打开所有支持文件类型。";
 "alert.set_default.success" = "已完成。%d 成功，%d 失败。";
 
 "alert.add_watch.title" = "添加监视属性";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "找不到软件包文件。";
 "plugin.install_error.cannot_download" = "下载插件失败。\n\n输出: %@\n";
 "plugin.install_error.cannot_unpackage" = "解包插件失败。\n\n输出: %@\n";
-"plugin.install_error.cannot_load" = "IINA无法加载此插件，可能是格式错误。";
+"plugin.install_error.cannot_load" = "Rawya无法加载此插件，可能是格式错误。";
 "plugin.check_for_updates" = "检查更新";
 "plugin.updating" = "下载更新中……";

@@ -26,7 +26,7 @@
 "guide.faq" = "Sık Sorulan Sorular";
 
 // Initial Window
-"initial.announcement" = "Şu an IINA'nın %@ BETA sürümünü kullanıyorsunuz";
+"initial.announcement" = "Şu an Rawya'nın %@ BETA sürümünü kullanıyorsunuz";
 "initial.beta.desc" = "Lütfen “Ayarlar” → “Genel” sekmesinden “Beta güncellemeleri al” seçeneğini kapatın ve <a href=\"https://iina.io\">resmi sitemizden</a> kararlı son sürümü indirin.";
 "initial.nightly.desc" = "Gecelik sürüm, günlük kullanım için tavsiye edilmez. Şu anda gecelik yapılar kendiliğinden güncellenmeyi desteklememektedir. Daha yeni yapıları elle <a href=\"https://nightly.iina.io\">gecelik sürüm web sitemizden</a> indirebilirsiniz.";
 "initial.debug.desc" = "Hata ayıklama amaçlı derlenmiş sürümler genellikle performans açısından optimize edilmediğinden günlük olarak kullanılması önerilmez. Hata ayıklama amaçlı sürümler otomatik güncellemeyi desteklemez.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Yeni Süzgeç";
 "alert.add_filter.message" = "Lütfen mpv’nin vf veya af komutu biçiminde bir süzgeç dizisi girin.";
 
-"alert.keybinding_config.error" = "“%@” tuş bağıntısı yapılandırma dosyası ayrıştırılırken hata! Saptanmış IINA ayarlarına dönülüyor. Lütfen yapılandırmanızı gözden geçirin.";
+"alert.keybinding_config.error" = "“%@” tuş bağıntısı yapılandırma dosyası ayrıştırılırken hata! Saptanmış Rawya ayarlarına dönülüyor. Lütfen yapılandırmanızı gözden geçirin.";
 
 "alert.extra_option.cannot_read" = "Kullanıcı tanımlı ek mpv seçenekleri okunamıyor.";
 "alert.extra_option.empty" = "Anahtar veya değer boş olamaz!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Giriş yapılamıyor. Lütfen kullanıcı adınızı, şifrenizi ve ağ durumunuzu denetleyin.\n\n%@";
 "alert.sub.save_downloaded.title" = "İndirilen Altyazıyı Kaydet";
 
-"alert.set_default.title" = "IINA’yı Saptanmış Uygulama Olarak Ayarla";
-"alert.set_default.message" = "Desteklenen tüm dosya türleri için IINA saptanmış uygulama olarak ayarlanacaktır.";
+"alert.set_default.title" = "Rawya’yı Saptanmış Uygulama Olarak Ayarla";
+"alert.set_default.message" = "Desteklenen tüm dosya türleri için Rawya saptanmış uygulama olarak ayarlanacaktır.";
 "alert.set_default.success" = "%d başarıyla tamamlandı ve %d başarısız oldu.";
 
 "alert.add_watch.title" = "İzleme Özelliği Ekle";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Paket dosyası bulunamadı.";
 "plugin.install_error.cannot_download" = "Eklenti indirilemedi.\n\nHata çıktısı:%@\n";
 "plugin.install_error.cannot_unpackage" = "Eklenti paketi açılamadı.\n\nHata çıktısı:%@\n";
-"plugin.install_error.cannot_load" = "IINA eklentiyi yükleyemedi. Eklenti yanlış biçimde olabilir.";
+"plugin.install_error.cannot_load" = "Rawya eklentiyi yükleyemedi. Eklenti yanlış biçimde olabilir.";
 "plugin.check_for_updates" = "Güncellemeleri Denetle";
 "plugin.updating" = "Güncelleme indiriliyor…";

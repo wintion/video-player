@@ -38,13 +38,13 @@
 "4ae-MT-2L1.title" = "Retarda àudio + 0.5s";
 
 /* Class = "NSMenuItem"; title = "Quit IINA"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Surt d'IINA";
+"4sb-4s-VLi.title" = "Surt d'Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Speed"; ObjectID = "5Gn-90-oDu"; */
 "5Gn-90-oDu.title" = "Reinicia la velocitat";
 
 /* Class = "NSMenuItem"; title = "About IINA"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "Quant a IINA";
+"5kV-Vb-QxS.title" = "Quant a Rawya";
 
 /* Class = "NSMenu"; title = "Rotation"; ObjectID = "5xN-ZB-VLI"; */
 "5xN-ZB-VLI.title" = "Rotació";
@@ -134,7 +134,7 @@
 "F6G-Ln-fqI.title" = "Capítol següent";
 
 /* Class = "NSMenuItem"; title = "IINA Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Ajuda d'IINA";
+"FKE-Sm-Kum.title" = "Ajuda d'Rawya";
 
 /* Class = "NSMenu"; title = "Video Track"; ObjectID = "FTu-CF-O0R"; */
 "FTu-CF-O0R.title" = "Pista de vídeo";
@@ -224,7 +224,7 @@
 "OY7-WF-poV.title" = "Minimitza";
 
 /* Class = "NSMenuItem"; title = "Hide IINA"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Amaga IINA";
+"Olw-nP-bQN.title" = "Amaga Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Subtitle Scale"; ObjectID = "P1a-ot-P31"; */
 "P1a-ot-P31.title" = "Reinicia escala dels subtítols";

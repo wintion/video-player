@@ -26,7 +26,7 @@
 "guide.faq" = "שאלות נפוצות";
 
 // Initial Window
-"initial.announcement" = "אתה משתמש בגרסת %@ של IINA";
+"initial.announcement" = "אתה משתמש בגרסת %@ של Rawya";
 "initial.beta.desc" = "אם ברצונך לחזור לגרסה הרגילה, הסר את הסימון \"קבל עדכוני בטא\" בהגדרות > כללי, והתקן את הגרסה הרגילה מ<a href=\"https://iina.io\">האתר הרשמי</a> שלנו.";
 "initial.nightly.desc" = "בניה לילית לא מומלצת לשימוש יומיומי. כרגע, בנייה לילית לא תומכת בעדכון אוטומטי. אנא הורד באופן ידני בניה עדכנית מ<a href=\"https://nightly.iina.io\">האתר</a> שלנו.";
 "initial.debug.desc" = "בניית ניפוי באגים בדרך כלל אינה מותאמת לטובת ביצועים, ולכן אינה מומלצת לשימוש יומיומי. בניית ניפוי באגים לא תומכת בעדכון אוטומטי.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "מסנן חדש";
 "alert.add_filter.message" = "אנא הזן מחרוזת מסנן בפורמט פקודת vf או af של mpv.";
 
-"alert.keybinding_config.error" = "שגיאה בניתוח קובץ תצורת קיצורי מקשים \"%@\"! חוזר לקיצורי מקשים ברירת המחדל של IINA. אנא בדוק את התצורה שלך.";
+"alert.keybinding_config.error" = "שגיאה בניתוח קובץ תצורת קיצורי מקשים \"%@\"! חוזר לקיצורי מקשים ברירת המחדל של Rawya. אנא בדוק את התצורה שלך.";
 
 "alert.extra_option.cannot_read" = "קריאת אפשרויות mpv נוספות המוגדרות על ידי המשתמש נכשלה.";
 "alert.extra_option.empty" = "המפתח או הערך לא יכולים להיות ריקים!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "ההתחברות נכשלה. אנא בדוק את שם המשתמש, הסיסמה ומצב הרשת שלך.\n\n%@";
 "alert.sub.save_downloaded.title" = "שמור כתוביות שהורדו";
 
-"alert.set_default.title" = "הגדרת IINA כאפליקציית ברירת המחדל";
-"alert.set_default.message" = "IINA תוגדר כאפליקציית ברירת המחדל עבור כל סוגי הקבצים שבהם היא תומכת.";
+"alert.set_default.title" = "הגדרת Rawya כאפליקציית ברירת המחדל";
+"alert.set_default.message" = "Rawya תוגדר כאפליקציית ברירת המחדל עבור כל סוגי הקבצים שבהם היא תומכת.";
 "alert.set_default.success" = "הסתיים עם %d שהצליחו ו-%d שנכשלו.";
 
 "alert.add_watch.title" = "הוסף מאפיין צפייה";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "קובץ החבילה לא נמצא.";
 "plugin.install_error.cannot_download" = "שגיאה בהורדת התוסף.\n\nפלט: %@\n";
 "plugin.install_error.cannot_unpackage" = "שגיאה בחילוץ התוסף.\n\nפלט: %@\n";
-"plugin.install_error.cannot_load" = "IINA לא יכול לטעון את התוסף הזה. ייתכן שהוא בפורמט שגוי.";
+"plugin.install_error.cannot_load" = "Rawya לא יכול לטעון את התוסף הזה. ייתכן שהוא בפורמט שגוי.";
 "plugin.check_for_updates" = "חפש עדכונים";
 "plugin.updating" = "מוריד את העדכון…";

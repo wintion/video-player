@@ -85,8 +85,8 @@
 /* Class = "NSTextFieldCell"; title = "Advanced"; ObjectID = "X7X-18-FJg"; */
 "X7X-18-FJg.title" = "מתקדם";
 
-/* Class = "NSMenuItem"; title = "Detect intelligently by IINA"; ObjectID = "XiL-eE-jah"; */
-"XiL-eE-jah.title" = "זיהוי חכם על ידי IINA";
+/* Class = "NSMenuItem"; title = "Detect intelligently by Rawya"; ObjectID = "XiL-eE-jah"; */
+"XiL-eE-jah.title" = "זיהוי חכם על ידי Rawya";
 
 /* Class = "NSTextFieldCell"; title = "Default encoding:"; ObjectID = "Y75-4k-2Du"; */
 "Y75-4k-2Du.title" = "קידוד ברירת מחדל:";
@@ -154,8 +154,8 @@
 /* Class = "NSTextFieldCell"; title = "Color:"; ObjectID = "vDc-dw-liI"; */
 "vDc-dw-liI.title" = "צבע:";
 
-/* Class = "NSTextFieldCell"; title = "If enabled, IINA will automatically search online subtitles only for videos without loaded subtitles and longer than 20 mintues."; ObjectID = "vYb-qH-XkH"; */
-"vYb-qH-XkH.title" = "אם מופעל, IINA יחפש אוטומטית כתוביות מקוונות (רק עבור סרטונים ללא כתוביות טעונות שאורכם יותר מ-20 דקות).";
+/* Class = "NSTextFieldCell"; title = "If enabled, Rawya will automatically search online subtitles only for videos without loaded subtitles and longer than 20 mintues."; ObjectID = "vYb-qH-XkH"; */
+"vYb-qH-XkH.title" = "אם מופעל, Rawya יחפש אוטומטית כתוביות מקוונות (רק עבור סרטונים ללא כתוביות טעונות שאורכם יותר מ-20 דקות).";
 
 /* Class = "NSTextFieldCell"; title = "Y:"; ObjectID = "xGf-fF-4Hx"; */
 "xGf-fF-4Hx.title" = "גובה:";

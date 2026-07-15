@@ -85,8 +85,8 @@
 /* Class = "NSTextFieldCell"; title = "Advanced"; ObjectID = "X7X-18-FJg"; */
 "X7X-18-FJg.title" = "उन्नत";
 
-/* Class = "NSMenuItem"; title = "Detect intelligently by IINA"; ObjectID = "XiL-eE-jah"; */
-"XiL-eE-jah.title" = "IINA द्वारा समझदारी से पता लगाएं";
+/* Class = "NSMenuItem"; title = "Detect intelligently by Rawya"; ObjectID = "XiL-eE-jah"; */
+"XiL-eE-jah.title" = "Rawya द्वारा समझदारी से पता लगाएं";
 
 /* Class = "NSTextFieldCell"; title = "Default encoding:"; ObjectID = "Y75-4k-2Du"; */
 "Y75-4k-2Du.title" = "डिफ़ॉल्ट एन्कोडिंग:";
@@ -154,8 +154,8 @@
 /* Class = "NSTextFieldCell"; title = "Color:"; ObjectID = "vDc-dw-liI"; */
 "vDc-dw-liI.title" = "रंग:";
 
-/* Class = "NSTextFieldCell"; title = "If enabled, IINA will automatically search online subtitles only for videos without loaded subtitles and longer than 20 mintues."; ObjectID = "vYb-qH-XkH"; */
-"vYb-qH-XkH.title" = "यदि सक्षम किया गया है, तो IINA स्वचालित रूप से केवल बिना उपशीर्षक के वीडियो के लिए ऑनलाइन उपशीर्षक खोजेगा और 20 मिनट से अधिक समय तक रहेगा।";
+/* Class = "NSTextFieldCell"; title = "If enabled, Rawya will automatically search online subtitles only for videos without loaded subtitles and longer than 20 mintues."; ObjectID = "vYb-qH-XkH"; */
+"vYb-qH-XkH.title" = "यदि सक्षम किया गया है, तो Rawya स्वचालित रूप से केवल बिना उपशीर्षक के वीडियो के लिए ऑनलाइन उपशीर्षक खोजेगा और 20 मिनट से अधिक समय तक रहेगा।";
 
 /* Class = "NSTextFieldCell"; title = "Y:"; ObjectID = "xGf-fF-4Hx"; */
 "xGf-fF-4Hx.title" = "Y:";

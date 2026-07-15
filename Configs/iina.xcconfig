@@ -7,7 +7,7 @@
 //
 
 CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES
-CODE_SIGN_ENTITLEMENTS = $(TARGET_NAME)/$(PRODUCT_NAME).entitlements
+CODE_SIGN_ENTITLEMENTS = $(TARGET_NAME)/IINA.entitlements
 COMBINE_HIDPI_IMAGES = YES
 FRAMEWORK_SEARCH_PATHS = $(inherited) $(SYSTEM_LIBRARY_DIR)/PrivateFrameworks
 GENERATE_INFOPLIST_FILE = YES
@@ -23,7 +23,9 @@ LIBRARY_SEARCH_PATHS = $(inherited) $(SRCROOT)/deps/lib
 // triggering build warnings they are not included in the Link Binary With Libraries phase. Instead
 // they are added here where we can add them only for the x86_64 build.
 OTHER_LDFLAGS[arch=x86_64] = $(inherited) -l gcc_s.1.1 -l stdc++.6
-PRODUCT_BUNDLE_IDENTIFIER = com.colliderli.$(TARGET_NAME)
-PRODUCT_NAME = IINA
+PRODUCT_BUNDLE_IDENTIFIER = com.wintion.rawya
+// Keep the Swift module name stable because existing nibs reference the IINA module.
+PRODUCT_MODULE_NAME = IINA
+PRODUCT_NAME = Rawya
 SWIFT_EMIT_LOC_STRINGS = YES
 SWIFT_OBJC_BRIDGING_HEADER = $(TARGET_NAME)/$(TARGET_NAME)-Bridging-Header.h

@@ -26,7 +26,7 @@
 "guide.faq" = "الأسئلة المتكررة";
 
 // Initial Window
-"initial.announcement" = "انت تستخدم %@ النسخه التجريبية من IINA";
+"initial.announcement" = "انت تستخدم %@ النسخه التجريبية من Rawya";
 "initial.beta.desc" = "قم بإلغاء تحديد \"تلقي تحديثات بيتا\" من التفضيلات - عام، وتثبيت إصدار مستقر من <a href=\"https://iina.io\">موقعنا الرسمي</a>.";
 "initial.nightly.desc" = "لا ينصح بنسخة البناء الليلي للاستخدام اليومي. في الوقت الراهن هذه النسخة لا تدعم التحديث التلقائي. الرجاء تحميل أحدث الإصدارات يدويا من موقعنا <a href=\"https://nightly.iina.io\">النسخة الليلية</a>.";
 "initial.debug.desc" = "عادة ما لا يتم تحسين إصدارات التصحيح للأداء، لذلك لا يوصى باستخدامها كمحرك أقراص يومي. إصدارات التصحيح لا تدعم التحديث التلقائي.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "عامل تصفية جديد";
 "alert.add_filter.message" = "الرجاء إدخال سلسلة فلتر في شكل أمر mpv أو af.";
 
-"alert.keybinding_config.error" = "حدث خطأ أثناء تحليل ملف تكوين الربط المفاتيح\"%@\"! العودة إلى إعدادات ربط المفتاح الافتراضي لـ IINA. الرجاء التحقق من الإعدادات الخاصة بك.";
+"alert.keybinding_config.error" = "حدث خطأ أثناء تحليل ملف تكوين الربط المفاتيح\"%@\"! العودة إلى إعدادات ربط المفتاح الافتراضي لـ Rawya. الرجاء التحقق من الإعدادات الخاصة بك.";
 
 "alert.extra_option.cannot_read" = "لا يمكن قراءة خيارات mpv الإضافية المحددة للمستخدم.";
 "alert.extra_option.empty" = "المفتاح أو القيمة لا يمكن أن تكون فارغة!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "لا يمكن تسجيل الدخول. الرجاء التحقق من اسم المستخدم وكلمة المرور وحالة الشبكة.\n\n%@";
 "alert.sub.save_downloaded.title" = "حفظ الترجمة التي تم تنزيلها";
 
-"alert.set_default.title" = "تعيين IINA كتطبيق افتراضي";
-"alert.set_default.message" = "سيتم تعيين IINA كتطبيق افتراضي لجميع أنواع الملفات التي يدعمها.";
+"alert.set_default.title" = "تعيين Rawya كتطبيق افتراضي";
+"alert.set_default.message" = "سيتم تعيين Rawya كتطبيق افتراضي لجميع أنواع الملفات التي يدعمها.";
 "alert.set_default.success" = "تم الانتهاء بـ %d نجاح و %d فشل.";
 
 "alert.add_watch.title" = "إضافة خاصية مشاهدة";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "لا يمكن العثور على ملف الحزمة.";
 "plugin.install_error.cannot_download" = "فشل تنزيل الإضافة.\n\nالصادر:%@\n";
 "plugin.install_error.cannot_unpackage" = "فشل في إلغاء حزمة الإضافة.\n\nالناتج:%@\n";
-"plugin.install_error.cannot_load" = "لا يمكن لـ IINA تحميل هذه الإضافة. قد يكون في شكل خاطئ.";
+"plugin.install_error.cannot_load" = "لا يمكن لـ Rawya تحميل هذه الإضافة. قد يكون في شكل خاطئ.";
 "plugin.check_for_updates" = "التحقق من وجود تحديثات";
 "plugin.updating" = "ينزّل التّحديث...";

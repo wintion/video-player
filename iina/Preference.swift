@@ -977,7 +977,7 @@ struct Preference {
     .ytdlRawOptions: "",
     .httpProxy: "",
 
-    .currentInputConfigName: "IINA Default",
+    .currentInputConfigName: PrefKeyBindingViewController.rawyaDefaultConfigName,
 
     .enableAdvancedSettings: false,
     .useMpvOsd: false,

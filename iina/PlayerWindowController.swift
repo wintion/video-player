@@ -702,6 +702,10 @@ class PlayerWindowController: NSWindowController, NSWindowDelegate {
       menuActionHandler.menuDeleteCurrentFile(.dummy)
     case .deleteCurrentFileHard:
       menuActionHandler.menuDeleteCurrentFileHard(.dummy)
+    case .rotateVideoClockwise:
+      player.rotateVideo(by: 90)
+    case .rotateVideoCounterclockwise:
+      player.rotateVideo(by: -90)
     default:
       break
     }

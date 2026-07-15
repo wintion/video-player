@@ -23,4 +23,7 @@
 "zCH-uO-acx.title" = "致谢";
 
 /* Class = "NSTextFieldCell"; title = "IINA localization is powered by Crowdin."; ObjectID = "HLj-vT-kNp"; */
-"HLj-vT-kNp.title" = "IINA 的本地化由 Crowdin 提供支持。";
+"HLj-vT-kNp.title" = "Rawya 的本地化由 Crowdin 提供支持。";
+
+/* Class = "NSButtonCell"; title = "Open-source contributors"; ObjectID = "U9l-uR-i7g"; */
+"U9l-uR-i7g.title" = "开源贡献者";

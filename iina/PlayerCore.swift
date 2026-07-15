@@ -549,14 +549,14 @@ class PlayerCore: NSObject {
   static func loadKeyBindings() {
     Logger.log("Loading key bindings")
     let userConfigs = PrefKeyBindingViewController.userConfigs
-    let iinaDefaultConfPath = PrefKeyBindingViewController.defaultConfigs["IINA Default"]!
-    var inputConfPath = iinaDefaultConfPath
+    let rawyaDefaultConfPath = PrefKeyBindingViewController.defaultConfigs[PrefKeyBindingViewController.rawyaDefaultConfigName]!
+    var inputConfPath = rawyaDefaultConfPath
     if let confFromUd = Preference.string(for: .currentInputConfigName) {
       if let currentConfigFilePath = Utility.getFilePath(Configs: userConfigs, forConfig: confFromUd, showAlert: false) {
         inputConfPath = currentConfigFilePath
       }
     }
-    setKeyBindings(KeyMapping.parseInputConf(at: inputConfPath) ?? KeyMapping.parseInputConf(at: iinaDefaultConfPath)!)
+    setKeyBindings(KeyMapping.parseInputConf(at: inputConfPath) ?? KeyMapping.parseInputConf(at: rawyaDefaultConfPath)!)
   }
 
   static func setKeyBindings(_ keyMappings: [KeyMapping]) {
@@ -1286,6 +1286,13 @@ class PlayerCore: NSObject {
     if AppData.rotations.firstIndex(of: degree)! >= 0 {
       mpv.setInt(MPVOption.Video.videoRotate, degree)
     }
+  }
+
+  func rotateVideo(by delta: Int) {
+    let currentRotation = mpv.getInt(MPVOption.Video.videoRotate)
+    let rotation = ((currentRotation + delta) % 360 + 360) % 360
+    setVideoRotate(rotation)
+    sendOSD(.rotate(rotation))
   }
 
   func setFlip(_ enable: Bool) {

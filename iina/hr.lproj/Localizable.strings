@@ -26,7 +26,7 @@
 "guide.faq" = "Često postavljena pitanja";
 
 // Initial Window
-"initial.announcement" = "Koristite %@ verziju IINA programa";
+"initial.announcement" = "Koristite %@ verziju Rawya programa";
 "initial.beta.desc" = "Ako se želiš vratiti na stariju verziju izdanja, odznači opciju „Primaj aktualiziranja za beta verzije” u Postavke > Općenito i instaliraj stabilno izdanje s naše <a href=\"https://iina.io\">službene web stranice</a>.";
 "initial.nightly.desc" = "Ne preporučujemo noćna izdanja za svakodnevnu upotrebu. Noćne izgradnje trenutačno ne podržavaju automatsko aktualiziranje. Preuzmi novije izgradnje s naše <a href=\"https://nightly.iina.io\">web stranice noćnih izdanja</a>.";
 "initial.debug.desc" = "Izdanja za otklanjanje grešaka obično nisu optimizirane za performanse, stoga se ne preporučuje njihova svakodnevna upotreba. Izdanja za otklanjanje grešaka ne podržavaju automatsko aktualiziranje.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Novi filtar";
 "alert.add_filter.message" = "Upiši znakovni niz za filtar u formatu mpv-ove naredbe vf ili af.";
 
-"alert.keybinding_config.error" = "Greška pri obradi datoteke konfiguracije tipkovnih prečaca „%@”! Vraća se na zadanu postavku tipkovnih prečaca za IINA. Provjeri svoju konfiguraciju.";
+"alert.keybinding_config.error" = "Greška pri obradi datoteke konfiguracije tipkovnih prečaca „%@”! Vraća se na zadanu postavku tipkovnih prečaca za Rawya. Provjeri svoju konfiguraciju.";
 
 "alert.extra_option.cannot_read" = "Neuspjelo čitanje dodatne korisnički definirane mpv opcije.";
 "alert.extra_option.empty" = "Ključ ili vrijednost ne smiju biti prazni!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Neuspjela prijava. Provjeri svoje korisničko ime, lozinku i stanje mreže.\n\n%@";
 "alert.sub.save_downloaded.title" = "Spremi preuzeti titl";
 
-"alert.set_default.title" = "Postavljanje programa IINA kao standardnog programa";
-"alert.set_default.message" = "IINA će se postaviti kao standardni program za sve formate koje podržava.";
+"alert.set_default.title" = "Postavljanje programa Rawya kao standardnog programa";
+"alert.set_default.message" = "Rawya će se postaviti kao standardni program za sve formate koje podržava.";
 "alert.set_default.success" = "Završeno: uspjelo: %d, neuspjelo: %d.";
 
 "alert.add_watch.title" = "Dodaj svojstvo gledanja";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Datoteka paketa nije pronađena.";
 "plugin.install_error.cannot_download" = "Neuspjelo preuzimanje dodatka.\n\nRezultat:%@\n";
 "plugin.install_error.cannot_unpackage" = "Neuspjelo raspakiranje dodatka.\n\nRezultat:%@\n";
-"plugin.install_error.cannot_load" = "IINA ne može učitati ovaj dodatak. Možda je u pogrešnom formatu.";
+"plugin.install_error.cannot_load" = "Rawya ne može učitati ovaj dodatak. Možda je u pogrešnom formatu.";
 "plugin.check_for_updates" = "Traži nove verzije ";
 "plugin.updating" = "Preuzimanje nove verzije …";

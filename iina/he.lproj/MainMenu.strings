@@ -38,13 +38,13 @@
 "4ae-MT-2L1.title" = "עיכוב שמע: הוסף 0.5 שניות";
 
 /* Class = "NSMenuItem"; title = "Quit IINA"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "צא מ-IINA";
+"4sb-4s-VLi.title" = "צא מ-Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Speed"; ObjectID = "5Gn-90-oDu"; */
 "5Gn-90-oDu.title" = "איפוס מהירות";
 
 /* Class = "NSMenuItem"; title = "About IINA"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "אודות IINA";
+"5kV-Vb-QxS.title" = "אודות Rawya";
 
 /* Class = "NSMenu"; title = "Rotation"; ObjectID = "5xN-ZB-VLI"; */
 "5xN-ZB-VLI.title" = "הטיה";
@@ -134,7 +134,7 @@
 "F6G-Ln-fqI.title" = "פרק הבא";
 
 /* Class = "NSMenuItem"; title = "IINA Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "ויקי IINA";
+"FKE-Sm-Kum.title" = "ויקי Rawya";
 
 /* Class = "NSMenu"; title = "Video Track"; ObjectID = "FTu-CF-O0R"; */
 "FTu-CF-O0R.title" = "רצועת וידאו";
@@ -224,7 +224,7 @@
 "OY7-WF-poV.title" = "מזעור";
 
 /* Class = "NSMenuItem"; title = "Hide IINA"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "הסתר את IINA";
+"Olw-nP-bQN.title" = "הסתר את Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Subtitle Scale"; ObjectID = "P1a-ot-P31"; */
 "P1a-ot-P31.title" = "אפס את קנה המידה של הכתוביות";

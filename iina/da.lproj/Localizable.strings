@@ -26,7 +26,7 @@
 "guide.faq" = "Ofte stillede spørgsmål";
 
 // Initial Window
-"initial.announcement" = "Du bruger en %@ version af IINA";
+"initial.announcement" = "Du bruger en %@ version af Rawya";
 "initial.beta.desc" = "Hvis du ønsker at vende tilbage til en udgivelsesversion, skal du fjerne markeringen af \"modtag betaopdateringer\" fra Indstillinger > Generelt, og installere en stabil udgivelse fra vores <a href=\"https://iina.io\">officielle hjemmeside</a>.";
 "initial.nightly.desc" = "Nightly er ikke anbefalet til daglig brug. I øjeblikket understøtter Nightly-versioner ikke automatisk opdatering. Du skal manuelt downloade nyere builds fra vores <a href=\"https://nightly.iina.io\">nightly-hjemmeside</a>.";
 "initial.debug.desc" = "Debug builds er normalt ikke optimeret til ydeevne, så det anbefales ikke at blive brugt til daglig brug. Debug builds understøtter ikke automatisk opdatering.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Nyt filter";
 "alert.add_filter.message" = "Venligst indtast en filter streng af mpvs vf eller af kommando.";
 
-"alert.keybinding_config.error" = "Fejl under opsætning af tastegenveje \"%@\"! Går tilbage til standard IINA opsætning. Venligst tjek konfigurationen.";
+"alert.keybinding_config.error" = "Fejl under opsætning af tastegenveje \"%@\"! Går tilbage til standard Rawya opsætning. Venligst tjek konfigurationen.";
 
 "alert.extra_option.cannot_read" = "Kan ikke læse brugerdefinerede ekstra mpv indstillinger.";
 "alert.extra_option.empty" = "Nøgle eller værdi må ikke være tom!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Kan ikke logge ind. Venligst tjek dit brugernavn, kodeord og netværksstatus.\n\n%@";
 "alert.sub.save_downloaded.title" = "Gem hentede undertekster";
 
-"alert.set_default.title" = "Sætter IINA som standard program";
-"alert.set_default.message" = "IINA vil være standard programmet for alle de filtyper som supporteres.";
+"alert.set_default.title" = "Sætter Rawya som standard program";
+"alert.set_default.message" = "Rawya vil være standard programmet for alle de filtyper som supporteres.";
 "alert.set_default.success" = "Færdig med %d succes og %d fejlet.";
 
 "alert.add_watch.title" = "Tilføj overvågningsegenskab";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Kan ikke finde pakkefilen.";
 "plugin.install_error.cannot_download" = "Det lykkedes ikke at hente tilføjelsen.\n\nOutput:%@\n";
 "plugin.install_error.cannot_unpackage" = "Det lykkedes ikke at pakke tilføjelsen ud.\n\nOutput:%@\n";
-"plugin.install_error.cannot_load" = "IINA kan ikke indlæse denne tilføjelse. Den er måske i det forkerte format.";
+"plugin.install_error.cannot_load" = "Rawya kan ikke indlæse denne tilføjelse. Den er måske i det forkerte format.";
 "plugin.check_for_updates" = "Tjek for opdateringer";
 "plugin.updating" = "Downloader opdatering…";

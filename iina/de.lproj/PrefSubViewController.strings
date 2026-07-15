@@ -85,8 +85,8 @@
 /* Class = "NSTextFieldCell"; title = "Advanced"; ObjectID = "X7X-18-FJg"; */
 "X7X-18-FJg.title" = "Erweitert";
 
-/* Class = "NSMenuItem"; title = "Detect intelligently by IINA"; ObjectID = "XiL-eE-jah"; */
-"XiL-eE-jah.title" = "Von IINA automatisch erkennen";
+/* Class = "NSMenuItem"; title = "Detect intelligently by Rawya"; ObjectID = "XiL-eE-jah"; */
+"XiL-eE-jah.title" = "Von Rawya automatisch erkennen";
 
 /* Class = "NSTextFieldCell"; title = "Default encoding:"; ObjectID = "Y75-4k-2Du"; */
 "Y75-4k-2Du.title" = "Standardkodierung:";
@@ -154,8 +154,8 @@
 /* Class = "NSTextFieldCell"; title = "Color:"; ObjectID = "vDc-dw-liI"; */
 "vDc-dw-liI.title" = "Farbe:";
 
-/* Class = "NSTextFieldCell"; title = "If enabled, IINA will automatically search online subtitles only for videos without loaded subtitles and longer than 20 mintues."; ObjectID = "vYb-qH-XkH"; */
-"vYb-qH-XkH.title" = "Ist die Option aktiviert, sucht IINA für untertitellose Videos von mehr als 20 Minuten Länge online nach passenden Untertiteln.";
+/* Class = "NSTextFieldCell"; title = "If enabled, Rawya will automatically search online subtitles only for videos without loaded subtitles and longer than 20 mintues."; ObjectID = "vYb-qH-XkH"; */
+"vYb-qH-XkH.title" = "Ist die Option aktiviert, sucht Rawya für untertitellose Videos von mehr als 20 Minuten Länge online nach passenden Untertiteln.";
 
 /* Class = "NSTextFieldCell"; title = "Y:"; ObjectID = "xGf-fF-4Hx"; */
 "xGf-fF-4Hx.title" = "Y:";

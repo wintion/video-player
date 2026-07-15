@@ -38,13 +38,13 @@
 "4ae-MT-2L1.title" = "Καθυστέρηση Ήχου + 0.5S";
 
 /* Class = "NSMenuItem"; title = "Quit IINA"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Έξοδος Από IINA";
+"4sb-4s-VLi.title" = "Έξοδος Από Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Speed"; ObjectID = "5Gn-90-oDu"; */
 "5Gn-90-oDu.title" = "Επαναφορά Ταχύτητας";
 
 /* Class = "NSMenuItem"; title = "About IINA"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "Σχετικά Με IINA";
+"5kV-Vb-QxS.title" = "Σχετικά Με Rawya";
 
 /* Class = "NSMenu"; title = "Rotation"; ObjectID = "5xN-ZB-VLI"; */
 "5xN-ZB-VLI.title" = "Περιστροφή";
@@ -134,7 +134,7 @@
 "F6G-Ln-fqI.title" = "Επόμενο Κεφάλαιο";
 
 /* Class = "NSMenuItem"; title = "IINA Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Βοήθεια IINA";
+"FKE-Sm-Kum.title" = "Βοήθεια Rawya";
 
 /* Class = "NSMenu"; title = "Video Track"; ObjectID = "FTu-CF-O0R"; */
 "FTu-CF-O0R.title" = "Κομμάτι Βίντεο";
@@ -224,7 +224,7 @@
 "OY7-WF-poV.title" = "Ελαχιστοποίηση";
 
 /* Class = "NSMenuItem"; title = "Hide IINA"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "ΑΠΟΚΡΥΨΗ IINA";
+"Olw-nP-bQN.title" = "ΑΠΟΚΡΥΨΗ Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Subtitle Scale"; ObjectID = "P1a-ot-P31"; */
 "P1a-ot-P31.title" = "Επαναφορά Κλίμακας Υποτίτλων";

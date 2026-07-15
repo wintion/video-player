@@ -26,7 +26,7 @@
 "guide.faq" = "Perguntas Frequentes";
 
 // Initial Window
-"initial.announcement" = "Está a usar a versão %@ do IINA";
+"initial.announcement" = "Está a usar a versão %@ do Rawya";
 "initial.beta.desc" = "Para reverter para uma versão anterior desmarque \"Receber Atualizações beta\" a partir de Definições... > Geral, e instale a versão pretendida através do nosso <a href=\"https://iina.io\">site oficial</a>.";
 "initial.nightly.desc" = "Não é recomendado que use Nightly no dia a dia. As versões Nightly não suportam atualizações automáticas. Descarregue novas versões manualmente do nosso <a href=\"https://nightly.iina.io\">website nightly</a>.";
 "initial.debug.desc" = "Compilações para depuração não estão otimizadas para velocidade, por isso não é recomendado que a use no dia a dia. Compilações para depuração não suportam atualizações automáticas.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Novo Filtro";
 "alert.add_filter.message" = "Por favor, digite uma string de filtro no formato de comando vf ou af de mpv.";
 
-"alert.keybinding_config.error" = "Erro ao analisar o arquivo de configuração de mapeamento de teclas \"%@\"! Volte para a configuração do padrão mapeamento de teclas do IINA. Por favor, verifique sua configuração.";
+"alert.keybinding_config.error" = "Erro ao analisar o arquivo de configuração de mapeamento de teclas \"%@\"! Volte para a configuração do padrão mapeamento de teclas do Rawya. Por favor, verifique sua configuração.";
 
 "alert.extra_option.cannot_read" = "Não é possível ler opções mpv definidas pelo usuário.";
 "alert.extra_option.empty" = "Chave ou valor não pode estar vazio!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Impossível iniciar sessão. Por favor verifique o seu nome de utilizador, palavra-passe e estado da rede.\n\n%@";
 "alert.sub.save_downloaded.title" = "Guardar legenda transferida";
 
-"alert.set_default.title" = "Definir IINA como Aplicação Predefinida";
-"alert.set_default.message" = "O IINA será definido como o aplicativo padrão para todos os tipos de arquivo que ele suporta.";
+"alert.set_default.title" = "Definir Rawya como Aplicação Predefinida";
+"alert.set_default.message" = "O Rawya será definido como o aplicativo padrão para todos os tipos de arquivo que ele suporta.";
 "alert.set_default.success" = "Terminado com %d de sucesso e %d de falhas.";
 
 "alert.add_watch.title" = "Adicionar Propriedade de Relógio";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Cannot find the package file.";
 "plugin.install_error.cannot_download" = "Failed to download the plugin.\n\nOutput:%@\n";
 "plugin.install_error.cannot_unpackage" = "Failed to unpackage the plugin.\n\nOutput:%@\n";
-"plugin.install_error.cannot_load" = "IINA cannot load this plugin. It might be in the wrong format.";
+"plugin.install_error.cannot_load" = "Rawya cannot load this plugin. It might be in the wrong format.";
 "plugin.check_for_updates" = "Procurar atualizações";
 "plugin.updating" = "Downloading update…";

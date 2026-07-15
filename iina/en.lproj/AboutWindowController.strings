@@ -23,4 +23,7 @@
 "zCH-uO-acx.title" = "Credits";
 
 /* Class = "NSTextFieldCell"; title = "IINA localization is powered by Crowdin."; ObjectID = "HLj-vT-kNp"; */
-"HLj-vT-kNp.title" = "IINA localization is powered by Crowdin.";
+"HLj-vT-kNp.title" = "Rawya localization is powered by Crowdin.";
+
+/* Class = "NSButtonCell"; title = "Open-source contributors"; ObjectID = "U9l-uR-i7g"; */
+"U9l-uR-i7g.title" = "Open-source contributors";

@@ -26,7 +26,7 @@
 "guide.faq" = "Questions fréquemment posées";
 
 // Initial Window
-"initial.announcement" = "Vous utilisez la version %@ d'IINA";
+"initial.announcement" = "Vous utilisez la version %@ d'Rawya";
 "initial.beta.desc" = "Si vous voulez revenir à une version officielle, décochez la case \"recevoir les versions bêta\" depuis Réglages > Général, et installez une version stable depuis <a href=\"https://iina.io\">notre site officiel</a>.";
 "initial.nightly.desc" = "Les versions de développement quotidiennes ne sont pas recommandées pour être utilisées en production. Les versions quotidiennes ne prennent pas actuellement en charge les mises à jour automatiques. Veuillez télécharger manuellement les dernières versions de notre site <a href=\"https://nightly.iina.io\">versions de développement quotidiennes</a>.";
 "initial.debug.desc" = "Les versions de débogage ne sont généralement pas optimisées pour les performances, donc il n'est pas recommandé d'être utilisé comme lecteur en production. Les versions de débogage ne prennent pas en charge la mise à jour automatique.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Nouveau filtre";
 "alert.add_filter.message" = "Veuillez renseigner une chaîne de caractères au format de la commande vf ou af de mpv.";
 
-"alert.keybinding_config.error" = "Une erreur est survenue lors de la lecture du fichier de configuration des touches \"%@\" ! Utilisation de la configuration des touches par défaut d'IINA. Veuillez vérifier votre fichier configuration.";
+"alert.keybinding_config.error" = "Une erreur est survenue lors de la lecture du fichier de configuration des touches \"%@\" ! Utilisation de la configuration des touches par défaut d'Rawya. Veuillez vérifier votre fichier configuration.";
 
 "alert.extra_option.cannot_read" = "Impossible de lire les options extra de mpv définies par l'utilisateur.";
 "alert.extra_option.empty" = "La clé et/ou la valeur ne peuvent pas être vides !";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Impossible de se connecter. Veuillez vérifier votre nom d'utilisateur, votre mot de passe et votre connexion Internet.\n\n%@";
 "alert.sub.save_downloaded.title" = "Sauvegarder le sous-titre téléchargé";
 
-"alert.set_default.title" = "Définir IINA comme application par défaut";
-"alert.set_default.message" = "Tous les fichiers supportés par IINA seront dorénavant ouverts par défaut avec IINA.";
+"alert.set_default.title" = "Définir Rawya comme application par défaut";
+"alert.set_default.message" = "Tous les fichiers supportés par Rawya seront dorénavant ouverts par défaut avec Rawya.";
 "alert.set_default.success" = "Terminé avec %d succès et %d erreurs.";
 
 "alert.add_watch.title" = "Nouvelle propriété à observer";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Impossible de trouver le fichier du paquet.";
 "plugin.install_error.cannot_download" = "Impossible de télécharger le module externe.\n\nRésultat : %@\n";
 "plugin.install_error.cannot_unpackage" = "Impossible de décompresser le module externe.\n\nRésultat : %@\n";
-"plugin.install_error.cannot_load" = "IINA ne parvient pas à charger ce module externe. Il est peut-être dans un mauvais format.";
+"plugin.install_error.cannot_load" = "Rawya ne parvient pas à charger ce module externe. Il est peut-être dans un mauvais format.";
 "plugin.check_for_updates" = "Rechercher des mises à jour";
 "plugin.updating" = "Téléchargement de la mise à jour…";

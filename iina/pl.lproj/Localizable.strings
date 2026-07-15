@@ -26,7 +26,7 @@
 "guide.faq" = "Najczęściej zadawane pytania (FAQ)";
 
 // Initial Window
-"initial.announcement" = "Używasz wersji %@ IINA";
+"initial.announcement" = "Używasz wersji %@ Rawya";
 "initial.beta.desc" = "Jeśli chcesz wrócić do wersji stabilnej, odznacz \"otrzymuj aktualizacje wersji beta\" w Ustawienia > Ogólne, i zainstaluj stabilne wydanie z naszej <a href=\"https://iina.io\">oficjalnej strony</a>.";
 "initial.nightly.desc" = "Wersja \"Nightly\" nie jest zalecana do codziennego użytku. Aktualnie nie wspiera ona automatycznej aktualizacji. Proszę, pobierz ręcznie nowsze wersje z naszej <a href=\"https://nightly.iina.io\">strony internetowej nightly</a>.";
 "initial.debug.desc" = "Wersje \"Debug\" przeważnie nie są zoptymalizowane pod kątem wydajności, więc nie jest zalecane wykorzystywanie ich jako wersji codziennego użytku. Wersje \"Debug\" nie wspierają automatycznych aktualizacji.";
@@ -294,8 +294,8 @@
 "alert.sub.cannot_login" = "Logowanie nie powiodło się. Sprawdź swoją nazwę użytkownika, hasło oraz stan sieci.\n\n%@";
 "alert.sub.save_downloaded.title" = "Zapisz pobrane napisy";
 
-"alert.set_default.title" = "Ustaw IINA jako domyślą aplikację";
-"alert.set_default.message" = "IINA zostanie ustawiona jako domyślna aplikacja dla wszystkich obsługiwanych typów plików.";
+"alert.set_default.title" = "Ustaw Rawya jako domyślą aplikację";
+"alert.set_default.message" = "Rawya zostanie ustawiona jako domyślna aplikacja dla wszystkich obsługiwanych typów plików.";
 "alert.set_default.success" = "Zakończono z %d sukcesem oraz %d porażką.";
 
 "alert.add_watch.title" = "Dodaj obiekt do obejrzenia";
@@ -463,6 +463,6 @@
 "plugin.install_error.file_not_found" = "Nie można znaleźć pliku pakietu.";
 "plugin.install_error.cannot_download" = "Nie udało się pobrać wtyczki.\n\nWyjście:%@\n";
 "plugin.install_error.cannot_unpackage" = "Nie udało się rozpakować wtyczki.\n\nWyjście:%@\n";
-"plugin.install_error.cannot_load" = "IINA nie może załadować tej wtyczki. Może być w złym formacie.";
+"plugin.install_error.cannot_load" = "Rawya nie może załadować tej wtyczki. Może być w złym formacie.";
 "plugin.check_for_updates" = "Sprawdź aktualizacje";
 "plugin.updating" = "Pobieranie aktualizacji…";

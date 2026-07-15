@@ -26,7 +26,7 @@
 "guide.faq" = "Частыя пытанні";
 
 // Initial Window
-"initial.announcement" = "Вы выкарыстоўваеце %@ версію IINA";
+"initial.announcement" = "Вы выкарыстоўваеце %@ версію Rawya";
 "initial.beta.desc" = "If you want to rollback to a release version, uncheck \"receive beta updates\" from Settings > General, and install a stable release from our <a href=\"https://iina.io\">official website</a>.";
 "initial.nightly.desc" = "Nightly is not recommended to be used as your daily driver. Currently nightly builds do not support auto update. Please manually download newer builds from our <a href=\"https://nightly.iina.io\">nightly website</a>.";
 "initial.debug.desc" = "Debug builds are usually not optimized for performance, so it is not recommended to be used as daily drive. Debug builds do not support auto update.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "New Filter";
 "alert.add_filter.message" = "Please enter a filter string in format of mpv's vf or af command.";
 
-"alert.keybinding_config.error" = "Error parsing keybinding configuration file \"%@\"! Fallback to IINA Default keybinding setting. Please check your configuration.";
+"alert.keybinding_config.error" = "Error parsing keybinding configuration file \"%@\"! Fallback to Rawya Default keybinding setting. Please check your configuration.";
 
 "alert.extra_option.cannot_read" = "Cannot read user defined extra mpv options.";
 "alert.extra_option.empty" = "Key or value cannot be empty!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Cannot login. Please check your username, password and network status.\n\n%@";
 "alert.sub.save_downloaded.title" = "Save Downloaded Subtitle";
 
-"alert.set_default.title" = "Setting IINA as Default App";
-"alert.set_default.message" = "IINA will be set as the default app for all file types it supports.";
+"alert.set_default.title" = "Setting Rawya as Default App";
+"alert.set_default.message" = "Rawya will be set as the default app for all file types it supports.";
 "alert.set_default.success" = "Finished with %d success and %d failed.";
 
 "alert.add_watch.title" = "Add Watch Property";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Cannot find the package file.";
 "plugin.install_error.cannot_download" = "Failed to download the plugin.\n\nOutput:%@\n";
 "plugin.install_error.cannot_unpackage" = "Failed to unpackage the plugin.\n\nOutput:%@\n";
-"plugin.install_error.cannot_load" = "IINA cannot load this plugin. It might be in the wrong format.";
+"plugin.install_error.cannot_load" = "Rawya cannot load this plugin. It might be in the wrong format.";
 "plugin.check_for_updates" = "Check for Updates";
 "plugin.updating" = "Downloading update…";

@@ -26,7 +26,7 @@
 "guide.faq" = "Întrebări adresate frecvent";
 
 // Initial Window
-"initial.announcement" = "Folosești o versiune %@ de IINA";
+"initial.announcement" = "Folosești o versiune %@ de Rawya";
 "initial.beta.desc" = "Dacă vreți să reveniți la o versiune non-beta, debifați \"primește actualizări beta\" din Setări > General, și instalați o actualizare stabilă de pe <a href=\"https://iina.io\">site-ul nostru oficial</a>.";
 "initial.nightly.desc" = "Versiunea Nightly nu este recomandată pentru utilizare zilnică. In momentul de față, versiunile Nightly nu suportă actualizare automată. Vă rugăm să descărcați manual versiunile mai noi de pe <a href=\"https://nightly.iina.io\">site-ul nostru Nightly</a>.";
 "initial.debug.desc" = "Versiunile de debug de obicei nu sunt optimizate pentru performanță, ca urmare nu sunt recomandate în utilizarea de zi cu zi. Versiunile de debug nu suportă actualizări automate.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Filtru nou";
 "alert.add_filter.message" = "Te rog introdu un șir care să fie o comandă în formatul mpv vf sau af.";
 
-"alert.keybinding_config.error" = "Eroare la scrierea atriubuirii de tasre în fișierul\"%@\"! Se revine la setarea implicită IINA. Te rog verifică fișierul de configurare.";
+"alert.keybinding_config.error" = "Eroare la scrierea atriubuirii de tasre în fișierul\"%@\"! Se revine la setarea implicită Rawya. Te rog verifică fișierul de configurare.";
 
 "alert.extra_option.cannot_read" = "Opțiunile mpv extra definite de către utilizator nu pot fi citite. ";
 "alert.extra_option.empty" = "Cheia sau valoarea nu pot fi goale!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Nu se poate efectua login. Te rog verifică numele de utilizator, parola și starea rețelei.\n\n%@";
 "alert.sub.save_downloaded.title" = "Salvează subtitrările descărcate";
 
-"alert.set_default.title" = "Setează IINA ca aplicație implicită";
-"alert.set_default.message" = "IINA va fi aplicația implictă pentru toate fișierele pe care le suportă.";
+"alert.set_default.title" = "Setează Rawya ca aplicație implicită";
+"alert.set_default.message" = "Rawya va fi aplicația implictă pentru toate fișierele pe care le suportă.";
 "alert.set_default.success" = "Terminat(e) %d cu succes și %d eșuat(e).";
 
 "alert.add_watch.title" = "Adăugați o proprietate de ceas";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Fișierul package nu poate fi găsit.";
 "plugin.install_error.cannot_download" = "Descărcarea extensiei a eșuat.\n\nMotiv:%@\n";
 "plugin.install_error.cannot_unpackage" = "Dezarhivarea extensiei a eșuat.\n\nMotiv:%@\n";
-"plugin.install_error.cannot_load" = "IINA nu poate încărca aceasta extensie. Ar putea fi într-un format greşit.";
+"plugin.install_error.cannot_load" = "Rawya nu poate încărca aceasta extensie. Ar putea fi într-un format greşit.";
 "plugin.check_for_updates" = "Verifică dacă există actualizări";
 "plugin.updating" = "Se descarcă actualizarea…";

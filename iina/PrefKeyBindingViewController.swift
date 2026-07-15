@@ -14,6 +14,9 @@ fileprivate typealias KC = PrefKeyBindingViewController
 @objcMembers
 class PrefKeyBindingViewController: PreferenceViewController, PreferenceWindowEmbeddable {
 
+  static let rawyaDefaultConfigName = "Rawya Default"
+  static let legacyDefaultConfigName = "IINA Default"
+
   override var nibName: NSNib.Name {
     return NSNib.Name("PrefKeyBindingViewController")
   }
@@ -31,14 +34,14 @@ class PrefKeyBindingViewController: PreferenceViewController, PreferenceWindowEm
   }
 
   static let defaultConfigMap: KeyValuePairs<String, String> = [
-    "IINA Default": "iina-default-input",
+    (rawyaDefaultConfigName): "iina-default-input",
     "mpv Default": "input",
     "VLC Default": "vlc-default-input",
     "Movist Default": "movist-default-input",
     "Movist v2 Default": "movist-v2-default-input",
   ]
 
-  let fallbackDefault = "IINA Default"
+  let fallbackDefault = rawyaDefaultConfigName
 
   static var defaultConfigs: [String: String] = {
     var configs: [String: String] = [:]
@@ -277,6 +280,7 @@ class PrefKeyBindingViewController: PreferenceViewController, PreferenceWindowEm
   /// If the target config file cannot be found, or the file cannot be parsed correctly, it will fallback to the default config.
   /// - Parameter configName: the target config name
   private func loadConfigFile(_ configName: String?, _ initialSetup: Bool = false) {
+    let configName = configName == KC.legacyDefaultConfigName ? KC.rawyaDefaultConfigName : configName
     guard configName != Preference.string(for: .currentInputConfigName) || initialSetup else { return }
     isLoadingConfig = true
     

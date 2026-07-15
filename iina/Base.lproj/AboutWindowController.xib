@@ -50,7 +50,7 @@
                                     <subviews>
                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1qX-fa-Cpb">
                                             <rect key="frame" x="76" y="237" width="68" height="35"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="IINA" id="dkA-td-UyX">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Rawya" id="dkA-td-UyX">
                                                 <font key="font" metaFont="systemBold" size="30"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -276,7 +276,7 @@
                                                     </visualEffectView>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0PM-oG-4Qs">
                                                         <rect key="frame" x="141" y="70" width="118" height="18"/>
-                                                        <buttonCell key="cell" type="inline" title="iina/contributors" bezelStyle="inline" image="forward" imagePosition="left" alignment="center" borderStyle="border" inset="2" id="U9l-uR-i7g">
+                                                        <buttonCell key="cell" type="inline" title="Open-source contributors" bezelStyle="inline" image="forward" imagePosition="left" alignment="center" borderStyle="border" inset="2" id="U9l-uR-i7g">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="smallSystemBold"/>
                                                         </buttonCell>
@@ -296,7 +296,7 @@
                                                     </button>
                                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lR7-ma-7xF">
                                                         <rect key="frame" x="-2" y="38" width="246" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="IINA localization is powered by Crowdin." id="HLj-vT-kNp">
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Rawya localization is powered by Crowdin." id="HLj-vT-kNp">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

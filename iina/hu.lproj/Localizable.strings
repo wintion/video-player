@@ -26,7 +26,7 @@
 "guide.faq" = "Gyakran Ismételt Kérdések";
 
 // Initial Window
-"initial.announcement" = "Ön Az IINA %@ verzióját használja";
+"initial.announcement" = "Ön Az Rawya %@ verzióját használja";
 "initial.beta.desc" = "Amennyiben végleges verzióra váltana, szüntesse meg a kijelölést a \"béta frissítések\" opciónál a Beállítások > Általános almenüben, és telepítsen stabil verziót a <a href=\"https://iina.io\">hivatalos weboldalunkról</a>.";
 "initial.nightly.desc" = "A Nightly verzió nem ajánlott mindennapi használatra. Jelenleg a nightly verzió nem támogatja az automatikus frissítést.. Töltsd le a friss verziót a <a href=\"https://nightly.iina.io\">nightly oldalunkról</a>.";
 "initial.debug.desc" = "A hibakeresési verzió általában nincs teljesítményre optimalizálva, ezért nem ajánlott napi használatra. A hibakeresési verziók nem támogatják az automatikus frissítést.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Új filter";
 "alert.add_filter.message" = "Adjon meg egy szűrő karakterláncot az mpv vf vagy af parancsának formátumában.";
 
-"alert.keybinding_config.error" = "Hiba a \"%@\" billentyűkombinációs konfigurációs fájl elemzésekor! Visszatérés az IINA alapértelmezett billentyűkombinációjához. Kérjük, ellenőrizze a konfigurációt.";
+"alert.keybinding_config.error" = "Hiba a \"%@\" billentyűkombinációs konfigurációs fájl elemzésekor! Visszatérés az Rawya alapértelmezett billentyűkombinációjához. Kérjük, ellenőrizze a konfigurációt.";
 
 "alert.extra_option.cannot_read" = "A felhasználó által meghatározott extra mpv beállítások nem olvashatók.";
 "alert.extra_option.empty" = "A kulcs vagy az érték nem lehet üres!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Nem tudsz bejelentkezni. Kérjük, ellenőrizd a felhasználónevedet, jelszavadat és a hálózat állapotát.\n\n%@";
 "alert.sub.save_downloaded.title" = "Letöltött felirat mentése";
 
-"alert.set_default.title" = "IINA beállítása alapértelmezettként";
-"alert.set_default.message" = "Az IINA be lesz állítva mint alapértelmezett lejátszó az összes támogatott fájltípushoz.";
+"alert.set_default.title" = "Rawya beállítása alapértelmezettként";
+"alert.set_default.message" = "Az Rawya be lesz állítva mint alapértelmezett lejátszó az összes támogatott fájltípushoz.";
 "alert.set_default.success" = "Befejezve %d sikeres és %d sikertelen.";
 
 "alert.add_watch.title" = "Nézési tulajdonság hozzáadása";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "A csomagfájl nem található.";
 "plugin.install_error.cannot_download" = "Nem sikerült letölteni a plugint.\n\nKimenet:%@\n";
 "plugin.install_error.cannot_unpackage" = "Nem sikerült kicsomagolni a plugint.\n\nKimenet:%@\n";
-"plugin.install_error.cannot_load" = "Az IINA nem tudja betölteni ezt a bővítményt. Lehet, hogy rossz formátumban van.";
+"plugin.install_error.cannot_load" = "Az Rawya nem tudja betölteni ezt a bővítményt. Lehet, hogy rossz formátumban van.";
 "plugin.check_for_updates" = "Frissítések keresése";
 "plugin.updating" = "Frissítés letöltése…";

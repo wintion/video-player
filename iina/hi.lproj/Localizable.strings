@@ -26,7 +26,7 @@
 "guide.faq" = "अक्सर पूछे जाने वाले प्रश्न";
 
 // Initial Window
-"initial.announcement" = "आप IINA का %@ संस्करण उपयोग कर रहे हैं";
+"initial.announcement" = "आप Rawya का %@ संस्करण उपयोग कर रहे हैं";
 "initial.beta.desc" = "अगर आप रिलीज़ संस्करण पर वापस जाना चाहते हैं, तो सेटिंग्स > सामान्य से \"बीटा अपडेट प्राप्त करें\" को अनचेक करें और हमारी <a href=\"https://iina.io\">आधिकारिक वेबसाइट</a> से एक स्थिर रिलीज़ इंस्टॉल करें।";
 "initial.nightly.desc" = "रोज़मर्रा के उपयोग के लिए नाइटली का इस्तेमाल करने की सिफारिश नहीं की जाती। फिलहाल, नाइटली बिल्ड ऑटो अपडेट को सपोर्ट नहीं करते हैं। कृपया हमारी <a href=\"https://nightly.iina.io\">नाइटली वेबसाइट</a> से नए बिल्ड मैन्युअल रूप से डाउनलोड करें।";
 "initial.debug.desc" = "डीबग बिल्ड आमतौर पर परफॉर्मेंस के लिए ऑप्टिमाइज़ नहीं होते हैं, इसलिए उन्हें रोज़मर्रा के उपयोग के लिए इस्तेमाल करने की सिफारिश नहीं की जाती। डीबग बिल्ड ऑटो अपडेट को सपोर्ट नहीं करते हैं।";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "नया फ़िल्टर";
 "alert.add_filter.message" = "कृपया mpv के vf या af कमांड के प्रारूप में एक फिल्टर स्ट्रिंग दर्ज करें।";
 
-"alert.keybinding_config.error" = "कीबाइंडिंग कॉन्फ़िगरेशन फ़ाइल पार्स करने में त्रुटि \"%@\"! IINA डिफ़ॉल्ट कीबाइंडिंग सेटिंग में गिरावट। कृपया अपना कॉन्फ़िगरेशन जांचें।";
+"alert.keybinding_config.error" = "कीबाइंडिंग कॉन्फ़िगरेशन फ़ाइल पार्स करने में त्रुटि \"%@\"! Rawya डिफ़ॉल्ट कीबाइंडिंग सेटिंग में गिरावट। कृपया अपना कॉन्फ़िगरेशन जांचें।";
 
 "alert.extra_option.cannot_read" = "अतिरिक्त परिभाषित एमपीवी विकल्पों को उपयोगकर्ता पढ़ नहीं सकता।";
 "alert.extra_option.empty" = "कुंजी या मान रिक्त नहीं हो सकता!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "लॉग इन नहीं कर सकता। कृपया अपना उपयोगकर्ता नाम, पासवर्ड और नेटवर्क स्थिति जांचें। \n\n%@";
 "alert.sub.save_downloaded.title" = "डाउनलोड किए गए उपशीर्षक को सहेजें";
 
-"alert.set_default.title" = "डिफ़ॉल्ट ऐप के रूप में IINA की स्थापना";
-"alert.set_default.message" = "IINA सभी फ़ाइल प्रकारों के लिए डिफ़ॉल्ट ऐप के रूप में सेट किया जाएगा जो इसका समर्थन करता है।";
+"alert.set_default.title" = "डिफ़ॉल्ट ऐप के रूप में Rawya की स्थापना";
+"alert.set_default.message" = "Rawya सभी फ़ाइल प्रकारों के लिए डिफ़ॉल्ट ऐप के रूप में सेट किया जाएगा जो इसका समर्थन करता है।";
 "alert.set_default.success" = "%d सफलता के साथ समाप्त हुआ और %d विफल रहा।";
 
 "alert.add_watch.title" = "वॉच प्रॉपर्टी जोड़ें";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Cannot find the package file.";
 "plugin.install_error.cannot_download" = "Failed to download the plugin.\n\nOutput:%@\n";
 "plugin.install_error.cannot_unpackage" = "Failed to unpackage the plugin.\n\nOutput:%@\n";
-"plugin.install_error.cannot_load" = "IINA cannot load this plugin. It might be in the wrong format.";
+"plugin.install_error.cannot_load" = "Rawya cannot load this plugin. It might be in the wrong format.";
 "plugin.check_for_updates" = "अद्यतन के लिए जाँच";
 "plugin.updating" = "Downloading update…";

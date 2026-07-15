@@ -26,8 +26,8 @@
 "guide.faq" = "Domande frequenti (FAQ)";
 
 // Initial Window
-"initial.announcement" = "Stai usando una versione %@ di IINA";
-"initial.beta.desc" = "Se vuoi passare al canale di release ufficiali di IINA, togli la spunta da 'Ricevi aggiornamenti beta' in Impostazioni → Generali, poi scarica l'ultima versione stabile dal <a href=\"https://iina.io\">sito ufficiale</a>.";
+"initial.announcement" = "Stai usando una versione %@ di Rawya";
+"initial.beta.desc" = "Se vuoi passare al canale di release ufficiali di Rawya, togli la spunta da 'Ricevi aggiornamenti beta' in Impostazioni → Generali, poi scarica l'ultima versione stabile dal <a href=\"https://iina.io\">sito ufficiale</a>.";
 "initial.nightly.desc" = "Le Nightly sono versioni di sviluppo instabili e non adatte all'utilizzo quotidiano. Attualmente, inoltre, non sono aggiornate automaticamente: se desideri, puoi scaricarle dalla <a href=\"https://nightly.iina.io\">pagina dedicata</a>.";
 "initial.debug.desc" = "Le versioni di debug sono dedicate alla raccolta di dati per la risoluzione di problemi e per altre finalità analitiche. Non sono ottimizzate per le prestazioni e non prevedono aggiornamenti automatici; in generale se ne sconsiglia l'utilizzo.";
 "initial.bug_report" = "Segnala tramite <a href=\"https://github.com/iina/iina/issues\">GitHub</a>.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Nuovo filtro";
 "alert.add_filter.message" = "Inserisci una stringa di filtro nel formato dei comandi vf o af di mpv.";
 
-"alert.keybinding_config.error" = "Errore nell'analisi del file di configurazione \"%@\"! Ripristino delle scorciatoie di tastiera di default di IINA. Controlla il tuo file di configurazione.";
+"alert.keybinding_config.error" = "Errore nell'analisi del file di configurazione \"%@\"! Ripristino delle scorciatoie di tastiera di default di Rawya. Controlla il tuo file di configurazione.";
 
 "alert.extra_option.cannot_read" = "Impossibile leggere le opzioni mpv extra definiti dall'utente.";
 "alert.extra_option.empty" = "La chiave o il valore non può essere vuoto!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Impossibile accedere. Controlla il tuo nome utente, la password e la connessione di rete.\n\n%@";
 "alert.sub.save_downloaded.title" = "Salva i sottotitoli scaricati";
 
-"alert.set_default.title" = "Imposta IINA come applicazione predefinita";
-"alert.set_default.message" = "IINA sarà impostata come applicazione predefinita per tutti i formati che supporta.";
+"alert.set_default.title" = "Imposta Rawya come applicazione predefinita";
+"alert.set_default.message" = "Rawya sarà impostata come applicazione predefinita per tutti i formati che supporta.";
 "alert.set_default.success" = "Terminato con %d di successo e %d di errore.";
 
 "alert.add_watch.title" = "Aggiungi proprietà di riproduzione";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Impossibile trovare il file del pacchetto.";
 "plugin.install_error.cannot_download" = "Impossibile scaricare il plugin.\n\nOutput:%@\n";
 "plugin.install_error.cannot_unpackage" = "Scompattamento del plugin non riuscito.\n\nOutput: %@\n";
-"plugin.install_error.cannot_load" = "IINA non può caricare questo plugin. Potrebbe essere nel formato sbagliato.";
+"plugin.install_error.cannot_load" = "Rawya non può caricare questo plugin. Potrebbe essere nel formato sbagliato.";
 "plugin.check_for_updates" = "Controlla aggiornamenti";
 "plugin.updating" = "Sto scaricando l'aggiornamento…";

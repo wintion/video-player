@@ -26,7 +26,7 @@
 "guide.faq" = "Häufig gestellte Fragen (FAQ)";
 
 // Initial Window
-"initial.announcement" = "Du benutzt Version %@ von IINA";
+"initial.announcement" = "Du benutzt Version %@ von Rawya";
 "initial.beta.desc" = "Wenn du eine Release Version benutzen willst, entferne den Haken bei „Betaupdates erhalten“ in Einstellungen -> Allgemein und installiere eine stabile Version von unserer <a href=\"https://iina.io\">offiziellen Webseite</a>.";
 "initial.nightly.desc" = "Nightly-Versionen sollten nicht für den täglichen Gebrauch eingesetzt werden. Aktuell unterstützen diese keine automatischen Updates. Bitte lade neuere Versionen von unserer <a href=\"https://nightly.iina.io\">Nightly-Website</a>.";
 "initial.debug.desc" = "Debug-Builds sind normalerweise nicht auf Leistung optimiert, daher wird es nicht empfohlen diese für den täglichen Gebrauch einzusetzen. Debug-Builds unterstützen keine automatischen Updates.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Neuer Filter";
 "alert.add_filter.message" = "Bitte gib die Zeichenkette für den Filter im Stil der vf- bzw. af-Kommandos von mpv an.";
 
-"alert.keybinding_config.error" = "Fehler beim Einlesen der Kurzbefehl-Konfiguration „%@“! Standard-Kurzbefehle von IINA werden benutzt. Bitte überprüfe die Einstellungen.";
+"alert.keybinding_config.error" = "Fehler beim Einlesen der Kurzbefehl-Konfiguration „%@“! Standard-Kurzbefehle von Rawya werden benutzt. Bitte überprüfe die Einstellungen.";
 
 "alert.extra_option.cannot_read" = "Benutzerdefinierte mpv-Optionen konnten nicht gelesen werden.";
 "alert.extra_option.empty" = "Schlüssel oder Wert dürfen nicht leer sein.";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Anmelden nicht möglich. Bitte überprüfe Benutzername, Passwort und Netzwerkverbindung.\n\n%@";
 "alert.sub.save_downloaded.title" = "Geladene Untertitel sichern";
 
-"alert.set_default.title" = "IINA als Standardprogramm setzten";
-"alert.set_default.message" = "IINA wird zum Standardprogramm für alle unterstützten Dateiformate.";
+"alert.set_default.title" = "Rawya als Standardprogramm setzten";
+"alert.set_default.message" = "Rawya wird zum Standardprogramm für alle unterstützten Dateiformate.";
 "alert.set_default.success" = "Abgeschlossen. %d erfolgreich, %d gescheitert.";
 
 "alert.add_watch.title" = "Zu beobachtenden Wert hinzufügen";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Die Paketdatei wurde nicht gefunden.";
 "plugin.install_error.cannot_download" = "Die Erweiterung konnte nicht heruntergeladen werden.\n\nAusgabe: %@\n";
 "plugin.install_error.cannot_unpackage" = "Die Erweiterung konnte nicht entpackt werden.\n\nAusgabe: %@\n";
-"plugin.install_error.cannot_load" = "IINA kann diese Erweiterung nicht laden. Es könnte im falschen Format sein.";
+"plugin.install_error.cannot_load" = "Rawya kann diese Erweiterung nicht laden. Es könnte im falschen Format sein.";
 "plugin.check_for_updates" = "Nach Updates suchen";
 "plugin.updating" = "Update herunterladen …";

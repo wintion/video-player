@@ -38,13 +38,13 @@
 "4ae-MT-2L1.title" = "Posunutie zvuku +0,5 s";
 
 /* Class = "NSMenuItem"; title = "Quit IINA"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Ukončiť aplikáciu IINA";
+"4sb-4s-VLi.title" = "Ukončiť aplikáciu Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Speed"; ObjectID = "5Gn-90-oDu"; */
 "5Gn-90-oDu.title" = "Obnoviť pôvodnú rýchlosť";
 
 /* Class = "NSMenuItem"; title = "About IINA"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "O aplikácii IINA";
+"5kV-Vb-QxS.title" = "O aplikácii Rawya";
 
 /* Class = "NSMenu"; title = "Rotation"; ObjectID = "5xN-ZB-VLI"; */
 "5xN-ZB-VLI.title" = "Otočiť";
@@ -134,7 +134,7 @@
 "F6G-Ln-fqI.title" = "Ďalšia kapitola";
 
 /* Class = "NSMenuItem"; title = "IINA Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Pomoc IINA";
+"FKE-Sm-Kum.title" = "Pomoc Rawya";
 
 /* Class = "NSMenu"; title = "Video Track"; ObjectID = "FTu-CF-O0R"; */
 "FTu-CF-O0R.title" = "Video stopa";
@@ -224,7 +224,7 @@
 "OY7-WF-poV.title" = "Minimalizovať";
 
 /* Class = "NSMenuItem"; title = "Hide IINA"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Skryť IINA";
+"Olw-nP-bQN.title" = "Skryť Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Subtitle Scale"; ObjectID = "P1a-ot-P31"; */
 "P1a-ot-P31.title" = "Resetovať Veľkosť Titulkov";

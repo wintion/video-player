@@ -38,13 +38,13 @@
 "4ae-MT-2L1.title" = "Lydforsinkelse + 0.5s";
 
 /* Class = "NSMenuItem"; title = "Quit IINA"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Avslutt IINA";
+"4sb-4s-VLi.title" = "Avslutt Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Speed"; ObjectID = "5Gn-90-oDu"; */
 "5Gn-90-oDu.title" = "Tilbakestill hastighet";
 
 /* Class = "NSMenuItem"; title = "About IINA"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "Om IINA";
+"5kV-Vb-QxS.title" = "Om Rawya";
 
 /* Class = "NSMenu"; title = "Rotation"; ObjectID = "5xN-ZB-VLI"; */
 "5xN-ZB-VLI.title" = "Rotasjon";
@@ -134,7 +134,7 @@
 "F6G-Ln-fqI.title" = "Neste kapittel";
 
 /* Class = "NSMenuItem"; title = "IINA Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "IINA Hjelp";
+"FKE-Sm-Kum.title" = "Rawya Hjelp";
 
 /* Class = "NSMenu"; title = "Video Track"; ObjectID = "FTu-CF-O0R"; */
 "FTu-CF-O0R.title" = "Videospor";
@@ -224,7 +224,7 @@
 "OY7-WF-poV.title" = "Minimer";
 
 /* Class = "NSMenuItem"; title = "Hide IINA"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Skjul IINA";
+"Olw-nP-bQN.title" = "Skjul Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Subtitle Scale"; ObjectID = "P1a-ot-P31"; */
 "P1a-ot-P31.title" = "Tilbakestill undertekstskala";

@@ -16,8 +16,8 @@
 /* Class = "NSTextFieldCell"; title = "Cleared."; ObjectID = "Fb4-dy-CXX"; */
 "Fb4-dy-CXX.title" = "消去しました。";
 
-/* Class = "NSTextFieldCell"; title = "Open links or current webpage in IINA with one click. The website must be supported by youtube-dl."; ObjectID = "GAo-fx-NG0"; */
-"GAo-fx-NG0.title" = "ワンクリックでリンク先や今開いているWebページをIINAで開くことができます。youtube-dlに対応したウェブサイトでのみ動作します。";
+/* Class = "NSTextFieldCell"; title = "Open links or current webpage in Rawya with one click. The website must be supported by youtube-dl."; ObjectID = "GAo-fx-NG0"; */
+"GAo-fx-NG0.title" = "ワンクリックでリンク先や今開いているWebページをRawyaで開くことができます。youtube-dlに対応したウェブサイトでのみ動作します。";
 
 /* Class = "NSButtonCell"; title = "OK"; ObjectID = "IkF-qG-s4j"; */
 "IkF-qG-s4j.title" = "OK";
@@ -34,8 +34,8 @@
 /* Class = "NSTextFieldCell"; title = "Clear Cache"; ObjectID = "QHA-tO-oSn"; */
 "QHA-tO-oSn.title" = "キャッシュを消去";
 
-/* Class = "NSButtonCell"; title = "Set IINA as the Default Application…"; ObjectID = "e1p-Aa-WFG"; */
-"e1p-Aa-WFG.title" = "IINAをデフォルトのアプリケーションに設定…";
+/* Class = "NSButtonCell"; title = "Set Rawya as the Default Application…"; ObjectID = "e1p-Aa-WFG"; */
+"e1p-Aa-WFG.title" = "Rawyaをデフォルトのアプリケーションに設定…";
 
 /* Class = "NSButtonCell"; title = "Firefox"; ObjectID = "f9i-sS-MJN"; */
 "f9i-sS-MJN.title" = "Firefox";
@@ -70,11 +70,11 @@
 /* Class = "NSTextFieldCell"; title = "Current thumbnail cache:"; ObjectID = "uV3-aF-UB7"; */
 "uV3-aF-UB7.title" = "現在のサムネイルキャッシュ量:";
 
-/* Class = "NSTextFieldCell"; title = "Please select the media types that you want to make IINA as the default Application for."; ObjectID = "uvK-Y1-dZr"; */
-"uvK-Y1-dZr.title" = "IINAをデフォルトの再生アプリケーションに設定したいメディアの種類を選択してください。";
+/* Class = "NSTextFieldCell"; title = "Please select the media types that you want to make Rawya as the default Application for."; ObjectID = "uvK-Y1-dZr"; */
+"uvK-Y1-dZr.title" = "Rawyaをデフォルトの再生アプリケーションに設定したいメディアの種類を選択してください。";
 
 /* Class = "NSButtonCell"; title = "Chrome"; ObjectID = "yuw-2i-ICd"; */
 "yuw-2i-ICd.title" = "Chrome";
 
-/* Class = "NSTextFieldCell"; title = "Get Browser Extensions for IINA"; ObjectID = "zCe-1f-tkF"; */
-"zCe-1f-tkF.title" = "IINAのブラウザ拡張機能を使う";
+/* Class = "NSTextFieldCell"; title = "Get Browser Extensions for Rawya"; ObjectID = "zCe-1f-tkF"; */
+"zCe-1f-tkF.title" = "Rawyaのブラウザ拡張機能を使う";

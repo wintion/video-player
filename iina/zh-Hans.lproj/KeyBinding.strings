@@ -51,6 +51,8 @@
 "iina.fit-to-screen" = "适应屏幕";
 "iina.toggle-flip" = "切换翻转";
 "iina.toggle-mirror" = "切换镜像";
+"iina.rotate-video-clockwise" = "顺时针旋转画面 90°";
+"iina.rotate-video-counterclockwise" = "逆时针旋转画面 90°";
 "iina.save-playlist" = "保存当前播放列表";
 "iina.show-current-file-in-finder" = "在访达中显示当前文件";
 "iina.delete-current-file" = "删除当前文件";

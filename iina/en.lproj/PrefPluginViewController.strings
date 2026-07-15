@@ -50,8 +50,8 @@
 /* Class = "NSTabViewItem"; label = "Settings"; ObjectID = "eyS-eb-H4e"; */
 "eyS-eb-H4e.label" = "Settings";
 
-/* Class = "NSTextFieldCell"; title = "You can install a new plugin from GitHub or a local .iinaplgz package. Plugins installed from GitHub can be updated automatically."; ObjectID = "fnl-uA-X7r"; */
-"fnl-uA-X7r.title" = "You can install a new plugin from GitHub or a local .iinaplgz package. Plugins installed from GitHub can be updated automatically.";
+/* Class = "NSTextFieldCell"; title = "You can install a plugin from GitHub or a local plugin package. Plugins installed from GitHub can be updated automatically."; ObjectID = "fnl-uA-X7r"; */
+"fnl-uA-X7r.title" = "You can install a plugin from GitHub or a local plugin package. Plugins installed from GitHub can be updated automatically.";
 
 /* Class = "NSButtonCell"; title = "Reload"; ObjectID = "ixN-OS-w87"; */
 "ixN-OS-w87.title" = "Reload";

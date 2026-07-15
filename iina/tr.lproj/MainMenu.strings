@@ -38,13 +38,13 @@
 "4ae-MT-2L1.title" = "Sesi +0,5 sn Geciktir";
 
 /* Class = "NSMenuItem"; title = "Quit IINA"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "IINA’dan Çık";
+"4sb-4s-VLi.title" = "Rawya’dan Çık";
 
 /* Class = "NSMenuItem"; title = "Reset Speed"; ObjectID = "5Gn-90-oDu"; */
 "5Gn-90-oDu.title" = "Hızı Sıfırla";
 
 /* Class = "NSMenuItem"; title = "About IINA"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "IINA Hakkında";
+"5kV-Vb-QxS.title" = "Rawya Hakkında";
 
 /* Class = "NSMenu"; title = "Rotation"; ObjectID = "5xN-ZB-VLI"; */
 "5xN-ZB-VLI.title" = "Döndür";
@@ -134,7 +134,7 @@
 "F6G-Ln-fqI.title" = "Sonraki Fasıl";
 
 /* Class = "NSMenuItem"; title = "IINA Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "IINA Yardımı";
+"FKE-Sm-Kum.title" = "Rawya Yardımı";
 
 /* Class = "NSMenu"; title = "Video Track"; ObjectID = "FTu-CF-O0R"; */
 "FTu-CF-O0R.title" = "Video Parçası";
@@ -224,7 +224,7 @@
 "OY7-WF-poV.title" = "Simge Durumuna Küçült";
 
 /* Class = "NSMenuItem"; title = "Hide IINA"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "IINA’yı Gizle";
+"Olw-nP-bQN.title" = "Rawya’yı Gizle";
 
 /* Class = "NSMenuItem"; title = "Reset Subtitle Scale"; ObjectID = "P1a-ot-P31"; */
 "P1a-ot-P31.title" = "Altyazı Boyutunu Sıfırla";

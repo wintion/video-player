@@ -26,7 +26,7 @@
 "guide.faq" = "Câu hỏi Thường Gặp";
 
 // Initial Window
-"initial.announcement" = "Bạn đang sử dụng phiên bản %@ của IINA";
+"initial.announcement" = "Bạn đang sử dụng phiên bản %@ của Rawya";
 "initial.beta.desc" = "Nếu bạn muốn quay lại phiên bản chính thức trước đó, hãy bỏ dấu tích khỏi \"nhận các phiên bản thử nghiệm Beta\" trong Cài đặt > Cài đặt chung, và cài một phiên bản chính thức từ <a href=\"https://iina.io\">website chính thức</a> của chúng tôi.";
 "initial.nightly.desc" = "Phiên bản thử nghiệm Nightly không được khuyên dùng làm phiên bản dùng thường xuyên. Những phiên bản thử nghiệm Nightly hiện tại không hỗ trợ cập nhật tự động. Vui lòng tải thủ công những phiên bản mới hơn từ <a href=\"https://nightly.iina.io\">website phiên bản thử nghiệm Nightly</a> của chúng tôi.";
 "initial.debug.desc" = "Các bản dựng gỡ lỗi thường không được tối ưu hóa về hiệu suất, vì vậy không nên sử dụng nó làm tay lái hàng ngày. Bản dựng gỡ lỗi không hỗ trợ cập nhật tự động.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Bộ lọc mới";
 "alert.add_filter.message" = "Please enter a filter string in format of mpv's vf or af command.";
 
-"alert.keybinding_config.error" = "Error parsing keybinding configuration file \"%@\"! Fallback to IINA Default keybinding setting. Please check your configuration.";
+"alert.keybinding_config.error" = "Error parsing keybinding configuration file \"%@\"! Fallback to Rawya Default keybinding setting. Please check your configuration.";
 
 "alert.extra_option.cannot_read" = "Cannot read user defined extra mpv options.";
 "alert.extra_option.empty" = "Key or value cannot be empty!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Cannot login. Please check your username, password and network status.\n\n%@";
 "alert.sub.save_downloaded.title" = "Lưu phụ đề đã tải";
 
-"alert.set_default.title" = "Setting IINA as Default App";
-"alert.set_default.message" = "IINA will be set as the default app for all file types it supports.";
+"alert.set_default.title" = "Setting Rawya as Default App";
+"alert.set_default.message" = "Rawya will be set as the default app for all file types it supports.";
 "alert.set_default.success" = "Finished with %d success and %d failed.";
 
 "alert.add_watch.title" = "Add Watch Property";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Cannot find the package file.";
 "plugin.install_error.cannot_download" = "Failed to download the plugin.\n\nOutput:%@\n";
 "plugin.install_error.cannot_unpackage" = "Failed to unpackage the plugin.\n\nOutput:%@\n";
-"plugin.install_error.cannot_load" = "IINA cannot load this plugin. It might be in the wrong format.";
+"plugin.install_error.cannot_load" = "Rawya cannot load this plugin. It might be in the wrong format.";
 "plugin.check_for_updates" = "Kiểm tra cập nhật";
 "plugin.updating" = "Downloading update…";

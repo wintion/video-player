@@ -38,13 +38,13 @@
 "4ae-MT-2L1.title" = "Задержка аудио +0,5 с";
 
 /* Class = "NSMenuItem"; title = "Quit IINA"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Завершить IINA";
+"4sb-4s-VLi.title" = "Завершить Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Speed"; ObjectID = "5Gn-90-oDu"; */
 "5Gn-90-oDu.title" = "Сбросить скорость";
 
 /* Class = "NSMenuItem"; title = "About IINA"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "О приложении IINA";
+"5kV-Vb-QxS.title" = "О приложении Rawya";
 
 /* Class = "NSMenu"; title = "Rotation"; ObjectID = "5xN-ZB-VLI"; */
 "5xN-ZB-VLI.title" = "Повернуть";
@@ -134,7 +134,7 @@
 "F6G-Ln-fqI.title" = "Следующая глава\n";
 
 /* Class = "NSMenuItem"; title = "IINA Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Справка IINA";
+"FKE-Sm-Kum.title" = "Справка Rawya";
 
 /* Class = "NSMenu"; title = "Video Track"; ObjectID = "FTu-CF-O0R"; */
 "FTu-CF-O0R.title" = "Видеодорожка";
@@ -224,7 +224,7 @@
 "OY7-WF-poV.title" = "Убрать в Dock";
 
 /* Class = "NSMenuItem"; title = "Hide IINA"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Скрыть IINA";
+"Olw-nP-bQN.title" = "Скрыть Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Subtitle Scale"; ObjectID = "P1a-ot-P31"; */
 "P1a-ot-P31.title" = "Сбросить размер субтитров";
@@ -512,4 +512,4 @@
 "Qwb-26-zjX.title" = "Открыть адрес…";
 
 /* Class = "NSMenuItem"; title = "Release Highlights"; ObjectID = "kOx-hc-aQG"; */
-"kOx-hc-aQG.title" = "Что нового в IINA";
+"kOx-hc-aQG.title" = "Что нового в Rawya";

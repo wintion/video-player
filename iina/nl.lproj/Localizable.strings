@@ -26,7 +26,7 @@
 "guide.faq" = "Veelgestelde vragen";
 
 // Initial Window
-"initial.announcement" = "U gebruikt een %@ versie van IINA";
+"initial.announcement" = "U gebruikt een %@ versie van Rawya";
 "initial.beta.desc" = "Als u wilt teruggaan naar een stabiele versie, vink \"beta updates ontvangen\" uit via Instellingen > Algemeen, en installeer een stabiele release van onze <a href=\"https://iina.io\">officiële website</a>.";
 "initial.nightly.desc" = "Nightly wordt niet aanbevolen voor dagelijks gebruik. Momenteel ondersteunen nightly builds geen automatische updates. Download handmatig nieuwere builds van onze <a href=\"https://nightly.iina.io\">nightly website</a>.";
 "initial.debug.desc" = "Debug builds zijn meestal niet geoptimaliseerd voor prestaties, dus deze zijn niet aangeraden voor dagelijks gebruik. Debug builds ondersteunen geen automatische updates.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Nieuw filter";
 "alert.add_filter.message" = "Voer een filtertekst met de structuur van mpv's vf/af-commando's in.";
 
-"alert.keybinding_config.error" = "Fout bij het lezen van sneltoetsen-configuratiebestand \"%@\"! De IINA standaardinstellingen worden hersteld. Controleer je configuratie.";
+"alert.keybinding_config.error" = "Fout bij het lezen van sneltoetsen-configuratiebestand \"%@\"! De Rawya standaardinstellingen worden hersteld. Controleer je configuratie.";
 
 "alert.extra_option.cannot_read" = "Kan de ingestelde mpv-opties niet lezen.";
 "alert.extra_option.empty" = "Naam en waarde kunnen niet leeg zijn.";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Kan niet inloggen. Controleer je gebruikersnaam, wachtwoord en netwerkverbinding.\n\n%@";
 "alert.sub.save_downloaded.title" = "Sla gedownloade ondertiteling op";
 
-"alert.set_default.title" = "Stel IINA in als standaardprogramma";
-"alert.set_default.message" = "IINA wordt ingesteld als standaardprogramma voor alle ondersteunde bestandstypes.";
+"alert.set_default.title" = "Stel Rawya in als standaardprogramma";
+"alert.set_default.message" = "Rawya wordt ingesteld als standaardprogramma voor alle ondersteunde bestandstypes.";
 "alert.set_default.success" = "%d types succesvol ingesteld, %d types mislukt.";
 
 "alert.add_watch.title" = "Voeg waarde toe om te volgen";
@@ -390,9 +390,9 @@
 "filter.video_filters" = "Videofilters";
 "filter.audio_filters" = "Audiofilters";
 
-"hwdec.no" = "Zonder hardware-acceleratie heeft IINA meer energie nodig, en presteert het mogelijk minder optimaal.";
-"hwdec.auto" = "Met Automatisch maakt IINA automatisch gebruik van hardware-acceleratie. Dat levert een hoge prestatie op voor relatief weinig energie. Deze optie biedt geen ondersteuning voor software-gebaseerde videofilters.";
-"hwdec.auto-copy" = "Met Automatisch maakt IINA automatisch gebruik van hardware-acceleratie. Dat levert een hoge prestatie op voor relatief weinig energie. Om software-gebaseerde videofilters te ondersteunen wordt gebruik gemaakt van een voorgefilterde kopie van de video. Deze optie gebruikt daarom dubbel zoveel geheugen.";
+"hwdec.no" = "Zonder hardware-acceleratie heeft Rawya meer energie nodig, en presteert het mogelijk minder optimaal.";
+"hwdec.auto" = "Met Automatisch maakt Rawya automatisch gebruik van hardware-acceleratie. Dat levert een hoge prestatie op voor relatief weinig energie. Deze optie biedt geen ondersteuning voor software-gebaseerde videofilters.";
+"hwdec.auto-copy" = "Met Automatisch maakt Rawya automatisch gebruik van hardware-acceleratie. Dat levert een hoge prestatie op voor relatief weinig energie. Om software-gebaseerde videofilters te ondersteunen wordt gebruik gemaakt van een voorgefilterde kopie van de video. Deze optie gebruikt daarom dubbel zoveel geheugen.";
 
 "gaplessAudio.no" = "Afspelen van achtereenvolgende audiobestanden kan leiden tot stilte of verstoring wanneer het bestand verandert.";
 "gaplessAudio.weak" = "Als het audioformaat van de decoderoutput verandert, wordt het audioapparaat gesloten en opnieuw geopend, waardoor het afspelen wordt verstoord.";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Kan het pakketbestand niet vinden.";
 "plugin.install_error.cannot_download" = "Fout bij het downloaden van de plug-in.\n\nUitvoer:%@\n";
 "plugin.install_error.cannot_unpackage" = "Fout bij het uitpakken van de plug-in.\n\nuitvoer:%@\n";
-"plugin.install_error.cannot_load" = "IINA kan deze plug-in niet laden. Deze kan in het verkeerde formaat geleverd zijn.";
+"plugin.install_error.cannot_load" = "Rawya kan deze plug-in niet laden. Deze kan in het verkeerde formaat geleverd zijn.";
 "plugin.check_for_updates" = "Zoek naar updates";
 "plugin.updating" = "Update downloaden…";

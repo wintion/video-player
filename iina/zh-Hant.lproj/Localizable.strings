@@ -26,7 +26,7 @@
 "guide.faq" = "常見問題";
 
 // Initial Window
-"initial.announcement" = "您正在使用IINA的%@版本";
+"initial.announcement" = "您正在使用Rawya的%@版本";
 "initial.beta.desc" = "如果您希望回到正式版，請進入「設定 > 一般」，將「接收 Beta 更新」取消勾選，然後從 <a href=\"https://iina.io\">官方網站</a>下載正式版進行安裝。";
 "initial.nightly.desc" = "不推薦您使用「每日構建版 Nightly Build」做為日常使用首選。每日構建版不支援自動更新，請至 <a href=\"https://nightly.iina.io\">每日構建版網站頁面</a> 自行下載更新。";
 "initial.debug.desc" = "「除錯版本 Debug Build」通常沒有針對性能進行最佳化。因此不推薦作為日常使用首選，且此版本不支援自動更新。";
@@ -244,7 +244,7 @@
 "alert.title_warning" = "警告";
 "alert.title_info" = "資訊";
 
-"alert.fatal_error" = "ㄧ嚴重錯誤：%@ \n，IINA 即將關閉。";
+"alert.fatal_error" = "ㄧ嚴重錯誤：%@ \n，Rawya 即將關閉。";
 "alert.mpv_error" = "發生內部錯誤 %@（%@）（設定 %@ 時）";
 
 "alert.unsupported_audio" = "不支援載入此音訊檔";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "新增濾鏡";
 "alert.add_filter.message" = "請輸入符合 mpv 的 vf 或 af 格式的濾鏡指令";
 
-"alert.keybinding_config.error" = "剖析快速鍵設定檔「%@」時發生錯誤，即將使用 IINA 預設快速鍵設定檔替代。請檢查您的設定檔。";
+"alert.keybinding_config.error" = "剖析快速鍵設定檔「%@」時發生錯誤，即將使用 Rawya 預設快速鍵設定檔替代。請檢查您的設定檔。";
 
 "alert.extra_option.cannot_read" = "無法讀取使用者定義額外的 mpv 設定";
 "alert.extra_option.empty" = "Key 或 value 不能留空！";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "登入失敗，請檢查您的使用者帳戶、密碼、網路連線。\n\n%@";
 "alert.sub.save_downloaded.title" = "儲存已下載的字幕";
 
-"alert.set_default.title" = "將 IINA 設為預設應用程式";
-"alert.set_default.message" = "即將把 IINA 設為所有受支援檔案格式的預設應用程式";
+"alert.set_default.title" = "將 Rawya 設為預設應用程式";
+"alert.set_default.message" = "即將把 Rawya 設為所有受支援檔案格式的預設應用程式";
 "alert.set_default.success" = "已成功 %d 個，失敗 %d 個";
 
 "alert.add_watch.title" = "加入監視屬性";
@@ -463,6 +463,6 @@
 "plugin.install_error.file_not_found" = "無法找到套件檔案。";
 "plugin.install_error.cannot_download" = "無法下載外掛程式。\n\n詳細內容:%@\n";
 "plugin.install_error.cannot_unpackage" = "無法打開外掛程式。\n\n詳細內容：%@\n";
-"plugin.install_error.cannot_load" = "IINA 無法載入此外掛程式，可能使用了錯誤的格式。";
+"plugin.install_error.cannot_load" = "Rawya 無法載入此外掛程式，可能使用了錯誤的格式。";
 "plugin.check_for_updates" = "檢查更新";
 "plugin.updating" = "正在下載更新…";

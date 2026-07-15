@@ -49,8 +49,8 @@
 /* Class = "NSTabViewItem"; label = "Settings"; ObjectID = "eyS-eb-H4e"; */
 "eyS-eb-H4e.label" = "偏好设置";
 
-/* Class = "NSTextFieldCell"; title = "You can install a new plugin from GitHub or a local .iinaplgz package. Plugins installed from GitHub can be updated automatically."; ObjectID = "fnl-uA-X7r"; */
-"fnl-uA-X7r.title" = "你可以从GitHub或本地的 .iinaplgz包安装新插件。从GitHub安装的插件可以自动更新。";
+/* Class = "NSTextFieldCell"; title = "You can install a plugin from GitHub or a local plugin package. Plugins installed from GitHub can be updated automatically."; ObjectID = "fnl-uA-X7r"; */
+"fnl-uA-X7r.title" = "你可以从 GitHub 或本地插件包安装新插件；从 GitHub 安装的插件支持自动更新。";
 
 /* Class = "NSButtonCell"; title = "Reload"; ObjectID = "ixN-OS-w87"; */
 "ixN-OS-w87.title" = "重新加载";

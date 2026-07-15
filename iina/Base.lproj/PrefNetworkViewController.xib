@@ -259,7 +259,7 @@
                 </textField>
                 <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8XM-Bb-OoC">
                     <rect key="frame" x="201" y="32" width="206" height="14"/>
-                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Requires restarting IINA to take effect." id="RwW-JS-iTv">
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Requires restarting Rawya to take effect." id="RwW-JS-iTv">
                         <font key="font" metaFont="message" size="11"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -398,7 +398,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="14" id="74z-l3-NRT"/>
                     </constraints>
-                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="IINA will search youtube-dl in this folder. Restart needed." id="YqE-yV-BvQ">
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Rawya will search youtube-dl in this folder. Restart needed." id="YqE-yV-BvQ">
                         <font key="font" metaFont="message" size="11"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

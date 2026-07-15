@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "새 필터";
 "alert.add_filter.message" = "mpv 플레이어의 vf 또는 af 명령의 형식으로 필터 설정 문자열을 입력하십시오.";
 
-"alert.keybinding_config.error" = "단축키 설정 파일 \"%@\"를 읽어올 때 오류가 발생했습니다! IINA 기본값을 사용하도록 설정됩니다. 사용자가 지정한 단축키 설정 내용을 점검하십시오.";
+"alert.keybinding_config.error" = "단축키 설정 파일 \"%@\"를 읽어올 때 오류가 발생했습니다! Rawya 기본값을 사용하도록 설정됩니다. 사용자가 지정한 단축키 설정 내용을 점검하십시오.";
 
 "alert.extra_option.cannot_read" = "사용자가 지정한 mpv 추가 옵션을 읽을 수 없습니다.";
 "alert.extra_option.empty" = "항목과 그 설정값을 반드시 지정해야 합니다!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "로그인할 수 없습니다. 계정 이름과 암호, 네트워크 상태를 확인하십시오.\n\n%@";
 "alert.sub.save_downloaded.title" = "다운로드된 자막 저장";
 
-"alert.set_default.title" = "IINA를 기본 프로그램으로 설정";
-"alert.set_default.message" = "지원하는 모든 파일 유형에 대해 IINA를 기본 프로그램으로 설정합니다.";
+"alert.set_default.title" = "Rawya를 기본 프로그램으로 설정";
+"alert.set_default.message" = "지원하는 모든 파일 유형에 대해 Rawya를 기본 프로그램으로 설정합니다.";
 "alert.set_default.success" = "설정을 마쳤습니다: %d개 성공, %d개 실패";
 
 "alert.add_watch.title" = "상태 보기 항목 추가";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "패키지 파일을 찾을 수 없습니다.";
 "plugin.install_error.cannot_download" = "플러그인 다운로드에 실패했습니다.\n\n출력: %@\n";
 "plugin.install_error.cannot_unpackage" = "플러그인 설치에 실패했습니다.\n\n출력: %@\n";
-"plugin.install_error.cannot_load" = "IINA가 이 플러그인을 로드할 수 없습니다. 플러그인이 잘못된 형식일 수 있습니다.";
+"plugin.install_error.cannot_load" = "Rawya가 이 플러그인을 로드할 수 없습니다. 플러그인이 잘못된 형식일 수 있습니다.";
 "plugin.check_for_updates" = "업데이트 확인";
 "plugin.updating" = "업데이트 다운로드 중...";

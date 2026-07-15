@@ -1,5 +1,5 @@
 /* Class = "NSWindow"; title = "About"; ObjectID = "F0z-JX-Cv5"; */
-"F0z-JX-Cv5.title" = "Informazioni su IINA";
+"F0z-JX-Cv5.title" = "Informazioni su Rawya";
 
 /* Class = "NSTabViewItem"; label = "Credits"; ObjectID = "HMc-Oy-hBR"; */
 "HMc-Oy-hBR.label" = "Crediti";
@@ -23,4 +23,4 @@
 "zCH-uO-acx.title" = "Crediti";
 
 /* Class = "NSTextFieldCell"; title = "IINA localization is powered by Crowdin."; ObjectID = "HLj-vT-kNp"; */
-"HLj-vT-kNp.title" = "La localizzazione multi-lingua di IINA è gestita con Crowdin.";
+"HLj-vT-kNp.title" = "La localizzazione multi-lingua di Rawya è gestita con Crowdin.";

@@ -38,13 +38,13 @@
 "4ae-MT-2L1.title" = "Opóźnienie dźwięku +0.5s";
 
 /* Class = "NSMenuItem"; title = "Quit IINA"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Zakończ IINA";
+"4sb-4s-VLi.title" = "Zakończ Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Speed"; ObjectID = "5Gn-90-oDu"; */
 "5Gn-90-oDu.title" = "Normalna prędkość odtwarzania";
 
 /* Class = "NSMenuItem"; title = "About IINA"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "O IINA";
+"5kV-Vb-QxS.title" = "O Rawya";
 
 /* Class = "NSMenu"; title = "Rotation"; ObjectID = "5xN-ZB-VLI"; */
 "5xN-ZB-VLI.title" = "Obróć";
@@ -224,7 +224,7 @@
 "OY7-WF-poV.title" = "Minimalizuj";
 
 /* Class = "NSMenuItem"; title = "Hide IINA"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Ukryj IINA";
+"Olw-nP-bQN.title" = "Ukryj Rawya";
 
 /* Class = "NSMenuItem"; title = "Reset Subtitle Scale"; ObjectID = "P1a-ot-P31"; */
 "P1a-ot-P31.title" = "Zrestartuj rozmiar napisów";

@@ -26,7 +26,7 @@
 "guide.faq" = "Vanliga frågor (FAQ)";
 
 // Initial Window
-"initial.announcement" = "Du använder en %@-version av IINA";
+"initial.announcement" = "Du använder en %@-version av Rawya";
 "initial.beta.desc" = "Om du vill återgå till en utgiven version, avbocka \"Ta emot beta-uppdateringar\" under Inställningar > Allmänt och installera en stabil version från vår <a href=\"https://iina.io\">officiella webbsida</a>.";
 "initial.nightly.desc" = "Nightly is not recommended to be used as your daily driver. Currently nightly builds do not support auto update. Please manually download newer builds from our <a href=\"https://nightly.iina.io\">nightly website</a>.";
 "initial.debug.desc" = "Debug builds are usually not optimized for performance, so it is not recommended to be used as daily drive. Debug builds do not support auto update.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Nytt filter";
 "alert.add_filter.message" = "Vänligen ange en filtersträng i formatet för mpv:s vf- eller af-kommando.";
 
-"alert.keybinding_config.error" = "Fel vid tolkning av konfigurationfilen \"%@\" för snabbtangenter! Återgår till snabbtangentsinställningen IINA Förval. Vänligen kontrollera din konfiguration.";
+"alert.keybinding_config.error" = "Fel vid tolkning av konfigurationfilen \"%@\" för snabbtangenter! Återgår till snabbtangentsinställningen Rawya Förval. Vänligen kontrollera din konfiguration.";
 
 "alert.extra_option.cannot_read" = "Kan ej läsa användardefinierade extra mpv-alternativ.";
 "alert.extra_option.empty" = "Nyckel eller värde får ej vara tomt!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Kan ej logga in. Vänligen kontrollera ditt användarnamn, lösenord och nätverksstatus.\n\n%@";
 "alert.sub.save_downloaded.title" = "Spara nedladdad undertext";
 
-"alert.set_default.title" = "Ställer in IINA som förvald app";
-"alert.set_default.message" = "IINA kommer att ställas in som den förvalda appen för alla filtyper som stöds.";
+"alert.set_default.title" = "Ställer in Rawya som förvald app";
+"alert.set_default.message" = "Rawya kommer att ställas in som den förvalda appen för alla filtyper som stöds.";
 "alert.set_default.success" = "Färdigställdes med %d lyckade och %d misslyckade.";
 
 "alert.add_watch.title" = "Lägg till bevakad egenskap";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Kan inte hitta paketfilen.";
 "plugin.install_error.cannot_download" = "Det gick inte att ladda ner tillägget.\n\nUtdata: %@\n";
 "plugin.install_error.cannot_unpackage" = "Det gick inte att packa upp tillägget.\n\nUtdata: %@\n";
-"plugin.install_error.cannot_load" = "IINA kan inte ladda detta tillägget. Det kanske är i fel format.";
+"plugin.install_error.cannot_load" = "Rawya kan inte ladda detta tillägget. Det kanske är i fel format.";
 "plugin.check_for_updates" = "Sök efter uppdateringar";
 "plugin.updating" = "Laddar ner uppdateringen…";

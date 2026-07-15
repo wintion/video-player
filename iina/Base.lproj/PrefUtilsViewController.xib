@@ -42,7 +42,7 @@
                 </textField>
                 <button identifier="FunctionalButtonDefaultApp" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9bz-Mj-bPf">
                     <rect key="frame" x="-6" y="1" width="253" height="32"/>
-                    <buttonCell key="cell" type="push" title="Set IINA as the Default Application…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="e1p-Aa-WFG">
+                    <buttonCell key="cell" type="push" title="Set Rawya as the Default Application…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="e1p-Aa-WFG">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -257,7 +257,7 @@
             <subviews>
                 <textField identifier="SectionTitleBrowserExt" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Al6-1d-mCg">
                     <rect key="frame" x="-2" y="78" width="211" height="16"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Get Browser Extensions for IINA" id="zCe-1f-tkF">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Get Browser Extensions for Rawya" id="zCe-1f-tkF">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -285,7 +285,7 @@
                 </button>
                 <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="DZn-sK-pTY">
                     <rect key="frame" x="-2" y="34" width="424" height="28"/>
-                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Open links or current webpage in IINA with one click. The website must be supported by youtube-dl." id="GAo-fx-NG0">
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Open links or current webpage in Rawya with one click. The website must be supported by youtube-dl." id="GAo-fx-NG0">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -319,7 +319,7 @@
                 <subviews>
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2JS-Ar-lM8">
                         <rect key="frame" x="18" y="140" width="412" height="32"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Please select the media types that you want to make IINA as the default Application for." id="uvK-Y1-dZr">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Please select the media types that you want to make Rawya the default application for." id="uvK-Y1-dZr">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

@@ -553,7 +553,7 @@
 			<key>CFBundleTypeIconSystemGenerated</key>
 			<integer>0</integer>
 			<key>CFBundleTypeName</key>
-			<string>IINA Plugin</string>
+			<string>Rawya Plugin</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSHandlerRank</key>
@@ -575,7 +575,7 @@
 			<key>CFBundleTypeIconSystemGenerated</key>
 			<integer>0</integer>
 			<key>CFBundleTypeName</key>
-			<string>IINA Plugin Package</string>
+			<string>Rawya Plugin Package</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSHandlerRank</key>
@@ -594,7 +594,7 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>IINA wrapper</string>
+			<string>Rawya wrapper</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>iina</string>
@@ -626,7 +626,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>IINA: Open URL</string>
+				<string>Rawya: Open URL</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>droppedText</string>
@@ -637,7 +637,7 @@
 		</dict>
 	</array>
 	<key>SUFeedURL</key>
-	<string>https://www.iina.io/appcast.xml</string>
+	<string>https://github.com/wintion/video-player/releases/latest/download/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>SUPublicEDKey</key>
@@ -650,7 +650,7 @@
 				<string>com.pkware.zip-archive</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>IINA Plugin Package</string>
+			<string>Rawya Plugin Package</string>
 			<key>UTTypeIconFile</key>
 			<string>doc_plugin</string>
 			<key>UTTypeIcons</key>
@@ -672,7 +672,7 @@
 				<string>com.apple.package</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>IINA Plugin</string>
+			<string>Rawya Plugin</string>
 			<key>UTTypeIconFile</key>
 			<string>doc_plugin</string>
 			<key>UTTypeIcons</key>

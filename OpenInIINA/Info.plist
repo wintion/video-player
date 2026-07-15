@@ -9,7 +9,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Open in IINA</string>
+	<string>Open in Rawya</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -39,13 +39,13 @@
 		<array>
 			<dict>
 				<key>Text</key>
-				<string>Open Current Page in IINA</string>
+				<string>Open Current Page in Rawya</string>
 				<key>Command</key>
 				<string>OpenInIINA</string>
 			</dict>
 			<dict>
 				<key>Text</key>
-				<string>Open Link in IINA</string>
+				<string>Open Link in Rawya</string>
 				<key>Command</key>
 				<string>OpenLinkInIINA</string>
 			</dict>
@@ -59,7 +59,7 @@
 			<key>Image</key>
 			<string>ToolbarItemIcon.pdf</string>
 			<key>Label</key>
-			<string>Open in IINA</string>
+			<string>Open in Rawya</string>
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
@@ -70,6 +70,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2018 lhc. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
-	<string>Open videos in IINA.</string>
+	<string>Open videos in Rawya.</string>
 </dict>
 </plist>

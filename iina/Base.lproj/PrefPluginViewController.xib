@@ -557,7 +557,7 @@
                     <rect key="frame" x="-2" y="489" width="728" height="14"/>
                     <textFieldCell key="cell" controlSize="small" id="fnl-uA-X7r">
                         <font key="font" metaFont="controlContent" size="11"/>
-                        <string key="title">You can install a new plugin from GitHub or a local .iinaplgz package. Plugins installed from GitHub can be updated automatically.</string>
+                        <string key="title">You can install a plugin from GitHub or a local plugin package. Plugins installed from GitHub can be updated automatically.</string>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

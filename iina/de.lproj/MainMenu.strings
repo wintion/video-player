@@ -38,13 +38,13 @@
 "4ae-MT-2L1.title" = "Verzögerung + 0,5 s";
 
 /* Class = "NSMenuItem"; title = "Quit IINA"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "IINA beenden";
+"4sb-4s-VLi.title" = "Rawya beenden";
 
 /* Class = "NSMenuItem"; title = "Reset Speed"; ObjectID = "5Gn-90-oDu"; */
 "5Gn-90-oDu.title" = "Geschwindigkeit zurücksetzen";
 
 /* Class = "NSMenuItem"; title = "About IINA"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "Über IINA";
+"5kV-Vb-QxS.title" = "Über Rawya";
 
 /* Class = "NSMenu"; title = "Rotation"; ObjectID = "5xN-ZB-VLI"; */
 "5xN-ZB-VLI.title" = "Drehung";
@@ -134,7 +134,7 @@
 "F6G-Ln-fqI.title" = "Nächstes Kapitel";
 
 /* Class = "NSMenuItem"; title = "IINA Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "IINA-Hilfe";
+"FKE-Sm-Kum.title" = "Rawya-Hilfe";
 
 /* Class = "NSMenu"; title = "Video Track"; ObjectID = "FTu-CF-O0R"; */
 "FTu-CF-O0R.title" = "Videospur";
@@ -224,7 +224,7 @@
 "OY7-WF-poV.title" = "Im Dock ablegen";
 
 /* Class = "NSMenuItem"; title = "Hide IINA"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "IINA ausblenden";
+"Olw-nP-bQN.title" = "Rawya ausblenden";
 
 /* Class = "NSMenuItem"; title = "Reset Subtitle Scale"; ObjectID = "P1a-ot-P31"; */
 "P1a-ot-P31.title" = "Skalierung zurücksetzen";

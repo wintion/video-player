@@ -26,7 +26,7 @@
 "guide.faq" = "Συχνές Ερωτήσεις";
 
 // Initial Window
-"initial.announcement" = "Χρησιμοποιείτε μια %@ έκδοση της IINA";
+"initial.announcement" = "Χρησιμοποιείτε μια %@ έκδοση της Rawya";
 "initial.beta.desc" = "Αν θέλετε να επιστρέψετε σε έκδοση έκδοσης, αποεπιλέξτε το \"λάβετε ενημερώσεις beta\" από τις Ρυθμίσεις > Γενικά, και εγκαταστήστε μια σταθερή έκδοση από την επίσημη ιστοσελίδα μας <a href=\"https://iina.io\"></a>.";
 "initial.nightly.desc" = "";
 "initial.debug.desc" = "Οι εκδόσεις αποσφαλμάτωσης συνήθως δε βελτιστοποιούνται για την απόδοση, οπότε δε συνιστάται να χρησιμοποιείται ως καθημερινή μονάδα. Οι εκδόσεις αποσφαλμάτωσης δεν υποστηρίζουν την αυτόματη ενημέρωση.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Νέο Φίλτρο";
 "alert.add_filter.message" = "Παρακαλώ εισάγετε μια συμβολοσειρά φίλτρου στην μορφή εντολής mpv, ή vf, ή af.";
 
-"alert.keybinding_config.error" = "Σφάλμα ανάλυσης του αρχείου ρυθμίσεων συντομεύσεων πληκτρολογίου \"%@\"! Επιστροφή στην προεπιλεγμένη ρύθμιση συντομεύσεων πληκτρολογίου του IINA. Παρακαλώ ελέγξτε τις ρυθμίσεις σας.";
+"alert.keybinding_config.error" = "Σφάλμα ανάλυσης του αρχείου ρυθμίσεων συντομεύσεων πληκτρολογίου \"%@\"! Επιστροφή στην προεπιλεγμένη ρύθμιση συντομεύσεων πληκτρολογίου του Rawya. Παρακαλώ ελέγξτε τις ρυθμίσεις σας.";
 
 "alert.extra_option.cannot_read" = "Αδυναμία ανάγνωσης επιλογών mpv του χρήστη.";
 "alert.extra_option.empty" = "Το πεδίο δεν μπορεί να είναι κενό!";
@@ -293,7 +293,7 @@
 "alert.sub.cannot_login" = "Αδυναμία σύνδεσης. Παρακαλώ ελέγξτε το Όνομα Χρήστη, τον Κωδικό Εισόδου, και την κατάσταση δικτύου.\n\n%@";
 "alert.sub.save_downloaded.title" = "Αποθήκευση Ληφθέντος Υπότιτλου";
 
-"alert.set_default.title" = "Ορισμός IINA ως προεπιλεγμένη εφαρμογή";
+"alert.set_default.title" = "Ορισμός Rawya ως προεπιλεγμένη εφαρμογή";
 "alert.set_default.message" = "Το ΙΙΝΑ θα οριστεί ως προεπιλεγμένη εφαρμογή για όλους τους τύπους αρχείων που υποστηρίζει.";
 "alert.set_default.success" = "Ολοκληρώθηκαν επιτυχώς %d και απέτυχαν %d.";
 
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Cannot find the package file.";
 "plugin.install_error.cannot_download" = "Failed to download the plugin.\n\nOutput:%@\n";
 "plugin.install_error.cannot_unpackage" = "Failed to unpackage the plugin.\n\nOutput:%@\n";
-"plugin.install_error.cannot_load" = "IINA cannot load this plugin. It might be in the wrong format.";
+"plugin.install_error.cannot_load" = "Rawya cannot load this plugin. It might be in the wrong format.";
 "plugin.check_for_updates" = "Check for Updates";
 "plugin.updating" = "Downloading update…";

@@ -85,8 +85,8 @@
 /* Class = "NSTextFieldCell"; title = "nits"; ObjectID = "baO-xy-7hD"; */
 "baO-xy-7hD.title" = "ニト";
 
-/* Class = "NSTextFieldCell"; title = "Measured peak brightness of the display. If set to 0, IINA detects this value. If detection fails, IINA sets the target peak to 400."; ObjectID = "aTt-aZ-rjK"; */
-"aTt-aZ-rjK.title" = "測定したディスプレイのピーク明るさを設定してください。設定値が0の場合、IINAがこの値を自動で検出します。検出に失敗した場合、IINAはピーク明るさを400に設定します。";
+/* Class = "NSTextFieldCell"; title = "Measured peak brightness of the display. If set to 0, Rawya detects this value. If detection fails, Rawya sets the target peak to 400."; ObjectID = "aTt-aZ-rjK"; */
+"aTt-aZ-rjK.title" = "測定したディスプレイのピーク明るさを設定してください。設定値が0の場合、Rawyaがこの値を自動で検出します。検出に失敗した場合、Rawyaはピーク明るさを400に設定します。";
 
 /* Class = "NSTextFieldCell"; title = "Algorithm:"; ObjectID = "qzI-rq-PqO"; */
 "qzI-rq-PqO.title" = "アルゴリズム:";

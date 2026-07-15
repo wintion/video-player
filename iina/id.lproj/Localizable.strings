@@ -26,7 +26,7 @@
 "guide.faq" = "Pertanyaan Umum";
 
 // Initial Window
-"initial.announcement" = "Kamu memakai IINA versi %@";
+"initial.announcement" = "Kamu memakai Rawya versi %@";
 "initial.beta.desc" = "Jika anda ingin mengembalikan ke versi rilis, hilangkan \"terima pembaruan beta\" dari Pengaturan > Umum, dan instal versi stabil dari <a href=\"https://iina.io\">situs resmi</a>.";
 "initial.nightly.desc" = "Versi nightly tidak disarankan untuk digunakan sehari-hari. Versi nightly saat ini tidak mendukung pembaruan otomatis. Unduh versi baru secara manual dari <a href=\"https://nightly.iina.io\">situs nightly</a> kami.";
 "initial.debug.desc" = "Bangunan debug biasanya tidak dioptimalkan performanya, sehingga tidak disarankan untuk digunakan sebagai drive harian. Bangunan debug tidak mendukung pembaruan otomatis.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Filter Baru";
 "alert.add_filter.message" = "Mohon isi string filter dengan format vf dari mpv atau af.";
 
-"alert.keybinding_config.error" = "Terjadi kesalahan saat memuat file konfigurasi pemetaan tombol \"%@\"! Pemetaan tombol akan dikembalikan ke setelan bawaan IINA. Mohon periksa kembali konfigurasi Anda.";
+"alert.keybinding_config.error" = "Terjadi kesalahan saat memuat file konfigurasi pemetaan tombol \"%@\"! Pemetaan tombol akan dikembalikan ke setelan bawaan Rawya. Mohon periksa kembali konfigurasi Anda.";
 
 "alert.extra_option.cannot_read" = "Tidak dapat membaca opsi mpv extra dari user.";
 "alert.extra_option.empty" = "Tombol atau nilai tidak boleh kosong!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Tidak bisa masuk. Harap periksa nama pengguna, kata sandi, dan status jaringan Anda.\n\n%@";
 "alert.sub.save_downloaded.title" = "Simpan Terjemahan Terunduh";
 
-"alert.set_default.title" = "Tetapkan IINA sebagai Aplikasi Utama";
-"alert.set_default.message" = "IINA akan ditetapkan sebagai aplikasi utama untuk semua tipe file yang didukung.";
+"alert.set_default.title" = "Tetapkan Rawya sebagai Aplikasi Utama";
+"alert.set_default.message" = "Rawya akan ditetapkan sebagai aplikasi utama untuk semua tipe file yang didukung.";
 "alert.set_default.success" = "Tuntas dengan kesuksesan %d dan kegagalan %d.";
 
 "alert.add_watch.title" = "Tambahkan Properti mpv";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Tidak dapat menemukan package file.";
 "plugin.install_error.cannot_download" = "Gagal mengunduh plugin.\n\nHasil:%@\n";
 "plugin.install_error.cannot_unpackage" = "Gagal membongkar plugin.\n\nHasil:%@\n";
-"plugin.install_error.cannot_load" = "IINA tidak dapat memproses plugin ini. Kemungkinan terdapat kesalahan format.";
+"plugin.install_error.cannot_load" = "Rawya tidak dapat memproses plugin ini. Kemungkinan terdapat kesalahan format.";
 "plugin.check_for_updates" = "Periksa Pembaruan";
 "plugin.updating" = "Mengunduh pembaruan…";

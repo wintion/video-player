@@ -26,7 +26,7 @@
 "guide.faq" = "Dúvidas frequentes";
 
 // Initial Window
-"initial.announcement" = "Você está usando uma versão %@ do IINA";
+"initial.announcement" = "Você está usando uma versão %@ do Rawya";
 "initial.beta.desc" = "Se quiser reverter para uma versão oficial, desmarque a opção \"receber atualizações beta\" em Configurações > Geral e instale uma versão estável do nosso <a href=\"https://iina.io\">site oficial</a>.";
 "initial.nightly.desc" = "Nightly is not recommended to be used as your daily driver. Currently nightly builds do not support auto update. Please manually download newer builds from our <a href=\"https://nightly.iina.io\">nightly website</a>.";
 "initial.debug.desc" = "Compilações de depuração geralmente não são otimizadas para desempenho, então não são recomendadas para uso diário. Compilações de depuração não suportam atualização automática.";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Impossível logar. Verifique usuário, senha ou estado da rede.\n\n%@";
 "alert.sub.save_downloaded.title" = "Salvar Legenda Baixada";
 
-"alert.set_default.title" = "Definindo IINA como App padrão";
-"alert.set_default.message" = "IINA será usado como player padrão para todos os tipos de arquivos que suporta.";
+"alert.set_default.title" = "Definindo Rawya como App padrão";
+"alert.set_default.message" = "Rawya será usado como player padrão para todos os tipos de arquivos que suporta.";
 "alert.set_default.success" = "Realizado com %d sucessos e %d falhas.";
 
 "alert.add_watch.title" = "Adicionar propriedade de exibição";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Não foi possível encontrar o arquivo do pacote.";
 "plugin.install_error.cannot_download" = "Falha ao baixar o plugin.\n\nSaída:%@\n";
 "plugin.install_error.cannot_unpackage" = "Falha ao desempacotar o plugin.\n\nSaída:%@\n";
-"plugin.install_error.cannot_load" = "IINA não pode carregar este plugin. Ele pode estar no formato errado.";
+"plugin.install_error.cannot_load" = "Rawya não pode carregar este plugin. Ele pode estar no formato errado.";
 "plugin.check_for_updates" = "Buscar por atualizações";
 "plugin.updating" = "Baixando a atualização…";

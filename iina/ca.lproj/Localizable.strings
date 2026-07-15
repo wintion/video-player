@@ -26,7 +26,7 @@
 "guide.faq" = "Preguntes freqüents";
 
 // Initial Window
-"initial.announcement" = "Estàs fent servir una versió %@ d'IINA";
+"initial.announcement" = "Estàs fent servir una versió %@ d'Rawya";
 "initial.beta.desc" = "Si vols tornar a una versió de llançament, desmarca “rebre actualitzacions beta” a Configuració > General i instal·la una versió estable des del nostre lloc  <a href=\"https://iina.io\">web oficial</a>.";
 "initial.nightly.desc" = "La versió Nightly no es recomana com a versió d’ús diari. Actualment, les compilacions Nightly no admeten l’actualització automàtica. Si us plau, descarrega manualment les versions més recents des del nostre  <a href=\"https://nightly.iina.io\">web de nightly</a>.";
 "initial.debug.desc" = "Debug builds are usually not optimized for performance, so it is not recommended to be used as daily drive. Debug builds do not support auto update.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Crea filtre";
 "alert.add_filter.message" = "Si us plau introdueix un filtre de text en format mpv's o format af.";
 
-"alert.keybinding_config.error" = "Error analitzant el fitxer \"%@\" de configuració de les dreceres de teclat! S'ha reestablert la configuració de defecte de IINA. Si us plau, verifica la configuració.";
+"alert.keybinding_config.error" = "Error analitzant el fitxer \"%@\" de configuració de les dreceres de teclat! S'ha reestablert la configuració de defecte de Rawya. Si us plau, verifica la configuració.";
 
 "alert.extra_option.cannot_read" = "No es poden llegir les opciones de mpv extra definides per l'usuari.";
 "alert.extra_option.empty" = "La clau o el valor no poden estar buits!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "No s'ha pogut iniciar sessió. Si us play, verifica el teu nom d'usuari, la contrasenya i l'estat de la xarxa.\n\n%@";
 "alert.sub.save_downloaded.title" = "Desa els subtítols baixats";
 
-"alert.set_default.title" = "Establir IINA com aplicació per defecte";
-"alert.set_default.message" = "IINA serà establerta com a aplicació per defecte per a tots els tipus de fitxer que suporta.";
+"alert.set_default.title" = "Establir Rawya com aplicació per defecte";
+"alert.set_default.message" = "Rawya serà establerta com a aplicació per defecte per a tots els tipus de fitxer que suporta.";
 "alert.set_default.success" = "S'ha acabat amb un %d d'èxit i un %d d'error.";
 
 "alert.add_watch.title" = "Afegeix una propietat de monitoreig";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "No es pot trobar el fitxer.";
 "plugin.install_error.cannot_download" = "No s'ha pogut descarregar el complement.\n\nSortida:%@\n";
 "plugin.install_error.cannot_unpackage" = "No s'ha pogut descomprimir el complement.\n\nSortida: %@\n";
-"plugin.install_error.cannot_load" = "IINA no pot carregar aquest complement. Potser té un format incorrecte.";
+"plugin.install_error.cannot_load" = "Rawya no pot carregar aquest complement. Potser té un format incorrecte.";
 "plugin.check_for_updates" = "Comprova si hi ha actualitzacions";
 "plugin.updating" = "S'està baixant l'actualització…";

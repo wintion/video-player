@@ -24,6 +24,8 @@ enum IINACommand: String {
 
   case flip = "toggle-flip"
   case mirror = "toggle-mirror"
+  case rotateVideoClockwise = "rotate-video-clockwise"
+  case rotateVideoCounterclockwise = "rotate-video-counterclockwise"
 
   case biggerWindow = "bigger-window"
   case smallerWindow = "smaller-window"

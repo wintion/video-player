@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "84EB1ED51D2F51D3004FA5A1"
-               BuildableName = "IINA.app"
+               BuildableName = "Rawya.app"
                BlueprintName = "iina"
                ReferencedContainer = "container:iina.xcodeproj">
             </BuildableReference>
@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84EB1ED51D2F51D3004FA5A1"
-            BuildableName = "IINA.app"
+            BuildableName = "Rawya.app"
             BlueprintName = "iina"
             ReferencedContainer = "container:iina.xcodeproj">
          </BuildableReference>
@@ -88,7 +88,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84EB1ED51D2F51D3004FA5A1"
-            BuildableName = "IINA.app"
+            BuildableName = "Rawya.app"
             BlueprintName = "iina"
             ReferencedContainer = "container:iina.xcodeproj">
          </BuildableReference>

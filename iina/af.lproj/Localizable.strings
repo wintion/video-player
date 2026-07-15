@@ -26,7 +26,7 @@
 "guide.faq" = "Gereelde vrae";
 
 // Initial Window
-"initial.announcement" = "U gebruik ’n %@-weergawe van IINA";
+"initial.announcement" = "U gebruik ’n %@-weergawe van Rawya";
 "initial.beta.desc" = "Indien u na ’n vroeëre weergawe wil terugkeer, verwyder die merkie “ontvang betabywerkings” in Voorkeure - Algemeen en installeer ’n stabiele weergawe d.m.v. ons <a href=\"https://iina.io\">amptelike webwerf</a>.";
 "initial.nightly.desc" = "Elke nag word nie aanbeveel as u daaglikse aandrywer nie. Huidige nagelike maaksels ondersteun nie outobywerking nie. Laai asb. nuwe maaksels van ons <a href=\"https://nightly.iina.io\">nagtelike webwerf</a> af.";
 "initial.debug.desc" = "Maaksels vir ontfouting is nie geoptimeer vir verrigting nie daarom word dit nie aanbeveel om as daaglikse drywer gebruik te word nie. Ontfoutmaaksels ondersteun ook nie outobywerking nie.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Nuwe filter";
 "alert.add_filter.message" = "Voer asb. ’n filterstring in die formaat van mpv se vf- of af-bevel in.";
 
-"alert.keybinding_config.error" = "Fout by die lees van sneltoetskonfigurasielêer “%@”! Die IINA-verstekinstellings word teruggestel. Gaan u konfigurasie na.";
+"alert.keybinding_config.error" = "Fout by die lees van sneltoetskonfigurasielêer “%@”! Die Rawya-verstekinstellings word teruggestel. Gaan u konfigurasie na.";
 
 "alert.extra_option.cannot_read" = "Kan nie gebruikergedefinieerde mpv-opsies lees nie.";
 "alert.extra_option.empty" = "Naam en waarde kan nie leeg wees nie!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Kan nie aanteken nie. Gaan u gebruikersnaam, wagwoord en netwerkstatus na.\n\n%@";
 "alert.sub.save_downloaded.title" = "Bewaar afgelaaide onderskrif";
 
-"alert.set_default.title" = "IINA word as verstektoep ingestel";
-"alert.set_default.message" = "IINA sal ingestel word as die verstektoep vir alle ondersteunde lêertipes.";
+"alert.set_default.title" = "Rawya word as verstektoep ingestel";
+"alert.set_default.message" = "Rawya sal ingestel word as die verstektoep vir alle ondersteunde lêertipes.";
 "alert.set_default.success" = "Klaar met %d suksesse en %d mislukkings.";
 
 "alert.add_watch.title" = "Voeg waarde toe om te volg";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Kan nie die pakketlêer vind nie.";
 "plugin.install_error.cannot_download" = "Kon nie die inprop aflaai nie.\n\nAfvoer:%@\n";
 "plugin.install_error.cannot_unpackage" = "Kon nie die inprop uitpak nie.\n\nAfvoer:%@\n";
-"plugin.install_error.cannot_load" = "IINA kan nie hierdie inprop laai nie. Dit is dalk in die verkeerde formaat.";
+"plugin.install_error.cannot_load" = "Rawya kan nie hierdie inprop laai nie. Dit is dalk in die verkeerde formaat.";
 "plugin.check_for_updates" = "Soek na bywerkings";
 "plugin.updating" = "Bywerking word afgelaai…";

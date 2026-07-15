@@ -26,7 +26,7 @@
 "guide.faq" = "Preguntas frecuentes";
 
 // Initial Window
-"initial.announcement" = "Estás usando una versión %@ de IINA";
+"initial.announcement" = "Estás usando una versión %@ de Rawya";
 "initial.beta.desc" = "Si desea volver a una versión estable, desmarque \"recibir actualizaciones beta\" desde Ajustes > Generales, e instale una versión estable de nuestro <a href=\"https://iina.io\">sitio web oficial</a>.";
 "initial.nightly.desc" = "No se recomienda usar versiones nocturnas para el uso diario. Actualmente las versiones nocturnas no soportan la actualización automática. Por favor, descargue manualmente nuevas versiones de nuestro <a href=\"https://nightly.iina.io\">sitio web nocturno</a>.";
 "initial.debug.desc" = "Las compilaciones de depuración normalmente no están optimizadas para el rendimiento, por lo que no se recomienda que se utilicen de manera habitual. Las compilaciones de depuración no soportan la actualización automática.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Nuevo filtro";
 "alert.add_filter.message" = "Por favor ingrese el filtro usando el formato de comando vf o af de mpv.";
 
-"alert.keybinding_config.error" = "¡Error al analizar el archivo de configuración de atajos de teclado \"%@\"! Se ha regresado a la configuración por defecto de los atajos de teclado de IINA. Por favor, compruebe su configuración.";
+"alert.keybinding_config.error" = "¡Error al analizar el archivo de configuración de atajos de teclado \"%@\"! Se ha regresado a la configuración por defecto de los atajos de teclado de Rawya. Por favor, compruebe su configuración.";
 
 "alert.extra_option.cannot_read" = "No se pueden leer las opciones de mpv adicionales definidas por el usuario.";
 "alert.extra_option.empty" = "¡La clave o el valor no pueden estar vacíos!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "No se puede iniciar sesión. Compruebe su nombre de usuario, contraseña, y el estado de la red.\n\n%@";
 "alert.sub.save_downloaded.title" = "Guardar los subtítulos descargados";
 
-"alert.set_default.title" = "Establecer IINA como aplicación predeterminada";
-"alert.set_default.message" = "IINA se establecerá como la aplicación predeterminada para todos los tipos de archivo que soporta.";
+"alert.set_default.title" = "Establecer Rawya como aplicación predeterminada";
+"alert.set_default.message" = "Rawya se establecerá como la aplicación predeterminada para todos los tipos de archivo que soporta.";
 "alert.set_default.success" = "Se terminó con %d éxito y %d fallo.";
 
 "alert.add_watch.title" = "Añadir propiedad de monitoreo";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "No se pudo encontrar el archivo de paquete.";
 "plugin.install_error.cannot_download" = "Error al descargar el plugin.\n\nSalida:%@\n";
 "plugin.install_error.cannot_unpackage" = "Error al desempaquetar el plugin.\n\nSalida:%@\n";
-"plugin.install_error.cannot_load" = "IINA no puede cargar este plugin. Puede estar en el formato incorrecto.";
+"plugin.install_error.cannot_load" = "Rawya no puede cargar este plugin. Puede estar en el formato incorrecto.";
 "plugin.check_for_updates" = "Buscar actualizaciones";
 "plugin.updating" = "Descargando actualización…";

@@ -1486,7 +1486,7 @@ Picture:</string>
                     <rect key="frame" x="118" y="8" width="434" height="56"/>
                     <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" id="9IR-Sf-wMq">
                         <font key="font" metaFont="label" size="11"/>
-                        <string key="title">When the macOS Reduce Motion accessibility setting is enabled IINA will reduce user interface animations that are known to cause problems for those with vestibular disorders. Should that be insufficient, this setting can be used to reduce motion further by eliminating user interface animations.</string>
+                        <string key="title">When the macOS Reduce Motion accessibility setting is enabled Rawya will reduce user interface animations that are known to cause problems for those with vestibular disorders. Should that be insufficient, this setting can be used to reduce motion further by eliminating user interface animations.</string>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

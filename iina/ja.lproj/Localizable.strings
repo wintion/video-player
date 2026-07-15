@@ -26,7 +26,7 @@
 "guide.faq" = "よくある質問";
 
 // Initial Window
-"initial.announcement" = "IINAバージョン %@ を使用しています";
+"initial.announcement" = "Rawyaバージョン %@ を使用しています";
 "initial.beta.desc" = "リリースバージョンにロールバックする場合は、設定 > 一般 の \"ベータアップデートを受信\" のチェックを外し、<a href=\"https://iina.io\">公式Webサイト</a> から安定版リリースをインストールしてください。";
 "initial.nightly.desc" = "Nightlyを常用することは推奨されません。Nightlyビルドは、現在自動アップデートに対応していません。新しいビルドは<a href=\"https://nightly.iina.io\">Nightly Webサイト</a>から手動でダウンロードしてください。";
 "initial.debug.desc" = "デバッグビルドは通常パフォーマンスが最適化されていないので、常用することは推奨されません。デバッグビルドは自動アップデートに対応していません。";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "フィルターの新規作成";
 "alert.add_filter.message" = "mpvの vf または af オプションの形式でフィルター名を入力してください。";
 
-"alert.keybinding_config.error" = "キーバインディングの設定ファイル\"%@\"の読み込み時にエラーが発生しました！IINAのデフォルト設定に戻します。設定を確認してください。";
+"alert.keybinding_config.error" = "キーバインディングの設定ファイル\"%@\"の読み込み時にエラーが発生しました！Rawyaのデフォルト設定に戻します。設定を確認してください。";
 
 "alert.extra_option.cannot_read" = "mpvの追加オプションが読み込めません。";
 "alert.extra_option.empty" = "キーもしくは値を空欄にはできません！";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "ログインできません。ユーザー名とパスワード、ネットワーク環境をご確認ください。\n\n%@";
 "alert.sub.save_downloaded.title" = "ダウンロードした字幕を保存";
 
-"alert.set_default.title" = "IINAをデフォルトのアプリケーションに設定";
-"alert.set_default.message" = "対応する全てのファイル形式にIINAをデフォルトアプリケーションとして設定します。";
+"alert.set_default.title" = "Rawyaをデフォルトのアプリケーションに設定";
+"alert.set_default.message" = "対応する全てのファイル形式にRawyaをデフォルトアプリケーションとして設定します。";
 "alert.set_default.success" = "完了しました。(成功: %d件, 失敗: %d件)";
 
 "alert.add_watch.title" = "監視するmpvのプロパティを追加";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "パッケージファイルが見つかりません。";
 "plugin.install_error.cannot_download" = "プラグインのダウンロードに失敗しました。\n\n結果:%@\n";
 "plugin.install_error.cannot_unpackage" = "プラグインのパッケージ解除に失敗しました。\n\n結果:%@\n";
-"plugin.install_error.cannot_load" = "IINAはこのプラグインを読み込むことができません。フォーマットが間違っている可能性があります。";
+"plugin.install_error.cannot_load" = "Rawyaはこのプラグインを読み込むことができません。フォーマットが間違っている可能性があります。";
 "plugin.check_for_updates" = "アップデートを確認";
 "plugin.updating" = "アップデートをダウンロード中...";

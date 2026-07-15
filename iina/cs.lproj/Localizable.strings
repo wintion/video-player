@@ -21,12 +21,12 @@
 "input.already_exists" = "Název již existuje.";
 
 // Guide Window
-"guide.highlights" = "Co je v IINA nového";
+"guide.highlights" = "Co je v Rawya nového";
 "guide.basic_settings" = "Základní nastavení";
 "guide.faq" = "Nejčastější dotazy";
 
 // Initial Window
-"initial.announcement" = "Používáte verzi %@ aplikace IINA";
+"initial.announcement" = "Používáte verzi %@ aplikace Rawya";
 "initial.beta.desc" = "Pokud se chcete vrátit k vydané verzi, zrušte výběr „Dostávat beta aktualizace“ v Nastavení > Obecné, a nainstalujte stabilní verzi z naší <a href=\"https://iina.io\">oficiální webové stránky</a>.";
 "initial.nightly.desc" = "Noční sestavení nejsou doporučena pro každodenní použití. V současné době nepodporují automatické aktualizace. Stáhněte si prosím ručně novější sestavení z naší <a href=\"https://nightly.iina.io\">noční webové stránky</a>.";
 "initial.debug.desc" = "Ladící sestavení obvykle nejsou optimalizována pro výkon, nejsou tedy doporučena pro každodenní použití. Ladící sestavení nepodporují automatické aktualizace.";
@@ -276,7 +276,7 @@
 "alert.add_filter.title" = "Přidat filtr";
 "alert.add_filter.message" = "Zadejte řetězec filtru ve formátu mpv příkazu vf nebo af.";
 
-"alert.keybinding_config.error" = "Chyba analýzy konfiguračního souboru klávesových zkratek „%@“! Vraťte se k výchozímu IINA nastavení klávesových zkratek. Zkontrolujte prosím vaši konfiguraci.";
+"alert.keybinding_config.error" = "Chyba analýzy konfiguračního souboru klávesových zkratek „%@“! Vraťte se k výchozímu Rawya nastavení klávesových zkratek. Zkontrolujte prosím vaši konfiguraci.";
 
 "alert.extra_option.cannot_read" = "Nelze načíst uživatelsky vymezené další možnosti mpv.";
 "alert.extra_option.empty" = "Název nebo hodnota nemohou být prázdné!";
@@ -293,8 +293,8 @@
 "alert.sub.cannot_login" = "Nelze se přihlásit. Zkontrolujte uživatelské jméno, heslo a připojení k síti.\n\n%@";
 "alert.sub.save_downloaded.title" = "Uložit stažené titulky";
 
-"alert.set_default.title" = "Nastavit IINA jako výchozí aplikaci";
-"alert.set_default.message" = "IINA bude nastavena jako výchozí aplikace pro všechny typy souborů, které podporuje.";
+"alert.set_default.title" = "Nastavit Rawya jako výchozí aplikaci";
+"alert.set_default.message" = "Rawya bude nastavena jako výchozí aplikace pro všechny typy souborů, které podporuje.";
 "alert.set_default.success" = "Provedeno u %d úspěšně, %d selhalo.";
 
 "alert.add_watch.title" = "Přidat možnost sledování";
@@ -462,6 +462,6 @@
 "plugin.install_error.file_not_found" = "Soubor balíčku nelze nalézt.";
 "plugin.install_error.cannot_download" = "Stahování plug-inu selhalo.\n\nVýstup:%@\n";
 "plugin.install_error.cannot_unpackage" = "Rozbalování plug-inu selhalo.\n\nVýstup:%@\n";
-"plugin.install_error.cannot_load" = "IINA nemůže načíst tento plug-in. Může být v chybném formátu.";
+"plugin.install_error.cannot_load" = "Rawya nemůže načíst tento plug-in. Může být v chybném formátu.";
 "plugin.check_for_updates" = "Vyhledávat aktualizace";
 "plugin.updating" = "Stahuje se aktualizace…";
