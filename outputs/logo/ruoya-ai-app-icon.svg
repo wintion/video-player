@@ -40,7 +40,7 @@
   <rect width="1024" height="1024" rx="210" fill="url(#background-light)"/>
   <rect x="3" y="3" width="1018" height="1018" rx="207" stroke="white" stroke-opacity="0.58" stroke-width="6"/>
 
-  <g id="larger-centered-play-symbol" filter="url(#symbol-shadow)" transform="translate(512 512) scale(1.12) translate(-512 -512)">
+  <g id="larger-centered-play-symbol" filter="url(#symbol-shadow)" transform="translate(512 512) scale(1.344) translate(-512 -512)">
     <g transform="translate(-40 0)">
 
     <path d="M474 322C437 299 389 325 389 369V677C389 722 438 748 475 723L763 545C800 522 800 468 763 445L474 322Z" fill="url(#play-back)" opacity="0.38" transform="translate(20 22)"/>
