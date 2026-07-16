@@ -79,6 +79,30 @@ class MenuController: NSObject, NSMenuDelegate {
   private var stringForOpenURL: String!
   private var stringForOpenURLAlternative: String!
 
+  private lazy var rotateVideoClockwise: NSMenuItem = {
+    NSMenuItem(
+      title: NSLocalizedString("iina.rotate-video-clockwise",
+                               tableName: "KeyBinding",
+                               bundle: .main,
+                               value: "Rotate video clockwise 90°",
+                               comment: "Rotate video clockwise 90 degrees"),
+      action: #selector(MainMenuActionHandler.menuRotateVideoClockwise(_:)),
+      keyEquivalent: ""
+    )
+  }()
+
+  private lazy var rotateVideoCounterclockwise: NSMenuItem = {
+    NSMenuItem(
+      title: NSLocalizedString("iina.rotate-video-counterclockwise",
+                               tableName: "KeyBinding",
+                               bundle: .main,
+                               value: "Rotate video counterclockwise 90°",
+                               comment: "Rotate video counterclockwise 90 degrees"),
+      action: #selector(MainMenuActionHandler.menuRotateVideoCounterclockwise(_:)),
+      keyEquivalent: ""
+    )
+  }()
+
   // File
   @IBOutlet weak var fileMenu: NSMenu!
   @IBOutlet weak var open: NSMenuItem!
@@ -322,6 +346,9 @@ class MenuController: NSObject, NSMenuDelegate {
     bind(menu: rotationMenu, withOptions: rotationTitles, objects: AppData.rotations, objectMap: nil, action: #selector(MainMenuActionHandler.menuChangeRotation(_:))) {
       PlayerCore.active.info.rotation == $0.representedObject as? Int
     }
+    rotationMenu.addItem(.separator())
+    rotationMenu.addItem(rotateVideoCounterclockwise)
+    rotationMenu.addItem(rotateVideoClockwise)
 
     // -- flip and mirror
     flipMenu.delegate = self
@@ -858,6 +885,8 @@ class MenuController: NSObject, NSMenuDelegate {
       (saveDownloadedSub, true, [IINACommand.saveDownloadedSub.rawValue], false, nil, nil),
       (flip, true, [IINACommand.flip.rawValue], false, nil, nil),
       (mirror, true, [IINACommand.mirror.rawValue], false, nil, nil),
+      (rotateVideoCounterclockwise, true, [IINACommand.rotateVideoCounterclockwise.rawValue], false, nil, nil),
+      (rotateVideoClockwise, true, [IINACommand.rotateVideoClockwise.rawValue], false, nil, nil),
       (biggerSize, true, [IINACommand.biggerWindow.rawValue], false, nil, nil),
       (smallerSize, true, [IINACommand.smallerWindow.rawValue], false, nil, nil),
       (fitToScreen, true, [IINACommand.fitToScreen.rawValue], false, nil, nil),

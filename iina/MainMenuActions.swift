@@ -231,6 +231,14 @@ extension MainMenuActionHandler {
     }
   }
 
+  @objc func menuRotateVideoClockwise(_ sender: NSMenuItem) {
+    player.rotateVideo(by: 90)
+  }
+
+  @objc func menuRotateVideoCounterclockwise(_ sender: NSMenuItem) {
+    player.rotateVideo(by: -90)
+  }
+
   @objc func menuToggleFlip(_ sender: NSMenuItem) {
     if player.info.flipFilter == nil {
       player.setFlip(true)
