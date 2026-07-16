@@ -27,8 +27,8 @@
 
 // Initial Window
 "initial.announcement" = "Du bruker en %@ versjon av Rawya";
-"initial.beta.desc" = "Hvis du vil rulle tilbake til en utgivelsesversjon, fjern avkrysningen for \"motta betaoppdateringer\" fra Innstillinger > Generelt, og installer en stabil versjon fra vår <a href=\"https://rawya.ai\">offisielle nettside</a>.";
-"initial.nightly.desc" = "Nightly is not recommended to be used as your daily driver. Currently nightly builds do not support auto update. Please manually download newer builds from our <a href=\"https://rawya.ai\">nightly website</a>.";
+"initial.beta.desc" = "Hvis du vil rulle tilbake til en utgivelsesversjon, fjern avkrysningen for \"motta betaoppdateringer\" fra Innstillinger > Generelt, og installer en stabil versjon fra vår <a href=\"https://rawya.app\">offisielle nettside</a>.";
+"initial.nightly.desc" = "Nightly is not recommended to be used as your daily driver. Currently nightly builds do not support auto update. Please manually download newer builds from our <a href=\"https://rawya.app\">nightly website</a>.";
 "initial.debug.desc" = "Feilsøkingsversjoner er vanligvis ikke optimalisert for ytelse, så det anbefales derfor ikke for daglig bruk. Feilsøkingsversjoner støtter ikke automatisk oppdatering.";
 "initial.bug_report" = "Meld feil via <a href=\"https://github.com/iina/iina/issues\">GitHub Issues</a>.";
 

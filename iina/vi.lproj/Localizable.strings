@@ -27,8 +27,8 @@
 
 // Initial Window
 "initial.announcement" = "Bạn đang sử dụng phiên bản %@ của Rawya";
-"initial.beta.desc" = "Nếu bạn muốn quay lại phiên bản chính thức trước đó, hãy bỏ dấu tích khỏi \"nhận các phiên bản thử nghiệm Beta\" trong Cài đặt > Cài đặt chung, và cài một phiên bản chính thức từ <a href=\"https://rawya.ai\">website chính thức</a> của chúng tôi.";
-"initial.nightly.desc" = "Phiên bản thử nghiệm Nightly không được khuyên dùng làm phiên bản dùng thường xuyên. Những phiên bản thử nghiệm Nightly hiện tại không hỗ trợ cập nhật tự động. Vui lòng tải thủ công những phiên bản mới hơn từ <a href=\"https://rawya.ai\">website phiên bản thử nghiệm Nightly</a> của chúng tôi.";
+"initial.beta.desc" = "Nếu bạn muốn quay lại phiên bản chính thức trước đó, hãy bỏ dấu tích khỏi \"nhận các phiên bản thử nghiệm Beta\" trong Cài đặt > Cài đặt chung, và cài một phiên bản chính thức từ <a href=\"https://rawya.app\">website chính thức</a> của chúng tôi.";
+"initial.nightly.desc" = "Phiên bản thử nghiệm Nightly không được khuyên dùng làm phiên bản dùng thường xuyên. Những phiên bản thử nghiệm Nightly hiện tại không hỗ trợ cập nhật tự động. Vui lòng tải thủ công những phiên bản mới hơn từ <a href=\"https://rawya.app\">website phiên bản thử nghiệm Nightly</a> của chúng tôi.";
 "initial.debug.desc" = "Các bản dựng gỡ lỗi thường không được tối ưu hóa về hiệu suất, vì vậy không nên sử dụng nó làm tay lái hàng ngày. Bản dựng gỡ lỗi không hỗ trợ cập nhật tự động.";
 "initial.bug_report" = "Báo cáo qua <a href=\"https://github.com/iina/iina/issues\">Sự cố GitHub</a>.";
 

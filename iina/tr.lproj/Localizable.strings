@@ -27,8 +27,8 @@
 
 // Initial Window
 "initial.announcement" = "Şu an Rawya'nın %@ BETA sürümünü kullanıyorsunuz";
-"initial.beta.desc" = "Lütfen “Ayarlar” → “Genel” sekmesinden “Beta güncellemeleri al” seçeneğini kapatın ve <a href=\"https://rawya.ai\">resmi sitemizden</a> kararlı son sürümü indirin.";
-"initial.nightly.desc" = "Gecelik sürüm, günlük kullanım için tavsiye edilmez. Şu anda gecelik yapılar kendiliğinden güncellenmeyi desteklememektedir. Daha yeni yapıları elle <a href=\"https://rawya.ai\">gecelik sürüm web sitemizden</a> indirebilirsiniz.";
+"initial.beta.desc" = "Lütfen “Ayarlar” → “Genel” sekmesinden “Beta güncellemeleri al” seçeneğini kapatın ve <a href=\"https://rawya.app\">resmi sitemizden</a> kararlı son sürümü indirin.";
+"initial.nightly.desc" = "Gecelik sürüm, günlük kullanım için tavsiye edilmez. Şu anda gecelik yapılar kendiliğinden güncellenmeyi desteklememektedir. Daha yeni yapıları elle <a href=\"https://rawya.app\">gecelik sürüm web sitemizden</a> indirebilirsiniz.";
 "initial.debug.desc" = "Hata ayıklama amaçlı derlenmiş sürümler genellikle performans açısından optimize edilmediğinden günlük olarak kullanılması önerilmez. Hata ayıklama amaçlı sürümler otomatik güncellemeyi desteklemez.";
 "initial.bug_report" = "<a href=\"https://github.com/iina/iina/issues\">GitHub issues</a>. web sitesine raporlayabilirsiniz.";
 

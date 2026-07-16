@@ -27,8 +27,8 @@
 
 // Initial Window
 "initial.announcement" = "U gebruik ’n %@-weergawe van Rawya";
-"initial.beta.desc" = "Indien u na ’n vroeëre weergawe wil terugkeer, verwyder die merkie “ontvang betabywerkings” in Voorkeure - Algemeen en installeer ’n stabiele weergawe d.m.v. ons <a href=\"https://rawya.ai\">amptelike webwerf</a>.";
-"initial.nightly.desc" = "Elke nag word nie aanbeveel as u daaglikse aandrywer nie. Huidige nagelike maaksels ondersteun nie outobywerking nie. Laai asb. nuwe maaksels van ons <a href=\"https://rawya.ai\">nagtelike webwerf</a> af.";
+"initial.beta.desc" = "Indien u na ’n vroeëre weergawe wil terugkeer, verwyder die merkie “ontvang betabywerkings” in Voorkeure - Algemeen en installeer ’n stabiele weergawe d.m.v. ons <a href=\"https://rawya.app\">amptelike webwerf</a>.";
+"initial.nightly.desc" = "Elke nag word nie aanbeveel as u daaglikse aandrywer nie. Huidige nagelike maaksels ondersteun nie outobywerking nie. Laai asb. nuwe maaksels van ons <a href=\"https://rawya.app\">nagtelike webwerf</a> af.";
 "initial.debug.desc" = "Maaksels vir ontfouting is nie geoptimeer vir verrigting nie daarom word dit nie aanbeveel om as daaglikse drywer gebruik te word nie. Ontfoutmaaksels ondersteun ook nie outobywerking nie.";
 "initial.bug_report" = "Rapporteer via <a href=\"https://github.com/iina/iina/issues\">GitHub-kwessies</a>.";
 

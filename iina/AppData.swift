@@ -55,7 +55,7 @@ struct AppData {
   static let contributorsLink = "https://github.com/iina/iina/graphs/contributors"
   static let crowdinMembersLink = "https://crowdin.com/project/iina"
   static let wikiLink = "https://github.com/iina/iina/wiki"
-  static let websiteLink = "https://rawya.ai"
+  static let websiteLink = "https://rawya.app"
   static let ytdlHelpLink = "https://github.com/rg3/youtube-dl/blob/master/README.md#readme"
   // Keep Rawya on its own stable release channel so it can never update from IINA or a
   // development branch. The release process should attach appcast.xml to the latest release.

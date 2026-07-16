@@ -1,8 +1,8 @@
 /* Class = "NSButtonCell"; title = "Website"; ObjectID = "FJS-b9-ATj"; */
 "FJS-b9-ATj.title" = "Web Sitesi";
 
-/* Class = "NSTextFieldCell"; title = "Failed to load highlights. Please visit our website https://rawya.ai for more information."; ObjectID = "oaH-Na-skD"; */
-"oaH-Na-skD.title" = "Vurgular yüklenemedi. Daha fazla bilgi için https://rawya.ai web sitemizi ziyaret edin.";
+/* Class = "NSTextFieldCell"; title = "Failed to load highlights. Please visit our website https://rawya.app for more information."; ObjectID = "oaH-Na-skD"; */
+"oaH-Na-skD.title" = "Vurgular yüklenemedi. Daha fazla bilgi için https://rawya.app web sitemizi ziyaret edin.";
 
 /* Class = "NSButtonCell"; title = "Continue"; ObjectID = "pRW-Nk-MIQ"; */
 "pRW-Nk-MIQ.title" = "Sürdür";

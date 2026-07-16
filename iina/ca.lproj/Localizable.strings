@@ -27,8 +27,8 @@
 
 // Initial Window
 "initial.announcement" = "Estàs fent servir una versió %@ d'Rawya";
-"initial.beta.desc" = "Si vols tornar a una versió de llançament, desmarca “rebre actualitzacions beta” a Configuració > General i instal·la una versió estable des del nostre lloc  <a href=\"https://rawya.ai\">web oficial</a>.";
-"initial.nightly.desc" = "La versió Nightly no es recomana com a versió d’ús diari. Actualment, les compilacions Nightly no admeten l’actualització automàtica. Si us plau, descarrega manualment les versions més recents des del nostre  <a href=\"https://rawya.ai\">web de nightly</a>.";
+"initial.beta.desc" = "Si vols tornar a una versió de llançament, desmarca “rebre actualitzacions beta” a Configuració > General i instal·la una versió estable des del nostre lloc  <a href=\"https://rawya.app\">web oficial</a>.";
+"initial.nightly.desc" = "La versió Nightly no es recomana com a versió d’ús diari. Actualment, les compilacions Nightly no admeten l’actualització automàtica. Si us plau, descarrega manualment les versions més recents des del nostre  <a href=\"https://rawya.app\">web de nightly</a>.";
 "initial.debug.desc" = "Debug builds are usually not optimized for performance, so it is not recommended to be used as daily drive. Debug builds do not support auto update.";
 "initial.bug_report" = "Report via <a href=\"https://github.com/iina/iina/issues\">GitHub issues</a>.";
 

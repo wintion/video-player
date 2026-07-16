@@ -7,7 +7,7 @@
 <p align="center">简洁、现代的 macOS 本地音视频播放器</p>
 
 <p align="center">
-  <a href="https://rawya.ai">官网（建设中）</a> ·
+  <a href="https://rawya.app">官网（建设中）</a> ·
   <a href="https://github.com/wintion/video-player/releases">下载</a> ·
   <a href="https://github.com/wintion/video-player/issues">问题反馈</a>
 </p>
@@ -16,7 +16,7 @@
 
 Rawya 专注于 macOS 本地媒体播放体验，提供清晰易用的操作界面，同时保留面向进阶用户的播放与显示设置。
 
-官网域名为 [rawya.ai](https://rawya.ai)，网站目前正在建设中。
+官网域名为 [rawya.app](https://rawya.app)，网站目前正在建设中。
 
 ## 主要功能
 
