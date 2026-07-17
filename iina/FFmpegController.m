@@ -9,6 +9,8 @@
 #import "FFmpegController.h"
 #import <Accelerate/Accelerate.h>
 #import <Cocoa/Cocoa.h>
+#include <errno.h>
+#include <math.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdocumentation"
@@ -17,8 +19,10 @@
 #import <libswscale/swscale.h>
 #import <libavutil/imgutils.h>
 #import <libavutil/mastering_display_metadata.h>
+#import <libavutil/mathematics.h>
 #pragma clang diagnostic pop
 
+#import "FFmpegAudioCompat.h"
 #import "IINA-Swift.h"
 
 #define LOG_DEBUG(msg, ...) [FFmpegLogger debug:([NSString stringWithFormat:(msg), ##__VA_ARGS__])];
@@ -26,6 +30,160 @@
 #define LOG_WARN(msg, ...) [FFmpegLogger warn:([NSString stringWithFormat:(msg), ##__VA_ARGS__])];
 
 #define THUMB_COUNT_DEFAULT 100
+#define AI_SUBTITLE_SAMPLE_RATE 16000
+
+static NSString * const FFmpegAudioErrorDomain = @"com.wintion.rawya.ffmpeg-audio";
+
+typedef NS_ENUM(NSInteger, FFmpegAudioErrorCode) {
+  FFmpegAudioErrorInvalidRange = 1,
+  FFmpegAudioErrorOpenInput,
+  FFmpegAudioErrorStreamInfo,
+  FFmpegAudioErrorAudioStream,
+  FFmpegAudioErrorDecoder,
+  FFmpegAudioErrorSeek,
+  FFmpegAudioErrorOutput,
+  FFmpegAudioErrorConversion,
+  FFmpegAudioErrorNoSamples,
+  FFmpegAudioErrorCanceled
+};
+
+static int FFmpegAudioInterruptCallback(void *opaque)
+{
+  if (!opaque) return 0;
+  BOOL (^shouldCancel)(void) = (__bridge BOOL (^)(void))opaque;
+  return shouldCancel() ? 1 : 0;
+}
+
+static void FFmpegSetAudioError(NSError **error, FFmpegAudioErrorCode code, NSString *message)
+{
+  if (error) {
+    *error = [NSError errorWithDomain:FFmpegAudioErrorDomain
+                                 code:code
+                             userInfo:@{NSLocalizedDescriptionKey: message}];
+  }
+}
+
+static void FFmpegWriteLE16(FILE *file, uint16_t value)
+{
+  uint8_t bytes[] = {(uint8_t)(value & 0xff), (uint8_t)((value >> 8) & 0xff)};
+  fwrite(bytes, sizeof(bytes), 1, file);
+}
+
+static void FFmpegWriteLE32(FILE *file, uint32_t value)
+{
+  uint8_t bytes[] = {
+    (uint8_t)(value & 0xff),
+    (uint8_t)((value >> 8) & 0xff),
+    (uint8_t)((value >> 16) & 0xff),
+    (uint8_t)((value >> 24) & 0xff)
+  };
+  fwrite(bytes, sizeof(bytes), 1, file);
+}
+
+static BOOL FFmpegWriteWAVHeader(FILE *file, uint32_t dataSize)
+{
+  if (fseek(file, 0, SEEK_SET) != 0) return NO;
+  fwrite("RIFF", 4, 1, file);
+  FFmpegWriteLE32(file, 36 + dataSize);
+  fwrite("WAVEfmt ", 8, 1, file);
+  FFmpegWriteLE32(file, 16);
+  FFmpegWriteLE16(file, 1);
+  FFmpegWriteLE16(file, 1);
+  FFmpegWriteLE32(file, AI_SUBTITLE_SAMPLE_RATE);
+  FFmpegWriteLE32(file, AI_SUBTITLE_SAMPLE_RATE * 2);
+  FFmpegWriteLE16(file, 2);
+  FFmpegWriteLE16(file, 16);
+  fwrite("data", 4, 1, file);
+  FFmpegWriteLE32(file, dataSize);
+  return ferror(file) == 0;
+}
+
+typedef struct {
+  SwrContext *resampler;
+  FILE *output;
+  double requestedStart;
+  double requestedEnd;
+  double timestampOrigin;
+  double timestampCursor;
+  uint64_t bytesWritten;
+} FFmpegAudioExtractionContext;
+
+/// Returns 1 when the requested end time has been reached, 0 to continue, or a negative FFmpeg error.
+static int FFmpegWriteAudioFrame(AVFrame *frame,
+                                AVStream *stream,
+                                FFmpegAudioExtractionContext *context)
+{
+  double frameStart = context->timestampCursor;
+  if (frame->best_effort_timestamp != AV_NOPTS_VALUE) {
+    frameStart = frame->best_effort_timestamp * av_q2d(stream->time_base) - context->timestampOrigin;
+  }
+  const int inputSampleRate = frame->sample_rate > 0 ? frame->sample_rate : stream->codecpar->sample_rate;
+  if (inputSampleRate <= 0) return AVERROR(EINVAL);
+  const double frameEnd = frameStart + (double)frame->nb_samples / inputSampleRate;
+  context->timestampCursor = frameEnd;
+  if (frameEnd <= context->requestedStart) return 0;
+  if (frameStart >= context->requestedEnd) return 1;
+
+  const int maximumOutputSamples = (int)av_rescale_rnd(
+    swr_get_delay(context->resampler, inputSampleRate) + frame->nb_samples,
+    AI_SUBTITLE_SAMPLE_RATE,
+    inputSampleRate,
+    AV_ROUND_UP);
+  uint8_t *outputData = NULL;
+  int lineSize = 0;
+  int result = av_samples_alloc(&outputData, &lineSize, 1, maximumOutputSamples, AV_SAMPLE_FMT_S16, 0);
+  if (result < 0) return result;
+
+  const uint8_t **inputData = (const uint8_t **)frame->extended_data;
+  const int convertedSamples = swr_convert(context->resampler,
+                                           &outputData,
+                                           maximumOutputSamples,
+                                           inputData,
+                                           frame->nb_samples);
+  if (convertedSamples < 0) {
+    av_freep(&outputData);
+    return convertedSamples;
+  }
+
+  int firstSample = 0;
+  if (frameStart < context->requestedStart) {
+    firstSample = (int)ceil((context->requestedStart - frameStart) * AI_SUBTITLE_SAMPLE_RATE);
+  }
+  int lastSample = convertedSamples;
+  if (frameEnd > context->requestedEnd) {
+    lastSample = (int)floor((context->requestedEnd - frameStart) * AI_SUBTITLE_SAMPLE_RATE);
+  }
+  firstSample = MAX(0, MIN(firstSample, convertedSamples));
+  lastSample = MAX(firstSample, MIN(lastSample, convertedSamples));
+  const int samplesToWrite = lastSample - firstSample;
+  if (samplesToWrite > 0) {
+    const size_t written = fwrite(outputData + firstSample * 2, 2, samplesToWrite, context->output);
+    context->bytesWritten += written * 2;
+    if (written != (size_t)samplesToWrite) result = AVERROR(EIO);
+  }
+  av_freep(&outputData);
+  if (result < 0) return result;
+  return frameEnd >= context->requestedEnd ? 1 : 0;
+}
+
+static int FFmpegDrainAudioDecoder(AVCodecContext *codecContext,
+                                   AVFrame *frame,
+                                   AVStream *stream,
+                                   FFmpegAudioExtractionContext *context,
+                                   BOOL *reachedEnd)
+{
+  int result;
+  while ((result = avcodec_receive_frame(codecContext, frame)) >= 0) {
+    const int writeResult = FFmpegWriteAudioFrame(frame, stream, context);
+    av_frame_unref(frame);
+    if (writeResult < 0) return writeResult;
+    if (writeResult > 0) {
+      *reachedEnd = YES;
+      return 0;
+    }
+  }
+  return result == AVERROR(EAGAIN) || result == AVERROR_EOF ? 0 : result;
+}
 
 #define CHECK_NOTNULL(ptr,msg) if (ptr == NULL) {\
 LOG_ERROR(@"Error when getting thumbnails: %@", msg);\
@@ -410,6 +568,253 @@ return -1;\
   avformat_free_context(pFormatCtx);
 
   return info;
+}
+
+// MARK: - Extracting Audio
+
++ (BOOL)extractAudioFromURL:(NSURL *)sourceURL
+                streamIndex:(NSInteger)streamIndex
+                  startTime:(NSTimeInterval)startTime
+                   duration:(NSTimeInterval)duration
+                  outputURL:(NSURL *)outputURL
+                      error:(NSError **)error
+{
+  return [self extractAudioFromURL:sourceURL
+                       streamIndex:streamIndex
+                         startTime:startTime
+                          duration:duration
+                         outputURL:outputURL
+                      shouldCancel:nil
+                             error:error];
+}
+
++ (BOOL)extractAudioFromURL:(NSURL *)sourceURL
+                streamIndex:(NSInteger)streamIndex
+                  startTime:(NSTimeInterval)startTime
+                   duration:(NSTimeInterval)duration
+                  outputURL:(NSURL *)outputURL
+               shouldCancel:(BOOL (^)(void))shouldCancel
+                      error:(NSError **)error
+{
+  if (startTime < 0 || duration <= 0 || !isfinite(startTime) || !isfinite(duration)) {
+    FFmpegSetAudioError(error, FFmpegAudioErrorInvalidRange, @"The requested audio range is invalid.");
+    return NO;
+  }
+
+  AVFormatContext *formatContext = NULL;
+  AVCodecContext *codecContext = NULL;
+  const AVCodec *codec = NULL;
+  AVPacket *packet = NULL;
+  AVFrame *frame = NULL;
+  SwrContext *resampler = NULL;
+  FILE *output = NULL;
+  BOOL succeeded = NO;
+  int selectedStreamIndex = -1;
+  int result = 0;
+  NSString *failureMessage = nil;
+  FFmpegAudioErrorCode failureCode = FFmpegAudioErrorConversion;
+  const char *input = sourceURL.isFileURL ? sourceURL.fileSystemRepresentation : sourceURL.absoluteString.UTF8String;
+  BOOL (^cancellationHandler)(void) = [shouldCancel copy];
+
+  if (cancellationHandler) {
+    formatContext = avformat_alloc_context();
+    if (!formatContext) {
+      failureCode = FFmpegAudioErrorOpenInput;
+      failureMessage = @"Cannot allocate media input for audio extraction.";
+      goto cleanup;
+    }
+    formatContext->interrupt_callback.callback = FFmpegAudioInterruptCallback;
+    formatContext->interrupt_callback.opaque = (__bridge void *)cancellationHandler;
+  }
+
+  result = avformat_open_input(&formatContext, input, NULL, NULL);
+  if (result < 0) {
+    const BOOL wasCanceled = cancellationHandler && cancellationHandler();
+    failureCode = wasCanceled ? FFmpegAudioErrorCanceled : FFmpegAudioErrorOpenInput;
+    failureMessage = wasCanceled
+      ? @"Audio extraction was canceled."
+      : [NSString stringWithFormat:@"Cannot open media for audio extraction: %s", av_err2str(result)];
+    goto cleanup;
+  }
+  result = avformat_find_stream_info(formatContext, NULL);
+  if (result < 0) {
+    failureCode = FFmpegAudioErrorStreamInfo;
+    failureMessage = [NSString stringWithFormat:@"Cannot read media stream information: %s", av_err2str(result)];
+    goto cleanup;
+  }
+
+  if (streamIndex >= 0) {
+    if (streamIndex >= formatContext->nb_streams ||
+        formatContext->streams[streamIndex]->codecpar->codec_type != AVMEDIA_TYPE_AUDIO) {
+      failureCode = FFmpegAudioErrorAudioStream;
+      failureMessage = [NSString stringWithFormat:@"Audio stream index %ld is unavailable.", (long)streamIndex];
+      goto cleanup;
+    }
+    selectedStreamIndex = (int)streamIndex;
+  } else {
+    selectedStreamIndex = av_find_best_stream(formatContext, AVMEDIA_TYPE_AUDIO, -1, -1, NULL, 0);
+    if (selectedStreamIndex < 0) {
+      failureCode = FFmpegAudioErrorAudioStream;
+      failureMessage = @"The media does not contain a decodable audio stream.";
+      goto cleanup;
+    }
+  }
+
+  AVStream *audioStream = formatContext->streams[selectedStreamIndex];
+  codec = avcodec_find_decoder(audioStream->codecpar->codec_id);
+  if (!codec) {
+    failureCode = FFmpegAudioErrorDecoder;
+    failureMessage = @"No decoder is available for the selected audio stream.";
+    goto cleanup;
+  }
+  codecContext = avcodec_alloc_context3(codec);
+  if (!codecContext) {
+    failureCode = FFmpegAudioErrorDecoder;
+    failureMessage = @"Cannot allocate the audio decoder.";
+    goto cleanup;
+  }
+  result = avcodec_parameters_to_context(codecContext, audioStream->codecpar);
+  if (result < 0 || avcodec_open2(codecContext, codec, NULL) < 0) {
+    failureCode = FFmpegAudioErrorDecoder;
+    failureMessage = @"Cannot initialize the audio decoder.";
+    goto cleanup;
+  }
+  if (codecContext->sample_rate <= 0) {
+    failureCode = FFmpegAudioErrorDecoder;
+    failureMessage = @"The selected audio stream has an invalid sample rate.";
+    goto cleanup;
+  }
+  if (codecContext->ch_layout.nb_channels == 0) {
+    av_channel_layout_default(&codecContext->ch_layout, MAX(codecContext->ch_layout.nb_channels, 1));
+  }
+
+  AVChannelLayout monoLayout = AV_CHANNEL_LAYOUT_MONO;
+  result = swr_alloc_set_opts2(&resampler,
+                               &monoLayout,
+                               AV_SAMPLE_FMT_S16,
+                               AI_SUBTITLE_SAMPLE_RATE,
+                               &codecContext->ch_layout,
+                               codecContext->sample_fmt,
+                               codecContext->sample_rate,
+                               0,
+                               NULL);
+  if (result < 0 || !resampler || swr_init(resampler) < 0) {
+    failureCode = FFmpegAudioErrorConversion;
+    failureMessage = @"Cannot initialize conversion to 16 kHz mono PCM.";
+    goto cleanup;
+  }
+
+  double timestampOrigin = 0;
+  if (audioStream->start_time != AV_NOPTS_VALUE) {
+    timestampOrigin = audioStream->start_time * av_q2d(audioStream->time_base);
+  } else if (formatContext->start_time != AV_NOPTS_VALUE) {
+    timestampOrigin = (double)formatContext->start_time / AV_TIME_BASE;
+  }
+  const int64_t seekTimestamp = av_rescale_q((int64_t)llround((startTime + timestampOrigin) * AV_TIME_BASE),
+                                             AV_TIME_BASE_Q,
+                                             audioStream->time_base);
+  result = avformat_seek_file(formatContext,
+                              selectedStreamIndex,
+                              INT64_MIN,
+                              seekTimestamp,
+                              seekTimestamp,
+                              AVSEEK_FLAG_BACKWARD);
+  if (result < 0) {
+    failureCode = FFmpegAudioErrorSeek;
+    failureMessage = [NSString stringWithFormat:@"Cannot seek to the requested audio range: %s", av_err2str(result)];
+    goto cleanup;
+  }
+  avcodec_flush_buffers(codecContext);
+
+  output = fopen(outputURL.fileSystemRepresentation, "wb+");
+  if (!output || !FFmpegWriteWAVHeader(output, 0)) {
+    failureCode = FFmpegAudioErrorOutput;
+    failureMessage = @"Cannot create the extracted WAV file.";
+    goto cleanup;
+  }
+
+  packet = av_packet_alloc();
+  frame = av_frame_alloc();
+  if (!packet || !frame) {
+    failureCode = FFmpegAudioErrorDecoder;
+    failureMessage = @"Cannot allocate audio decoding buffers.";
+    goto cleanup;
+  }
+
+  FFmpegAudioExtractionContext extraction = {
+    .resampler = resampler,
+    .output = output,
+    .requestedStart = startTime,
+    .requestedEnd = startTime + duration,
+    .timestampOrigin = timestampOrigin,
+    .timestampCursor = startTime,
+    .bytesWritten = 0
+  };
+  BOOL reachedEnd = NO;
+  while (!reachedEnd && av_read_frame(formatContext, packet) >= 0) {
+    if (packet->stream_index == selectedStreamIndex) {
+      while ((result = avcodec_send_packet(codecContext, packet)) == AVERROR(EAGAIN)) {
+        result = FFmpegDrainAudioDecoder(codecContext, frame, audioStream, &extraction, &reachedEnd);
+        if (result < 0 || reachedEnd) break;
+      }
+      if (result < 0 || reachedEnd) {
+        av_packet_unref(packet);
+        if (result < 0) {
+          failureMessage = [NSString stringWithFormat:@"Audio decoding failed: %s", av_err2str(result)];
+          goto cleanup;
+        }
+        break;
+      }
+      result = FFmpegDrainAudioDecoder(codecContext, frame, audioStream, &extraction, &reachedEnd);
+      if (result < 0) {
+        failureMessage = [NSString stringWithFormat:@"Audio decoding failed: %s", av_err2str(result)];
+        goto cleanup;
+      }
+    }
+    av_packet_unref(packet);
+  }
+
+  if (cancellationHandler && cancellationHandler()) {
+    failureCode = FFmpegAudioErrorCanceled;
+    failureMessage = @"Audio extraction was canceled.";
+    goto cleanup;
+  }
+
+  if (!reachedEnd) {
+    result = avcodec_send_packet(codecContext, NULL);
+    if (result >= 0 || result == AVERROR_EOF) {
+      result = FFmpegDrainAudioDecoder(codecContext, frame, audioStream, &extraction, &reachedEnd);
+    }
+    if (result < 0 && result != AVERROR_EOF) {
+      failureMessage = [NSString stringWithFormat:@"Audio decoder flush failed: %s", av_err2str(result)];
+      goto cleanup;
+    }
+  }
+
+  if (extraction.bytesWritten == 0) {
+    failureCode = FFmpegAudioErrorNoSamples;
+    failureMessage = @"The requested range did not contain audio samples.";
+    goto cleanup;
+  }
+  if (extraction.bytesWritten > UINT32_MAX || !FFmpegWriteWAVHeader(output, (uint32_t)extraction.bytesWritten)) {
+    failureCode = FFmpegAudioErrorOutput;
+    failureMessage = @"Cannot finalize the extracted WAV file.";
+    goto cleanup;
+  }
+  succeeded = YES;
+
+cleanup:
+  if (output) fclose(output);
+  av_frame_free(&frame);
+  av_packet_free(&packet);
+  swr_free(&resampler);
+  avcodec_free_context(&codecContext);
+  avformat_close_input(&formatContext);
+  if (!succeeded) {
+    [[NSFileManager defaultManager] removeItemAtURL:outputURL error:nil];
+    FFmpegSetAudioError(error, failureCode, failureMessage ?: @"Audio extraction failed.");
+  }
+  return succeeded;
 }
 
 // MARK: - Decoding Image

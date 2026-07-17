@@ -52,6 +52,7 @@ class MPVTrack: NSObject {
   var id: Int
   var type: TrackType
   var srcId: Int?
+  var ffIndex: Int?
   var title: String?
   var lang: String?
   var isDefault: Bool

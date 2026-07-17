@@ -246,6 +246,15 @@
 		8476440A1D48CC3D004F6DF5 /* MPVCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847644091D48CC3D004F6DF5 /* MPVCommand.swift */; };
 		8476440C1D48F63D004F6DF5 /* OSDMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476440B1D48F63D004F6DF5 /* OSDMessage.swift */; };
 		84791C8B1D405E9D0069E28A /* PlaybackInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84791C8A1D405E9D0069E28A /* PlaybackInfo.swift */; };
+		87E13FFEEE654CC4BFC4AA82 /* AISubtitleCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD58D7D4A0489D83EA8F87 /* AISubtitleCore.swift */; };
+		2F8D1A4B5C6E47D8910A1B2C /* AISubtitleFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E2B5C6D7F48E9011B2C3D /* AISubtitleFile.swift */; };
+		4BA03C6D7E8F491A122C3D4E /* AISubtitleAudioExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB14D7E8F904A2B233D4E5F /* AISubtitleAudioExtractor.swift */; };
+		6DC25E8F901A4B3C344E5F60 /* AppleAISubtitleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED36F901A2B4C4D455F6071 /* AppleAISubtitleProvider.swift */; };
+		8FE4701A2B3C4D5E56607182 /* AISubtitleScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015812B3C4D4E6F67718293 /* AISubtitleScheduler.swift */; };
+		A1F5812B3C4D4E6F67718294 /* AISubtitleCloudProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F5812B3C4D4E6F67718294 /* AISubtitleCloudProvider.swift */; };
+		B1F5812B3C4D4E6F67718295 /* AISubtitleAliyunProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5812B3C4D4E6F67718295 /* AISubtitleAliyunProvider.swift */; };
+		C1F5812B3C4D4E6F67718296 /* WhisperCppAISubtitleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5812B3C4D4E6F67718296 /* WhisperCppAISubtitleProvider.swift */; };
+		D1F5812B3C4D4E6F67718297 /* AISubtitlePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5812B3C4D4E6F67718297 /* AISubtitlePanelController.swift */; };
 		84795C3A1E083EE30059A648 /* PrefControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84795C381E083EE30059A648 /* PrefControlViewController.swift */; };
 		847C62CA1DC13CDA00E1EF16 /* PrefGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C62C81DC13CDA00E1EF16 /* PrefGeneralViewController.swift */; };
 		84817C981DBDCE4300CC2279 /* RoundedColorWell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84817C971DBDCE4300CC2279 /* RoundedColorWell.swift */; };
@@ -1452,6 +1461,15 @@
 		847644091D48CC3D004F6DF5 /* MPVCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPVCommand.swift; sourceTree = "<group>"; };
 		8476440B1D48F63D004F6DF5 /* OSDMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OSDMessage.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		84791C8A1D405E9D0069E28A /* PlaybackInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackInfo.swift; sourceTree = "<group>"; };
+		5CFD58D7D4A0489D83EA8F87 /* AISubtitleCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AISubtitleCore.swift; sourceTree = "<group>"; };
+		3A9E2B5C6D7F48E9011B2C3D /* AISubtitleFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AISubtitleFile.swift; sourceTree = "<group>"; };
+		5CB14D7E8F904A2B233D4E5F /* AISubtitleAudioExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AISubtitleAudioExtractor.swift; sourceTree = "<group>"; };
+		7ED36F901A2B4C4D455F6071 /* AppleAISubtitleProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleAISubtitleProvider.swift; sourceTree = "<group>"; };
+		9015812B3C4D4E6F67718293 /* AISubtitleScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AISubtitleScheduler.swift; sourceTree = "<group>"; };
+		A2F5812B3C4D4E6F67718294 /* AISubtitleCloudProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AISubtitleCloudProvider.swift; sourceTree = "<group>"; };
+		B2F5812B3C4D4E6F67718295 /* AISubtitleAliyunProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AISubtitleAliyunProvider.swift; sourceTree = "<group>"; };
+		C2F5812B3C4D4E6F67718296 /* WhisperCppAISubtitleProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperCppAISubtitleProvider.swift; sourceTree = "<group>"; };
+		D2F5812B3C4D4E6F67718297 /* AISubtitlePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AISubtitlePanelController.swift; sourceTree = "<group>"; };
 		84792F541EBB957E002E98F6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		84795C381E083EE30059A648 /* PrefControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefControlViewController.swift; sourceTree = "<group>"; };
 		847C62C81DC13CDA00E1EF16 /* PrefGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefGeneralViewController.swift; sourceTree = "<group>"; };
@@ -2246,6 +2264,15 @@
 		845ABEAD1D4D19CF00BFB15B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5CFD58D7D4A0489D83EA8F87 /* AISubtitleCore.swift */,
+				3A9E2B5C6D7F48E9011B2C3D /* AISubtitleFile.swift */,
+				5CB14D7E8F904A2B233D4E5F /* AISubtitleAudioExtractor.swift */,
+				7ED36F901A2B4C4D455F6071 /* AppleAISubtitleProvider.swift */,
+				9015812B3C4D4E6F67718293 /* AISubtitleScheduler.swift */,
+				A2F5812B3C4D4E6F67718294 /* AISubtitleCloudProvider.swift */,
+				B2F5812B3C4D4E6F67718295 /* AISubtitleAliyunProvider.swift */,
+				C2F5812B3C4D4E6F67718296 /* WhisperCppAISubtitleProvider.swift */,
+				D2F5812B3C4D4E6F67718297 /* AISubtitlePanelController.swift */,
 				84791C8A1D405E9D0069E28A /* PlaybackInfo.swift */,
 				8476440B1D48F63D004F6DF5 /* OSDMessage.swift */,
 				845ABEAB1D4D19C000BFB15B /* MPVTrack.swift */,
@@ -3148,6 +3175,15 @@
 				84D0FB7E1F5E519300C6A6A7 /* FreeSelectingViewController.swift in Sources */,
 				E3530702214935DE008FE492 /* JavascriptAPIConsole.swift in Sources */,
 				840D47A01DFEFC49000D9A64 /* KeyRecordView.swift in Sources */,
+				87E13FFEEE654CC4BFC4AA82 /* AISubtitleCore.swift in Sources */,
+				2F8D1A4B5C6E47D8910A1B2C /* AISubtitleFile.swift in Sources */,
+				4BA03C6D7E8F491A122C3D4E /* AISubtitleAudioExtractor.swift in Sources */,
+				6DC25E8F901A4B3C344E5F60 /* AppleAISubtitleProvider.swift in Sources */,
+				8FE4701A2B3C4D5E56607182 /* AISubtitleScheduler.swift in Sources */,
+				A1F5812B3C4D4E6F67718294 /* AISubtitleCloudProvider.swift in Sources */,
+				B1F5812B3C4D4E6F67718295 /* AISubtitleAliyunProvider.swift in Sources */,
+				C1F5812B3C4D4E6F67718296 /* WhisperCppAISubtitleProvider.swift in Sources */,
+				D1F5812B3C4D4E6F67718297 /* AISubtitlePanelController.swift in Sources */,
 				84791C8B1D405E9D0069E28A /* PlaybackInfo.swift in Sources */,
 				E322A4F820A8442E00C67D32 /* PlaylistPlaybackProgressView.swift in Sources */,
 				84D123B41ECAA405004E0D53 /* TouchBarSupport.swift in Sources */,

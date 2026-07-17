@@ -879,6 +879,12 @@ class MPVController: NSObject {
     return Int(data)
   }
 
+  func getOptionalInt(_ name: String) -> Int? {
+    var data = Int64()
+    let status = mpv_get_property(mpv, name, MPV_FORMAT_INT64, &data)
+    return status >= 0 ? Int(data) : nil
+  }
+
   func getDouble(_ name: String) -> Double {
     var data = Double()
     mpv_get_property(mpv, name, MPV_FORMAT_DOUBLE, &data)

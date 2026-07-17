@@ -176,6 +176,28 @@ class PlayerCore: NSObject {
   let backgroundQueue: DispatchQueue
   let playlistQueue: DispatchQueue
   let thumbnailQueue: DispatchQueue
+  let aiSubtitleQueue: DispatchQueue
+  private let aiSubtitleFileLoader = AISubtitleFileLoader()
+  private var aiSubtitleScheduler: AISubtitleScheduler?
+  private var aiSubtitleActiveCacheKey: AISubtitleCacheKey?
+  private var aiSubtitlePanelController: AISubtitlePanelController?
+  private var aiSubtitleMaintenanceWorkItem: DispatchWorkItem?
+  private var aiSubtitleSuggestedMediaURL: URL?
+  private(set) var aiSubtitleState = AISubtitleTaskState(.idle)
+
+  var hasExportableAISubtitles: Bool {
+    guard let cacheKey = aiSubtitleActiveCacheKey else { return false }
+    return AISubtitleCacheStore().cachedVTT(for: cacheKey) != nil
+  }
+
+  var recommendedAISubtitleProviderID: AISubtitleProviderID {
+    makeAISubtitleSelection()?.plan.transcriber ?? .apple
+  }
+
+  func pruneAISubtitleCache(maximumBytes: Int64) throws -> AISubtitleCacheUsage {
+    try AISubtitleCacheStore().prune(maximumBytes: maximumBytes,
+                                     excluding: aiSubtitleActiveCacheKey)
+  }
 
   /**
    This ticket will be increased each time before a new task being submitted to `backgroundQueue`.
@@ -306,6 +328,7 @@ class PlayerCore: NSObject {
     backgroundQueue = DispatchQueue(label: "IINAPlayerCoreTask\(playerNumber)", qos: .background)
     playlistQueue = DispatchQueue(label: "IINAPlaylistTask\(playerNumber)", qos: .utility)
     thumbnailQueue = DispatchQueue(label: "IINAPlayerCoreThumbnailTask\(playerNumber)", qos: .utility)
+    aiSubtitleQueue = DispatchQueue(label: "IINAPlayerCoreAISubtitleTask\(playerNumber)", qos: .utility)
     super.init()
     self.mpv = MPVController(playerCore: self)
     self.mainWindow = MainWindowController(playerCore: self)
@@ -663,6 +686,7 @@ class PlayerCore: NSObject {
   ///     task is still running this method only changes the player state. When the background task ends it will notice that shutting
   ///     down was in progress and will call this method again to continue the process of shutting down..
   func shutdown() {
+    stopAISubtitles()
     info.state = .shuttingDown
     guard !backgroundTaskInUse else { return }
     log("Shutting down")
@@ -689,6 +713,7 @@ class PlayerCore: NSObject {
   ///     windows of vulnerability that can not be fully closed. IINA has no choice but to support a mpv initiated shutdown as best it
   ///     can.
   func mpvHasShutdown() {
+    stopAISubtitles()
     let isMPVInitiated = info.state != .shuttingDown
     let suffix = isMPVInitiated ? " (initiated by mpv)" : ""
     log("Player has shutdown\(suffix)")
@@ -908,6 +933,7 @@ class PlayerCore: NSObject {
   ///     and call this method again to continue the process of stopping. It is important to stop the background task as if it is still
   ///     running when the mpv core is shutdown it may call into mpv triggering a crash.
   func stop() {
+    stopAISubtitles()
     guard info.state != .shutDown else { return }
     savePlaybackPosition()
 
@@ -1263,6 +1289,9 @@ class PlayerCore: NSObject {
       name = MPVOption.Subtitles.secondarySid
     }
     mpv.setInt(name, index)
+    if forType == .audio {
+      stopAISubtitles()
+    }
     getSelectedTracks()
   }
 
@@ -1423,6 +1452,380 @@ class PlayerCore: NSObject {
         }
       }
     }
+  }
+
+  func loadOrReloadAISubtitleFile(_ url: URL) {
+    aiSubtitleFileLoader.update(url: url) { [weak self] subtitleURL in
+      guard let self = self, self.info.state.active else { return }
+      self.loadExternalSubFile(subtitleURL)
+    }
+  }
+
+  func showAISubtitlePanel() {
+    let controller = aiSubtitlePanelController ?? AISubtitlePanelController(player: self)
+    aiSubtitlePanelController = controller
+    controller.present()
+  }
+
+  func exportAISubtitles(format: AISubtitleFileFormat) {
+    guard let cacheKey = aiSubtitleActiveCacheKey,
+          let artifacts = try? AISubtitleCacheStore().layout.artifacts(for: cacheKey),
+          AISubtitleCacheStore().cachedVTT(for: cacheKey) != nil else {
+      let alert = NSAlert()
+      alert.alertStyle = .informational
+      alert.messageText = aiSubtitleLocalized("ai_subtitle.no_generated_title", fallback: "No AI Subtitles")
+      alert.informativeText = aiSubtitleLocalized("ai_subtitle.no_generated_message",
+                                                  fallback: "No generated AI subtitles are available to export.")
+      if let currentWindow = currentWindow {
+        alert.beginSheetModal(for: currentWindow)
+      } else {
+        alert.runModal()
+      }
+      return
+    }
+    let sourceURL = format == .webVTT ? artifacts.translatedVTTURL : artifacts.translatedSRTURL
+    let defaultName = info.currentURL?.deletingPathExtension().lastPathComponent
+      .appending(".ai.\(format == .webVTT ? "vtt" : "srt")") ?? "ai-subtitles.\(format == .webVTT ? "vtt" : "srt")"
+    Utility.quickSavePanel(title: "Export AI Subtitles",
+                           filename: defaultName,
+                           types: [format == .webVTT ? "vtt" : "srt"],
+                           sheetWindow: currentWindow) { destination in
+      do {
+        if FileManager.default.fileExists(atPath: destination.path) {
+          try FileManager.default.removeItem(at: destination)
+        }
+        try FileManager.default.copyItem(at: sourceURL, to: destination)
+      } catch {
+        Utility.showAlert("error_saving_file",
+                          arguments: ["subtitle", error.localizedDescription],
+                          sheetWindow: self.currentWindow)
+      }
+    }
+  }
+
+  /// Converts a timed transcript JSON file into cached VTT/SRT files and loads the VTT track.
+  /// This is the M1 integration entry point and will also be used by real transcribers.
+  func loadAISubtitleTranscript(from transcriptURL: URL) {
+    guard let selection = makeAISubtitleSelection() else { return }
+    let mediaURL = selection.media.url
+    aiSubtitleQueue.async { [weak self] in
+      do {
+        let artifacts = try AISubtitleFilePipeline().prepare(transcriptURL: transcriptURL,
+                                                             targetLanguage: selection.media.targetLanguage,
+                                                             cacheKey: selection.cacheKey)
+        DispatchQueue.main.async {
+          guard let self = self, self.info.currentURL == mediaURL, self.info.state.active else { return }
+          self.aiSubtitleActiveCacheKey = selection.cacheKey
+          self.log("Prepared AI subtitle cache at \(artifacts.directoryURL.path)")
+          self.loadOrReloadAISubtitleFile(artifacts.translatedVTTURL)
+        }
+      } catch {
+        DispatchQueue.main.async { [weak self] in
+          self?.log("Failed preparing AI subtitle transcript: \(error)", level: .error)
+        }
+      }
+    }
+  }
+
+  func startAppleAISubtitles(sourceLanguage: AISubtitleLanguage,
+                             targetLanguage: AISubtitleLanguage,
+                             fallbackProviderID: AISubtitleProviderID? = nil,
+                             fallbackTranslatorProviderID: AISubtitleProviderID? = nil) {
+    guard var media = makeAISubtitleMediaContext(),
+          let duration = info.videoDuration?.second,
+          duration > 0 else {
+      updateAISubtitleState(AISubtitleTaskState(.failed,
+                                                error: AISubtitleError(code: "apple_ai_subtitles_unavailable",
+                                                                       message: "Apple AI subtitles require a loaded media file.",
+                                                                       recoverable: false)))
+      return
+    }
+
+    guard #available(macOS 26.0, *) else {
+      startAISubtitleFallback(providerID: fallbackProviderID,
+                              whisperTranslatorProviderID: fallbackTranslatorProviderID,
+                              sourceLanguage: sourceLanguage,
+                              targetLanguage: targetLanguage,
+                              appleError: AISubtitleError(code: "apple_ai_subtitles_unavailable",
+                                                         message: "Apple AI subtitles require macOS 26 or later.",
+                                                         recoverable: false))
+      return
+    }
+
+    stopAISubtitles()
+    media.sourceLanguage = sourceLanguage
+    media.targetLanguage = targetLanguage
+    let mediaURL = media.url
+    let preparedMedia = media
+    let transcriber = AppleAISubtitleTranscriber()
+    let translator = AppleAISubtitleTranslator()
+    updateAISubtitleState(AISubtitleTaskState(.preparing,
+                                              message: "Checking Apple language assets."))
+    Task { @MainActor [weak self, preparedMedia] in
+      let speechCapability = await transcriber.probe(language: sourceLanguage)
+      guard speechCapability.status == .available else {
+        self?.startAISubtitleFallback(providerID: fallbackProviderID,
+                                      whisperTranslatorProviderID: fallbackTranslatorProviderID,
+                                      sourceLanguage: sourceLanguage,
+                                      targetLanguage: targetLanguage,
+                                      appleError: AISubtitleError(code: "apple_speech_not_ready",
+                                                                 message: speechCapability.reason ?? "Apple Speech is not ready."))
+        return
+      }
+
+      let translationRequired = !sourceLanguage.isEquivalent(to: targetLanguage)
+      if translationRequired {
+        let translationCapability = await translator.probe(sourceLanguage: sourceLanguage,
+                                                            targetLanguage: targetLanguage)
+        guard translationCapability.status == .available else {
+          self?.startAISubtitleFallback(providerID: fallbackProviderID,
+                                        whisperTranslatorProviderID: fallbackTranslatorProviderID,
+                                        sourceLanguage: sourceLanguage,
+                                        targetLanguage: targetLanguage,
+                                        appleError: AISubtitleError(code: "apple_translation_not_ready",
+                                                                   message: translationCapability.reason ?? "Apple Translation is not ready."))
+          return
+        }
+      }
+
+      guard let self = self, self.info.currentURL == mediaURL, self.info.state.active else { return }
+      let selectedTranslator: AISubtitleTranslator = translationRequired
+        ? translator
+        : AISubtitlePassThroughTranslator(providerID: .apple)
+      self.startAISubtitleScheduler(media: preparedMedia,
+                                    duration: duration,
+                                    transcriber: transcriber,
+                                    translator: selectedTranslator,
+                                    transcriberID: .apple,
+                                    translatorID: translationRequired ? .apple : nil)
+    }
+  }
+
+  private func startAISubtitleFallback(providerID: AISubtitleProviderID?,
+                                       whisperTranslatorProviderID: AISubtitleProviderID?,
+                                       sourceLanguage: AISubtitleLanguage,
+                                       targetLanguage: AISubtitleLanguage,
+                                       appleError: AISubtitleError) {
+    guard let providerID = providerID else {
+      updateAISubtitleState(AISubtitleTaskState(.failed, error: appleError))
+      return
+    }
+    updateAISubtitleState(AISubtitleTaskState(.preparing,
+                                              message: "Apple is unavailable. Falling back to \(providerID.displayName)."))
+    switch providerID {
+    case .openAI, .aliyun:
+      startCloudAISubtitles(providerID: providerID,
+                            sourceLanguage: sourceLanguage,
+                            targetLanguage: targetLanguage)
+    case .whisperCpp:
+      startWhisperAISubtitles(sourceLanguage: sourceLanguage,
+                              targetLanguage: targetLanguage,
+                              translatorProviderID: whisperTranslatorProviderID)
+    case .apple:
+      updateAISubtitleState(AISubtitleTaskState(.failed, error: appleError))
+    }
+  }
+
+  func startCloudAISubtitles(providerID: AISubtitleProviderID,
+                             sourceLanguage: AISubtitleLanguage?,
+                             targetLanguage: AISubtitleLanguage,
+                             aliyunAudioPublisher: AISubtitleAliyunAudioPublishing? = nil) {
+    guard providerID.isCloudProvider,
+          var media = makeAISubtitleMediaContext(),
+          let duration = info.videoDuration?.second,
+          duration > 0 else {
+      updateAISubtitleState(AISubtitleTaskState(.failed,
+                                                error: AISubtitleError(code: "cloud_ai_subtitles_unavailable",
+                                                                       message: "Cloud AI subtitles require a cloud provider and a loaded media file.",
+                                                                       recoverable: false)))
+      return
+    }
+
+    stopAISubtitles()
+    media.sourceLanguage = sourceLanguage
+    media.targetLanguage = targetLanguage
+    let request = AISubtitleProviderRequest(sourceLanguage: sourceLanguage,
+                                            targetLanguage: targetLanguage,
+                                            media: media)
+    let factory = AISubtitleCloudProviderFactory(aliyunAudioPublisher: aliyunAudioPublisher)
+    let pair: AISubtitleProviderPair
+    switch factory.makePair(providerID: providerID, request: request) {
+    case .failure(let error):
+      updateAISubtitleState(AISubtitleTaskState(.failed, error: error))
+      return
+    case .success(let value):
+      pair = value
+    }
+
+    let estimate: AISubtitleCostEstimate
+    switch providerID {
+    case .openAI:
+      estimate = AISubtitleOpenAIPricing().transcriptionEstimate(duration: duration)
+    case .aliyun:
+      estimate = AISubtitleAliyunPricing().transcriptionEstimate(duration: duration)
+    case .apple, .whisperCpp:
+      return
+    }
+    updateAISubtitleState(AISubtitleTaskState(.preparing,
+                                              message: "Estimated transcription cost: \(estimate.currencyCode) \(estimate.amount). Translation usage is additional."))
+    startAISubtitleScheduler(media: media,
+                             duration: duration,
+                             transcriber: pair.transcriber,
+                             translator: pair.translator,
+                             transcriberID: providerID,
+                             translatorID: pair.translatorIDForCache)
+  }
+
+  func startWhisperAISubtitles(sourceLanguage: AISubtitleLanguage?,
+                               targetLanguage: AISubtitleLanguage,
+                               translatorProviderID: AISubtitleProviderID?) {
+    guard var media = makeAISubtitleMediaContext(),
+          let duration = info.videoDuration?.second,
+          duration > 0 else {
+      updateAISubtitleState(AISubtitleTaskState(.failed,
+                                                error: AISubtitleError(code: "whisper_ai_subtitles_unavailable",
+                                                                       message: "whisper.cpp subtitles require a loaded media file.",
+                                                                       recoverable: false)))
+      return
+    }
+    stopAISubtitles()
+    media.sourceLanguage = sourceLanguage
+    media.targetLanguage = targetLanguage
+    let transcriber = WhisperCppAISubtitleTranscriber()
+    let request = AISubtitleProviderRequest(sourceLanguage: sourceLanguage,
+                                            targetLanguage: targetLanguage,
+                                            media: media)
+    let capability = transcriber.capability(for: request)
+    guard capability.status == .available else {
+      updateAISubtitleState(AISubtitleTaskState(.failed,
+                                                error: AISubtitleError(code: "whisper_\(capability.status.rawValue)",
+                                                                       message: capability.reason ?? "whisper.cpp is not ready.")))
+      return
+    }
+    guard sourceLanguage.map({ !$0.isEquivalent(to: targetLanguage) }) ?? true else {
+      startAISubtitleScheduler(media: media,
+                               duration: duration,
+                               transcriber: transcriber,
+                               translator: AISubtitlePassThroughTranslator(providerID: .whisperCpp),
+                               transcriberID: .whisperCpp,
+                               translatorID: nil)
+      return
+    }
+    guard let translatorProviderID = translatorProviderID else {
+      updateAISubtitleState(AISubtitleTaskState(.failed,
+                                                error: AISubtitleError(code: "whisper_translator_required",
+                                                                       message: "Choose Apple, OpenAI, or Alibaba Cloud for subtitle translation.")))
+      return
+    }
+    switch translatorProviderID {
+    case .apple:
+      guard #available(macOS 26.0, *), let sourceLanguage = sourceLanguage else {
+        updateAISubtitleState(AISubtitleTaskState(.failed,
+                                                  error: AISubtitleError(code: "apple_translation_unavailable",
+                                                                         message: "Apple translation requires macOS 26 and a known source language.")))
+        return
+      }
+      let translator = AppleAISubtitleTranslator()
+      let mediaURL = media.url
+      let preparedMedia = media
+      updateAISubtitleState(AISubtitleTaskState(.preparing,
+                                                message: "Checking Apple translation assets."))
+      Task { @MainActor [weak self, preparedMedia] in
+        let translationCapability = await translator.probe(sourceLanguage: sourceLanguage,
+                                                            targetLanguage: targetLanguage)
+        guard let self = self, self.info.currentURL == mediaURL, self.info.state.active else { return }
+        guard translationCapability.status == .available else {
+          self.updateAISubtitleState(AISubtitleTaskState(.failed,
+                                                         error: AISubtitleError(code: "apple_translation_not_ready",
+                                                                                message: translationCapability.reason ?? "Apple Translation is not ready.")))
+          return
+        }
+        self.startAISubtitleScheduler(media: preparedMedia,
+                                      duration: duration,
+                                      transcriber: transcriber,
+                                      translator: translator,
+                                      transcriberID: .whisperCpp,
+                                      translatorID: .apple)
+      }
+    case .openAI, .aliyun:
+      let factory = AISubtitleCloudProviderFactory()
+      switch factory.makeTranslator(providerID: translatorProviderID, request: request) {
+      case .failure(let error):
+        updateAISubtitleState(AISubtitleTaskState(.failed, error: error))
+      case .success(let translator):
+        startAISubtitleScheduler(media: media,
+                                 duration: duration,
+                                 transcriber: transcriber,
+                                 translator: translator,
+                                 transcriberID: .whisperCpp,
+                                 translatorID: translatorProviderID)
+      }
+    case .whisperCpp:
+      updateAISubtitleState(AISubtitleTaskState(.failed,
+                                                error: AISubtitleError(code: "whisper_translation_unsupported",
+                                                                       message: "whisper.cpp transcribes audio but does not translate subtitle text.")))
+    }
+  }
+
+  private func startAISubtitleScheduler(media: AISubtitleMediaContext,
+                                        duration: Double,
+                                        transcriber: AISubtitleTranscriber,
+                                        translator: AISubtitleTranslator,
+                                        transcriberID: AISubtitleProviderID,
+                                        translatorID: AISubtitleProviderID?) {
+    let cacheKey = AISubtitleCacheKey(media: media,
+                                      transcriberID: transcriberID,
+                                      translatorID: translatorID,
+                                      transcriberModelIdentifier: transcriber.modelIdentifier,
+                                      translatorModelIdentifier: translatorID == nil ? nil : translator.modelIdentifier)
+    aiSubtitleActiveCacheKey = cacheKey
+    let scheduler = AISubtitleScheduler(extractor: FFmpegAISubtitleAudioExtractor(),
+                                        transcriber: transcriber,
+                                        translator: translator)
+    aiSubtitleScheduler = scheduler
+    scheduler.start(media: media,
+                    mediaDuration: duration,
+                    cacheKey: cacheKey,
+                    playbackPosition: info.videoPosition?.second ?? 0,
+                    stateHandler: { [weak self] state in
+                      DispatchQueue.main.async {
+                        self?.updateAISubtitleState(state)
+                      }
+                    },
+                    subtitleFileHandler: { [weak self] url in
+                      DispatchQueue.main.async {
+                        self?.loadOrReloadAISubtitleFile(url)
+                      }
+                    })
+    scheduleAISubtitleMaintenance()
+  }
+
+  func stopAISubtitles() {
+    aiSubtitleMaintenanceWorkItem?.cancel()
+    aiSubtitleMaintenanceWorkItem = nil
+    aiSubtitleScheduler?.cancel()
+    aiSubtitleScheduler = nil
+  }
+
+  private func scheduleAISubtitleMaintenance() {
+    aiSubtitleMaintenanceWorkItem?.cancel()
+    guard aiSubtitleScheduler != nil else { return }
+    let workItem = DispatchWorkItem { [weak self] in
+      guard let self = self, let scheduler = self.aiSubtitleScheduler, self.info.state.active else { return }
+      self.syncPositionIfNeeded()
+      scheduler.updatePlaybackPosition(self.info.videoPosition?.second ?? 0)
+      self.scheduleAISubtitleMaintenance()
+    }
+    aiSubtitleMaintenanceWorkItem = workItem
+    DispatchQueue.main.asyncAfter(deadline: .now() + 30, execute: workItem)
+  }
+
+  private func updateAISubtitleState(_ state: AISubtitleTaskState) {
+    aiSubtitleState = state
+    let range = state.coveredRange.map { ", covered=\($0.start)-\($0.end)" } ?? ""
+    let error = state.error.map { ", error=\($0.code): \($0.message)" } ?? ""
+    log("AI subtitle state: \(state.phase.rawValue)\(range)\(error)")
+    NotificationCenter.default.post(name: .iinaAISubtitleStateDidChange, object: self)
   }
 
   func reloadAllSubs() {
@@ -2005,6 +2408,8 @@ class PlayerCore: NSObject {
   func fileStarted(path: String) {
     guard info.state.active else { return }
     log("File started")
+    stopAISubtitles()
+    aiSubtitleFileLoader.reset()
     info.justStartedFile = true
     info.disableOSDForFileLoading = true
     currentMediaIsAudio = .unknown
@@ -2126,6 +2531,8 @@ class PlayerCore: NSObject {
     }
     // call `trackListChanged` to load tracks and check whether need to switch to music mode
     trackListChanged()
+    inspectAISubtitleProviderSelectionAndLoadCache()
+    scheduleAISubtitleSuggestionIfNeeded()
     getPlaylist()
     getChapters()
     syncAbLoop()
@@ -2158,6 +2565,146 @@ class PlayerCore: NSObject {
     syncUI(.playlist)
   }
 
+  private typealias AISubtitleSelection = (media: AISubtitleMediaContext,
+                                           plan: AISubtitleProviderPlan,
+                                           cacheKey: AISubtitleCacheKey)
+
+  private func makeAISubtitleSelection() -> AISubtitleSelection? {
+    guard let media = makeAISubtitleMediaContext() else { return nil }
+    let request = AISubtitleProviderRequest(sourceLanguage: media.sourceLanguage,
+                                            targetLanguage: media.targetLanguage,
+                                            media: media)
+    let recommendedPlan = AISubtitleCapabilityDetector().recommendedPlan(for: request)
+    let savedProvider = UserDefaults.standard.object(forKey: "aiSubtitle.provider").flatMap { _ in
+      AISubtitleProviderID(preferenceIndex: UserDefaults.standard.integer(forKey: "aiSubtitle.provider"))
+    }
+    let transcriberID = savedProvider ?? recommendedPlan.transcriber
+    let translationRequired = request.requiresTranslation
+    let translatorID: AISubtitleProviderID?
+    if translationRequired, transcriberID == .whisperCpp {
+      translatorID = AISubtitleProviderID(preferenceIndex:
+        min(max(UserDefaults.standard.integer(forKey: "aiSubtitle.whisperTranslator"), 0), 2))
+    } else {
+      translatorID = translationRequired ? transcriberID : nil
+    }
+    let plan = AISubtitleProviderPlan(status: transcriberID == nil ? .unavailable : .ready,
+                                      transcriber: transcriberID,
+                                      translator: translatorID,
+                                      reason: savedProvider == nil ? recommendedPlan.reason : "Using the saved provider preference.",
+                                      requiresCloudAuthorization: transcriberID?.isCloudProvider == true
+                                        || translatorID?.isCloudProvider == true)
+    let transcriberModelIdentifier = transcriberID == .whisperCpp
+      ? WhisperCppAISubtitleTranscriber().modelIdentifier
+      : AISubtitleProviderModelCatalog.identifier(for: transcriberID, role: .transcriber)
+    let cacheKey = AISubtitleCacheKey(media: media,
+                                      transcriberID: transcriberID,
+                                      translatorID: translatorID,
+                                      transcriberModelIdentifier: transcriberModelIdentifier,
+                                      translatorModelIdentifier: AISubtitleProviderModelCatalog.identifier(for: translatorID,
+                                                                                                           role: .translator))
+    return (media, plan, cacheKey)
+  }
+
+  private func inspectAISubtitleProviderSelectionAndLoadCache() {
+    guard let selection = makeAISubtitleSelection() else { return }
+    let request = AISubtitleProviderRequest(sourceLanguage: selection.media.sourceLanguage,
+                                            targetLanguage: selection.media.targetLanguage,
+                                            media: selection.media)
+    let capabilities = AISubtitleCapabilityDetector().capabilities(for: request)
+      .map(\.debugSummary)
+      .joined(separator: "; ")
+    let plan = selection.plan
+    let cacheKey = selection.cacheKey
+    log("AI subtitle provider selection: \(plan.debugSummary), cacheKey=\(cacheKey.stableIdentifier)")
+    log("AI subtitle provider capabilities: \(capabilities)", level: .verbose)
+    if let cachedVTT = AISubtitleCacheStore().cachedVTT(for: cacheKey) {
+      aiSubtitleActiveCacheKey = cacheKey
+      log("Loading cached AI subtitles from \(cachedVTT.path)")
+      loadOrReloadAISubtitleFile(cachedVTT)
+    }
+  }
+
+  private func scheduleAISubtitleSuggestionIfNeeded() {
+    let suggestionDefaultsKey = "aiSubtitle.suggestWhenMissing"
+    if UserDefaults.standard.object(forKey: suggestionDefaultsKey) == nil {
+      UserDefaults.standard.set(true, forKey: suggestionDefaultsKey)
+    }
+    let mediaURL = info.currentURL
+    guard AISubtitleSuggestionPolicy.shouldSchedule(
+      isEnabled: UserDefaults.standard.bool(forKey: suggestionDefaultsKey),
+      mediaURL: mediaURL,
+      previouslySuggestedMediaURL: aiSubtitleSuggestedMediaURL
+    ), let mediaURL else { return }
+    aiSubtitleSuggestedMediaURL = mediaURL
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+      guard let self = self else { return }
+      let hasSubtitles = self.info.$subTracks.withLock { !$0.isEmpty }
+      guard AISubtitleSuggestionPolicy.shouldPresent(
+        scheduledMediaURL: mediaURL,
+        currentMediaURL: self.info.currentURL,
+        isPlaybackActive: self.info.state.active,
+        hasAudioTracks: !self.info.audioTracks.isEmpty,
+        hasSubtitleTracks: hasSubtitles,
+        hasExportableAISubtitles: self.hasExportableAISubtitles
+      ) else { return }
+
+      let alert = NSAlert()
+      alert.alertStyle = .informational
+      alert.messageText = aiSubtitleLocalized("ai_subtitle.suggestion_title", fallback: "No Subtitles Found")
+      alert.informativeText = aiSubtitleLocalized("ai_subtitle.suggestion_message",
+                                                  fallback: "Generate subtitles from this video's audio?")
+      alert.addButton(withTitle: aiSubtitleLocalized("ai_subtitle.generate_ellipsis", fallback: "Generate AI Subtitles…"))
+      alert.addButton(withTitle: aiSubtitleLocalized("ai_subtitle.not_now", fallback: "Not Now"))
+      alert.showsSuppressionButton = true
+      alert.suppressionButton?.title = aiSubtitleLocalized("ai_subtitle.dont_suggest_again",
+                                                           fallback: "Don't suggest this again")
+      let completion: (NSApplication.ModalResponse) -> Void = { [weak self] response in
+        if alert.suppressionButton?.state == .on {
+          UserDefaults.standard.set(false, forKey: suggestionDefaultsKey)
+        }
+        if response == .alertFirstButtonReturn {
+          self?.showAISubtitlePanel()
+        }
+      }
+      if let currentWindow = self.currentWindow {
+        alert.beginSheetModal(for: currentWindow, completionHandler: completion)
+      } else {
+        completion(alert.runModal())
+      }
+    }
+  }
+
+  private func makeAISubtitleMediaContext() -> AISubtitleMediaContext? {
+    guard let url = info.currentURL else { return nil }
+
+    var fileSize: UInt64?
+    var fileModifiedAt: Date?
+    if url.isFileURL {
+      let attributes = try? FileManager.default.attributesOfItem(atPath: url.path)
+      fileSize = (attributes?[.size] as? NSNumber)?.uint64Value
+      fileModifiedAt = attributes?[.modificationDate] as? Date
+    }
+
+    let audioTrack = info.currentTrack(.audio)
+    let sourceLanguageCode = audioTrack?.lang
+      ?? UserDefaults.standard.string(forKey: "aiSubtitle.sourceLanguage")
+    let targetLanguageCode = UserDefaults.standard.string(forKey: "aiSubtitle.targetLanguage")
+      ?? Locale.preferredLanguages.first
+      ?? "en"
+    let sourceLanguage = sourceLanguageCode.map(AISubtitleLanguage.init)
+    let targetLanguage = AISubtitleLanguage(targetLanguageCode)
+
+    return AISubtitleMediaContext(url: url,
+                                  isNetworkResource: info.isNetworkResource,
+                                  fileSize: fileSize,
+                                  fileModifiedAt: fileModifiedAt,
+                                  audioTrackID: audioTrack?.id,
+                                  audioStreamIndex: audioTrack?.ffIndex,
+                                  sourceLanguage: sourceLanguage,
+                                  targetLanguage: targetLanguage)
+  }
+
   func fileEnded(_ dueToStopCommand: Bool) {
     // if receive end-file when loading file, might be error
     // wait for idle
@@ -2177,6 +2724,7 @@ class PlayerCore: NSObject {
 
   func aidChanged() {
     guard info.state.active else { return }
+    stopAISubtitles()
     info.aid = Int(mpv.getInt(MPVOption.TrackSelection.aid))
     guard mainWindow.loaded else { return }
     mainWindow?.muteButton.isHidden = (info.aid == 0)
@@ -2310,6 +2858,9 @@ class PlayerCore: NSObject {
     // Important to synchronize the time as mpv may slightly alter the playback position during a
     // restart even while paused. See issue #5337.
     syncUI(.time)
+    if let position = info.videoPosition?.second {
+      aiSubtitleScheduler?.updatePlaybackPosition(position)
+    }
     reloadSavedIINAfilters()
     
     // The new video's size is guaranteed to be available. Reset the flags used for window resizing.
@@ -2835,6 +3386,7 @@ class PlayerCore: NSObject {
                              isSelected: mpv.getFlag(MPVProperty.trackListNSelected(index)),
                              isExternal: mpv.getFlag(MPVProperty.trackListNExternal(index)))
         track.srcId = mpv.getInt(MPVProperty.trackListNSrcId(index))
+        track.ffIndex = mpv.getOptionalInt(MPVProperty.trackListNFFIndex(index))
         track.title = mpv.getString(MPVProperty.trackListNTitle(index))
         track.lang = mpv.getString(MPVProperty.trackListNLang(index))
         track.codec = mpv.getString(MPVProperty.trackListNCodec(index))

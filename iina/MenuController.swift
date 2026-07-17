@@ -217,6 +217,32 @@ class MenuController: NSObject, NSMenuDelegate {
   @IBOutlet weak var findOnlineSub: NSMenuItem!
   @IBOutlet weak var onlineSubSourceMenu: NSMenu!
   @IBOutlet weak var saveDownloadedSub: NSMenuItem!
+  private lazy var aiSubtitleStatus = NSMenuItem(title: aiSubtitleLocalized("ai_subtitle.state.idle", fallback: "Idle"),
+                                                action: nil,
+                                                keyEquivalent: "")
+  private lazy var aiSubtitleStop = NSMenuItem(title: aiSubtitleLocalized("ai_subtitle.stop", fallback: "Stop Generating"),
+                                              action: #selector(MainMenuActionHandler.menuStopAISubtitles(_:)),
+                                              keyEquivalent: "")
+  private lazy var aiSubtitleMenuItem: NSMenuItem = {
+    let title = aiSubtitleLocalized("ai_subtitle.title", fallback: "AI Subtitles")
+    let item = NSMenuItem(title: title, action: nil, keyEquivalent: "")
+    let menu = NSMenu(title: title)
+    menu.addItem(withTitle: aiSubtitleLocalized("ai_subtitle.generate_or_configure", fallback: "Generate or Configure…"),
+                 action: #selector(MainMenuActionHandler.menuShowAISubtitlePanel(_:)),
+                 keyEquivalent: "")
+    menu.addItem(aiSubtitleStop)
+    menu.addItem(.separator())
+    menu.addItem(aiSubtitleStatus)
+    menu.addItem(.separator())
+    menu.addItem(withTitle: aiSubtitleLocalized("ai_subtitle.export_webvtt", fallback: "Export WebVTT…"),
+                 action: #selector(MainMenuActionHandler.menuExportAIWebVTT(_:)),
+                 keyEquivalent: "")
+    menu.addItem(withTitle: aiSubtitleLocalized("ai_subtitle.export_srt", fallback: "Export SRT…"),
+                 action: #selector(MainMenuActionHandler.menuExportAISRT(_:)),
+                 keyEquivalent: "")
+    item.submenu = menu
+    return item
+  }()
   // Plugin
   @IBOutlet weak var pluginMenu: NSMenu!
   @IBOutlet weak var pluginMenuItem: NSMenuItem!
@@ -409,6 +435,12 @@ class MenuController: NSObject, NSMenuDelegate {
 
     findOnlineSub.action = #selector(MainMenuActionHandler.menuFindOnlineSub(_:))
     saveDownloadedSub.action = #selector(MainMenuActionHandler.saveDownloadedSub(_:))
+
+    if !subMenu.items.contains(aiSubtitleMenuItem),
+       let insertionIndex = subMenu.items.firstIndex(of: saveDownloadedSub).map({ $0 + 1 }) {
+      subMenu.insertItem(.separator(), at: insertionIndex)
+      subMenu.insertItem(aiSubtitleMenuItem, at: insertionIndex + 1)
+    }
 
     onlineSubSourceMenu.delegate = self
 
@@ -607,6 +639,9 @@ class MenuController: NSObject, NSMenuDelegate {
     let providerID = Preference.string(for: .onlineSubProvider) ?? OnlineSubtitle.Providers.openSub.id
     let providerName = OnlineSubtitle.Providers.nameForID(providerID)
     findOnlineSub.title = String(format: Constants.String.findOnlineSubtitles, providerName)
+    let state = player.aiSubtitleState
+    aiSubtitleStatus.title = state.error?.message ?? state.message ?? state.phase.rawValue.capitalized
+    aiSubtitleStop.isEnabled = ![.idle, .completed, .failed, .canceled].contains(state.phase)
   }
 
   private func updateOnlineSubSourceMenu() {

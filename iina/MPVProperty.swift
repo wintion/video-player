@@ -420,6 +420,10 @@ struct MPVProperty {
   static func trackListNSrcId(_ n: Int) -> String {
     return "track-list/\(n)/src-id"
   }
+  /** track-list/N/ff-index */
+  static func trackListNFFIndex(_ n: Int) -> String {
+    return "track-list/\(n)/ff-index"
+  }
   /** track-list/N/title */
   static func trackListNTitle(_ n: Int) -> String {
     return "track-list/\(n)/title"

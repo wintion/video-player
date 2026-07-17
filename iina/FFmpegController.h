@@ -66,4 +66,22 @@
 
 + (nullable NSDictionary *)probeVideoInfoForFile:(nonnull NSString *)file;
 
+/// Extracts a time range as 16 kHz, mono, signed 16-bit PCM WAV.
+/// Pass a negative stream index to use FFmpeg's best audio stream.
++ (BOOL)extractAudioFromURL:(nonnull NSURL *)sourceURL
+                streamIndex:(NSInteger)streamIndex
+                  startTime:(NSTimeInterval)startTime
+                   duration:(NSTimeInterval)duration
+                  outputURL:(nonnull NSURL *)outputURL
+                      error:(NSError * _Nullable * _Nullable)error;
+
+/// Equivalent to `extractAudioFromURL`, with an interrupt callback for canceling blocking I/O.
++ (BOOL)extractAudioFromURL:(nonnull NSURL *)sourceURL
+                streamIndex:(NSInteger)streamIndex
+                  startTime:(NSTimeInterval)startTime
+                   duration:(NSTimeInterval)duration
+                  outputURL:(nonnull NSURL *)outputURL
+               shouldCancel:(BOOL (^ _Nullable)(void))shouldCancel
+                      error:(NSError * _Nullable * _Nullable)error;
+
 @end

@@ -486,6 +486,22 @@ extension MainMenuActionHandler {
     return true
   }
 
+  @objc func menuShowAISubtitlePanel(_ sender: NSMenuItem) {
+    player.showAISubtitlePanel()
+  }
+
+  @objc func menuStopAISubtitles(_ sender: NSMenuItem) {
+    player.stopAISubtitles()
+  }
+
+  @objc func menuExportAIWebVTT(_ sender: NSMenuItem) {
+    player.exportAISubtitles(format: .webVTT)
+  }
+
+  @objc func menuExportAISRT(_ sender: NSMenuItem) {
+    player.exportAISubtitles(format: .srt)
+  }
+
   // MARK: - Plugin
 
   @objc func showPluginsPanel(_ sender: NSMenuItem) {

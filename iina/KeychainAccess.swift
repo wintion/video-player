@@ -56,7 +56,7 @@ class KeychainAccess {
       var query: [String: Any] = [kSecAttrService as String: serviceName.rawValue,
                                   kSecAttrLabel as String: serviceName.rawValue,
                                   kSecAttrAccount as String: username,
-                                  kSecValueData as String: password]
+                                  kSecValueData as String: password.data(using: .utf8)!]
       if let server = server { query[kSecAttrServer as String] = server }
       if let port = port { query[kSecAttrPort as String] = port }
       query[kSecClass as String] = server == nil && port == nil ? kSecClassGenericPassword : kSecClassInternetPassword
@@ -103,5 +103,22 @@ class KeychainAccess {
     return (account, password)
   }
 
-}
+  static func delete(username: String? = nil,
+                     forService serviceName: ServiceName,
+                     server: String? = nil,
+                     port: Int? = nil) throws {
+    var query: [String: Any] = [kSecAttrService as String: serviceName.rawValue]
+    if let username = username { query[kSecAttrAccount as String] = username }
+    if let server = server { query[kSecAttrServer as String] = server }
+    if let port = port { query[kSecAttrPort as String] = port }
+    query[kSecClass as String] = server == nil && port == nil
+      ? kSecClassGenericPassword
+      : kSecClassInternetPassword
+    let status = SecItemDelete(query as CFDictionary)
+    guard status == errSecSuccess || status == errSecItemNotFound else {
+      let message = (SecCopyErrorMessageString(status, nil) as String?) ?? ""
+      throw KeychainError.unhandledError(message: message)
+    }
+  }
 
+}
